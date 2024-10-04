@@ -37,14 +37,12 @@ module generateRandomNumber(
             lfsr <= 8'b10101010;   
         end
         else begin
+            // Shift LFSR and apply feedback
+            lfsr <= {lfsr[6:0],feedback};
             // When have button signal generate new random number
             if(getNumber) begin
-                lfsr <= {lfsr[6:0],feedback}; // Shift LFSR and apply feedback
+                random_number =  lfsr[3:0] % 10;
             end
         end
-    end
-    
-   always @(lfsr) begin
-        random_number =  lfsr[3:0] % 10;
-   end    
+    end  
 endmodule
