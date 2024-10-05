@@ -24,7 +24,8 @@ module controlSpeedMode0(
     input clk,              // Clock from Arty-clk
     input rst,              // Reset signal
     input button,           // Button 0 signal
-    input [1:0] game_mode,   // Game mode 0->4
+    input done_signal,      // Signal when done get random number
+    input [1:0] game_mode,  // Game mode 0->4
     output reg getNumber    // Signal get random number
     );
     
@@ -37,8 +38,16 @@ module controlSpeedMode0(
     localparam NORMAL_SPEED_COUNTER = FREQ_CLK / NORMAL_SPEED_FREQ;
     localparam LOW_SPEED_COUNTER = FREQ_CLK / LOW_SPEED_FREQ;
     
+    localparam TEST_SPEED_COUNTER = 10;
+    
     reg [31:0] speed;
     reg [31:0] counter;
+    always @(done_signal) begin
+        // Reset signal get random number
+        if(done_signal) begin
+            getNumber <= 0;
+        end
+    end
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
@@ -47,8 +56,8 @@ module controlSpeedMode0(
             counter <= 0;
         end
         else begin
-            // Reset signal get random number
-            getNumber <= 0;
+            
+            
             case(game_mode)
             // Mode 0 : Press and release BTN0 
             2'b00: begin
@@ -61,7 +70,19 @@ module controlSpeedMode0(
                 end         
             end
             // Mode 1: Press and hold BTN0 speed constraint, release stop
-            
+            // We will implement 0.25s will generate new random number 
+            2'b01: begin
+                if(button) begin
+                    counter <= counter + 1;
+                    if(counter >= speed || counter >= TEST_SPEED_COUNTER) begin
+                        getNumber <= 1;
+                        counter <= 0;
+                    end
+                end
+                else begin
+                    getNumber <= 0;
+                end
+            end
             // Mode 2: Press and hold BTN0 speed increase then decrease    
             
             // Mode 3: Press and release BTN0, speed constraint then press
@@ -71,5 +92,11 @@ module controlSpeedMode0(
             end
             endcase
         end
+    end
+    
+    always @(game_mode) begin
+        // Reset signal get random number when have mode change
+        getNumber <= 0;
+        counter <= 0;
     end
 endmodule

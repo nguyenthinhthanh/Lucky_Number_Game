@@ -27,6 +27,7 @@ reg rst;
 reg button;
 reg [1:0] game_mode;
 
+wire done_signal;
 wire getNumber;
 wire [3:0] random_number;
 
@@ -35,6 +36,7 @@ controlSpeedMode0 uut(
     .rst(rst),
     .button(button),
     .game_mode(game_mode),
+    .done_signal(done_signal),
     .getNumber(getNumber)
 );
 
@@ -42,6 +44,7 @@ generateRandomNumber uut1(
     .clk(clk),
     .rst(rst),
     .getNumber(getNumber),
+    .done_signal(done_signal),
     .random_number(random_number)
 );
 
@@ -62,12 +65,22 @@ initial begin
     rst = 0;
     #10
     
+    $display("This is test Mode 0 \n");
+    
     for(integer i =0;i<10;i =i+1) begin
         #10
         button = 1;
         #10
         button = 0;        
     end
+    
+    #10
+    
+    $display("This is test Mode 1 \n");
+    game_mode = 2'b01;
+    button = 1;
+    #500
+    button = 0;
     
     #10
     $finish;    

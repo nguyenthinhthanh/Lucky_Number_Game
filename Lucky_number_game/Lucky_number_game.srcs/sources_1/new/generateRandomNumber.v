@@ -24,6 +24,7 @@ module generateRandomNumber(
     input clk,          // Clock input
     input rst,          // Reset input
     input getNumber,    // Get random number when have signal button input
+    output reg done_signal, // Signal when done get random number
     output reg[3:0]  random_number  // 4-bit random number from 0-9    
     );
     
@@ -34,15 +35,20 @@ module generateRandomNumber(
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
+            done_signal <= 0;
             lfsr <= 8'b10101010;   
         end
         else begin
-            // Shift LFSR and apply feedback
+           // Shift LFSR and apply feedback
             lfsr <= {lfsr[6:0],feedback};
-            // When have button signal generate new random number
             if(getNumber) begin
-                random_number =  lfsr[3:0] % 10;
+                // When have button signal generate new random number
+                random_number <=  lfsr[3:0] % 10;
+                done_signal <= 1; 
+            end
+            else begin
+                done_signal <= 0;
             end
         end
-    end  
+    end 
 endmodule
