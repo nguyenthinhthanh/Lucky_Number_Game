@@ -33,7 +33,7 @@ module frequencyDivider #(
     // Calculate the number of clock cycles needed to achieve the target frequency
     localparam integer DIVISOR_TOGGLE = INPUT_CLK_FREQ / (2*TARGET_CLK_FREQ);
     
-    reg [31:0] counter;
+    reg[31:0] counter;
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
