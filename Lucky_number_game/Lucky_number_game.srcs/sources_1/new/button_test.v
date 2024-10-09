@@ -25,6 +25,7 @@ module button_test(
     output reg[3:0] led
     );
     
+    /*Test for button in Arty-z7*/
     always@(button) begin
         case(button)
             0:  led = 4'b0000;
