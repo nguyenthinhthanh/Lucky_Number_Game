@@ -1,0 +1,1 @@
+-wto "0b1c946941c64ea3a8001196648d0756" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "generateRandomNumber_tb_behav" "xil_defaultlib.generateRandomNumber_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

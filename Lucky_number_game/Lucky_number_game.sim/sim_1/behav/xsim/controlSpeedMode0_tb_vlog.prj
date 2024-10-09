@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v" \
+"../../../../Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v" \
+"../../../../Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
