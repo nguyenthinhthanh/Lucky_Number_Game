@@ -21,13 +21,13 @@
 
 /*This module use for read button signal with resolve debounce problem */
 `include "header.vh"
-`include "frequencyDivider.v"
 
 module readButtonWithDebounce(
     input clk,
     input rst,
     input[3:0] button_in,
-    output reg[3:0] button_debounce
+    output reg[3:0] button_debounce,
+    output reg[3:0] button_pressed_hold
     );
     
     reg clk_out;                        /*This clk for 100Hz - 10ms read button*/
@@ -60,7 +60,7 @@ module readButtonWithDebounce(
         end
         else begin
             /*Read new button value and update debounce value*/
-            for(integer i=0;i<4;i=i+1) begin
+            for(integer i=0;i< `NUM_OF_BUTTON;i=i+1) begin
                 button_debounce0[i] <= button_debounce1[i];
                 button_debounce1[i] <= button_in[i];
                 
@@ -69,7 +69,18 @@ module readButtonWithDebounce(
                     button_debounce[i] = button_debounce0[i];
                     
                     if(button_debounce[i] == `BUTTON_PRESSED) begin
-                        
+                        /*If button is pressed check just press
+                        or press hold*/
+                        if(counter_pressed_button < `COUNTER_PRESSED_HOLD) begin
+                            counter_pressed_button <= counter_pressed_button + 1;
+                        end
+                        else begin
+                            pressed_hold_flag <= 1;
+                        end
+                    end
+                    else begin
+                        counter_pressed_button <= 0;
+                        pressed_hold_flag <= 0;
                     end
                 end
             end
