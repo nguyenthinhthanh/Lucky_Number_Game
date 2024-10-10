@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log controlSpeedMode0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlSpeedMode0.tcl
+EAStep vivado -log frequencyDivider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source frequencyDivider.tcl

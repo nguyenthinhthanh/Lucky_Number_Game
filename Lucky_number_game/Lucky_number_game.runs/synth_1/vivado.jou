@@ -2,11 +2,11 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Fri Oct  4 20:51:45 2024
-# Process ID: 15596
+# Start of session at: Thu Oct 10 10:40:34 2024
+# Process ID: 14104
 # Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
-# Command line: vivado.exe -log controlSpeedMode0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlSpeedMode0.tcl
-# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/controlSpeedMode0.vds
+# Command line: vivado.exe -log frequencyDivider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source frequencyDivider.tcl
+# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/frequencyDivider.vds
 # Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source controlSpeedMode0.tcl -notrace
+source frequencyDivider.tcl -notrace
