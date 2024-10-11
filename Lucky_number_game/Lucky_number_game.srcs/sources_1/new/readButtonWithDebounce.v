@@ -30,13 +30,15 @@ module readButtonWithDebounce(
     output reg[3:0] button_pressed_hold
     );
     
-    reg clk_out;                        /*This clk for 100Hz - 10ms read button*/
+    wire clk_out;                        /*This clk for 100Hz - 10ms read button*/
+    
     reg[3:0] button_debounce0;          /*For debonce value*/
     reg[3:0] button_debounce1;          /*For debonce value*/
     
     reg[3:0] pressed_hold_flag;         /*This flag will set when pressed more
                                         than 500ms*/
-    integer counter_pressed_button[3:0]; /*Counter for 500ms*/   
+    integer i;
+    integer counter_pressed_button[3:0] = {0,0,0,0}; /*Counter for 500ms*/   
                                         
     parameter TARGET_CLK_FREQ = 100;   /*100Hz for every 10ms read button value */
     
@@ -51,8 +53,6 @@ module readButtonWithDebounce(
     /*Reset, read and update button value debounce*/
     always @(posedge clk_out or posedge rst) begin
         if(rst) begin
-            counter_pressed_button <= 4'b0000;
-        
             button_debounce0 <= 4'b0000;
             button_debounce1 <= 4'b0000;
             
@@ -60,7 +60,7 @@ module readButtonWithDebounce(
         end
         else begin
             /*Read new button value and update debounce value*/
-            for(integer i=0;i< `NUM_OF_BUTTON;i=i+1) begin
+            for(i=0;i< `NUM_OF_BUTTON;i=i+1) begin
                 button_debounce0[i] <= button_debounce1[i];
                 button_debounce1[i] <= button_in[i];
                 
@@ -71,16 +71,16 @@ module readButtonWithDebounce(
                     if(button_debounce[i] == `BUTTON_PRESSED) begin
                         /*If button is pressed check just press
                         or press hold*/
-                        if(counter_pressed_button < `COUNTER_PRESSED_HOLD) begin
-                            counter_pressed_button <= counter_pressed_button + 1;
+                        if(counter_pressed_button[i] < `COUNTER_PRESSED_HOLD) begin
+                            counter_pressed_button[i] <= counter_pressed_button[i] + 1;
                         end
                         else begin
-                            pressed_hold_flag <= 1;
+                            pressed_hold_flag[i] <= 1;
                         end
                     end
                     else begin
-                        counter_pressed_button <= 0;
-                        pressed_hold_flag <= 0;
+                        counter_pressed_button[i] <= 0;
+                        pressed_hold_flag[i] <= 0;
                     end
                 end
             end
