@@ -26,19 +26,20 @@ module readButtonWithDebounce(
     input clk,
     input rst,
     input[3:0] button_in,
-    output reg[3:0] button_debounce,
-    output reg[3:0] button_pressed_hold
+    input[3:0] button_read_done,
+    output reg[3:0] button_press_flag,          /*This flag will set when press button*/
+    output reg[3:0] button_pressed_hold_flag    /*This flag will set when pressed more
+                                                than 500ms*/
     );
     
     wire clk_out;                        /*This clk for 100Hz - 10ms read button*/
     
+    reg[3:0] button_debounce;           /*For store old stable value*/
     reg[3:0] button_debounce0;          /*For debonce value*/
     reg[3:0] button_debounce1;          /*For debonce value*/
     
-    reg[3:0] pressed_hold_flag;         /*This flag will set when pressed more
-                                        than 500ms*/
     integer i;
-    integer counter_pressed_button[3:0] = {0,0,0,0}; /*Counter for 500ms*/   
+    integer counter_pressed_hold_button[3:0] = {0,0,0,0}; /*Counter for 500ms*/   
                                         
     parameter TARGET_CLK_FREQ = 100;   /*100Hz for every 10ms read button value */
     
@@ -50,13 +51,35 @@ module readButtonWithDebounce(
         .clk_out(clk_out)
     );
     
+    always @(button_read_done) begin
+        if(button_read_done[0]) begin
+            button_press_flag[0] <= 0;
+            button_pressed_hold_flag[0] <= 0;
+        end
+        else if(button_read_done[1]) begin
+            button_press_flag[1] <= 0;
+            button_pressed_hold_flag[1] <= 0;
+        end
+        else if(button_read_done[2]) begin
+            button_press_flag[2] <= 0;
+            button_pressed_hold_flag[2] <= 0;
+        end
+        else if(button_read_done[3]) begin
+            button_press_flag[3] <= 0;
+            button_pressed_hold_flag[3] <= 0;
+        end
+    end
+    
     /*Reset, read and update button value debounce*/
     always @(posedge clk_out or posedge rst) begin
         if(rst) begin
             button_debounce0 <= 4'b0000;
             button_debounce1 <= 4'b0000;
+            button_debounce  <= 4'b0000;
             
-            pressed_hold_flag <=  4'b0000;
+            button_press_flag <= 4'b0000;
+            button_pressed_hold_flag <=  4'b0000;
+            
         end
         else begin
             /*Read new button value and update debounce value*/
@@ -64,24 +87,28 @@ module readButtonWithDebounce(
                 button_debounce0[i] <= button_debounce1[i];
                 button_debounce1[i] <= button_in[i];
                 
+                /*If tow value is same update the button value*/
                 if(button_debounce0[i] == button_debounce1[i]) begin
-                    /*If tow value is same update the button value*/
-                    button_debounce[i] = button_debounce0[i];
-                    
-                    if(button_debounce[i] == `BUTTON_PRESSED) begin
-                        /*If button is pressed check just press
-                        or press hold*/
-                        if(counter_pressed_button[i] < `COUNTER_PRESSED_HOLD) begin
-                            counter_pressed_button[i] <= counter_pressed_button[i] + 1;
-                        end
-                        else begin
-                            pressed_hold_flag[i] <= 1;
-                        end
+                    if(button_debounce0[i] != button_debounce[i]) begin
+                        /*If new value is diff update vaule*/
+                        button_debounce[i] = button_debounce0[i];
+                        if(button_debounce[i] == `BUTTON_PRESSED) begin
+                            counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
+                            button_press_flag[i] <= 1;
+                        end    
                     end
                     else begin
-                        counter_pressed_button[i] <= 0;
-                        pressed_hold_flag[i] <= 0;
+                        /*If value is not change that mean
+                        press hold so we increase counter value*/
+                        counter_pressed_hold_button[i] <= counter_pressed_hold_button[i] - 1;
+                        if(counter_pressed_hold_button[i] <= 0) begin
+                            counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
+                            if(button_debounce[i] == `BUTTON_PRESSED) begin
+                                button_pressed_hold_flag[i] <= 1;
+                            end
+                        end
                     end
+                
                 end
             end
         end
