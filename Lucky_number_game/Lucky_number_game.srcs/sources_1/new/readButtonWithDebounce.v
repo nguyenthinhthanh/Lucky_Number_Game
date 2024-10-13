@@ -52,24 +52,26 @@ module readButtonWithDebounce(
     );
     
     always @(button_read_done) begin
-        if(button_read_done[0]) begin
+        if(button_read_done) begin
+            if(button_read_done[0]) begin
             button_press_flag[0] <= 0;
             button_pressed_hold_flag[0] <= 0;
-        end
-        else if(button_read_done[1]) begin
-            button_press_flag[1] <= 0;
-            button_pressed_hold_flag[1] <= 0;
-        end
-        else if(button_read_done[2]) begin
-            button_press_flag[2] <= 0;
-            button_pressed_hold_flag[2] <= 0;
-        end
-        else if(button_read_done[3]) begin
-            button_press_flag[3] <= 0;
-            button_pressed_hold_flag[3] <= 0;
-        end
+            end
+            else if(button_read_done[1]) begin
+                button_press_flag[1] <= 0;
+                button_pressed_hold_flag[1] <= 0;
+            end
+            else if(button_read_done[2]) begin
+                button_press_flag[2] <= 0;
+                button_pressed_hold_flag[2] <= 0;
+            end
+            else if(button_read_done[3]) begin
+                button_press_flag[3] <= 0;
+                button_pressed_hold_flag[3] <= 0;
+            end
+         end    
     end
-    
+   
     /*Reset, read and update button value debounce*/
     always @(posedge clk_out or posedge rst) begin
         if(rst) begin
