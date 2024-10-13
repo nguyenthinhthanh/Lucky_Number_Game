@@ -68,9 +68,9 @@ initial begin
     $display("This is test Mode 0 \n");
     
     for(integer i =0;i<10;i =i+1) begin
-        #10
+        #20
         button = 1;
-        #10
+        #20
         button = 0;        
     end
     

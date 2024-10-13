@@ -1,3 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/header.vh" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module controlSpeedMode0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v" into library xil_defaultlib
