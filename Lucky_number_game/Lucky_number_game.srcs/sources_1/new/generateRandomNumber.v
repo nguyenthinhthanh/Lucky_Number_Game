@@ -44,7 +44,7 @@ module generateRandomNumber(
             if(getNumber) begin
                 // When have button signal generate new random number
                 random_number <=  lfsr[3:0] % 10;
-                done_signal <= 1; 
+                done_signal <= 0; 
             end
             else begin
                 done_signal <= 0;
