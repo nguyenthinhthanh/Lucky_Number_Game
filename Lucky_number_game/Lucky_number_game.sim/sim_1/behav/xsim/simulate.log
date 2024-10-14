@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+Time no:                    0ns Randon number : xxxx binary  x decimal
+This is test Mode 0 
+
+Time no:                   55ns Randon number : 0101 binary  5 decimal
+Time no:                   95ns Randon number : 1001 binary  9 decimal
+Time no:                  135ns Randon number : 0100 binary  4 decimal
+Time no:                  175ns Randon number : 0010 binary  2 decimal
+Time no:                  215ns Randon number : 0111 binary  7 decimal
+Time no:                  255ns Randon number : 0101 binary  5 decimal
+Time no:                  295ns Randon number : 1000 binary  8 decimal
+Time no:                  335ns Randon number : 0101 binary  5 decimal
+Time no:                  375ns Randon number : 0100 binary  4 decimal
+Time no:                  415ns Randon number : 0011 binary  3 decimal
+This is test Mode 1 
+
+Time no:                  545ns Randon number : 1000 binary  8 decimal
+Time no:                  655ns Randon number : 0010 binary  2 decimal
+Time no:                  765ns Randon number : 0011 binary  3 decimal
+Time no:                  875ns Randon number : 0110 binary  6 decimal
+$finish called at time : 940 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v" Line 86
