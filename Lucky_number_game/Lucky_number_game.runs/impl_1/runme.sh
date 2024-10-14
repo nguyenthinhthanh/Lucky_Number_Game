@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1'
+HD_PWD='D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log toggleLedWithButton.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toggleLedWithButton.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log toggleLedWithButton.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source toggleLedWithButton.tcl -notrace
+
+
