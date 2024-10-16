@@ -51,27 +51,6 @@ module readButtonWithDebounce(
         .clk_out(clk_out)
     );
     
-    always @(button_read_done) begin
-        if(button_read_done) begin
-            if(button_read_done[0]) begin
-            button_press_flag[0] <= 0;
-            button_pressed_hold_flag[0] <= 0;
-            end
-            else if(button_read_done[1]) begin
-                button_press_flag[1] <= 0;
-                button_pressed_hold_flag[1] <= 0;
-            end
-            else if(button_read_done[2]) begin
-                button_press_flag[2] <= 0;
-                button_pressed_hold_flag[2] <= 0;
-            end
-            else if(button_read_done[3]) begin
-                button_press_flag[3] <= 0;
-                button_pressed_hold_flag[3] <= 0;
-            end
-         end    
-    end
-   
     /*Reset, read and update button value debounce*/
     always @(posedge clk_out or posedge rst) begin
         if(rst) begin
@@ -91,12 +70,19 @@ module readButtonWithDebounce(
                 
                 /*If tow value is same update the button value*/
                 if(button_debounce0[i] == button_debounce1[i]) begin
-                    if(button_debounce0[i] != button_debounce[i]) begin
+                    if(button_debounce0[i] != button_debounce[i] ) begin
                         /*If new value is diff update vaule*/
                         button_debounce[i] = button_debounce0[i];
-                        if(button_debounce[i] == `BUTTON_PRESSED) begin
+                        if(button_read_done[i]) begin
+                            button_press_flag[i] <= 0;
+                            button_pressed_hold_flag[i] <= 0;
+                        end
+                        else if(button_debounce[i] == `BUTTON_PRESSED) begin
                             counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
                             button_press_flag[i] <= 1;
+                        end
+                        else begin
+                            button_press_flag[i] <= 0;
                         end    
                     end
                     else begin
@@ -108,9 +94,11 @@ module readButtonWithDebounce(
                             if(button_debounce[i] == `BUTTON_PRESSED) begin
                                 button_pressed_hold_flag[i] <= 1;
                             end
+                            else begin
+                                button_pressed_hold_flag[i] <= 0;
+                            end
                         end
                     end
-                
                 end
             end
         end

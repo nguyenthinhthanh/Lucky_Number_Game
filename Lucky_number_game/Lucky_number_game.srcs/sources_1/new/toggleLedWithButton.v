@@ -30,12 +30,15 @@ module toggleLedWithButton(
     output reg[3:0] led
     );
     
+    wire[3:0] button_press_flag_wire;
+    wire[3:0] button_pressed_hold_flag_wire;
+    
     readButtonWithDebounce read_button_debounce_inst(
         .clk(clk),
         .rst(rst),
         .button_in(button_in),
-        .button_press_flag(button_press_flag),
-        .button_pressed_hold_flag(button_pressed_hold_flag),
+        .button_press_flag(button_press_flag_wire),
+        .button_pressed_hold_flag(button_pressed_hold_flag_wire),
         .button_read_done(button_read_done)
     );
     
@@ -48,7 +51,7 @@ module toggleLedWithButton(
         end
         else begin
             for(i=0;i<4;i=i+1) begin
-                if(button_press_flag[i] || button_pressed_hold_flag[i]) begin
+                if(button_press_flag_wire || button_pressed_hold_flag_wire) begin
                     led[i] <= ~led[i];
                     button_read_done[i] <= 1;
                 end
