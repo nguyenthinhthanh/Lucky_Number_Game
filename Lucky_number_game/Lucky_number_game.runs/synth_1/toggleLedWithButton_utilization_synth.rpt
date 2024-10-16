@@ -1,13 +1,13 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Wed Oct 16 17:02:37 2024
+| Date         : Wed Oct 16 21:28:26 2024
 | Host         : MSI running 64-bit major release  (build 9200)
-| Command      : report_utilization -file fsmForButtonState_utilization_synth.rpt -pb fsmForButtonState_utilization_synth.pb
-| Design       : fsmForButtonState
+| Command      : report_utilization -file toggleLedWithButton_utilization_synth.rpt -pb toggleLedWithButton_utilization_synth.pb
+| Design       : toggleLedWithButton
 | Device       : 7z020clg400-1
 | Design State : Synthesized
------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -30,12 +30,12 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  269 |     0 |          0 |     53200 |  0.51 |
-|   LUT as Logic          |  269 |     0 |          0 |     53200 |  0.51 |
+| Slice LUTs*             |   89 |     0 |          0 |     53200 |  0.17 |
+|   LUT as Logic          |   89 |     0 |          0 |     53200 |  0.17 |
 |   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |  193 |     0 |          0 |    106400 |  0.18 |
-|   Register as Flip Flop |  193 |     0 |          0 |    106400 |  0.18 |
-|   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
+| Slice Registers         |   94 |     0 |          0 |    106400 |  0.09 |
+|   Register as Flip Flop |   74 |     0 |          0 |    106400 |  0.07 |
+|   Register as Latch     |   20 |     0 |          0 |    106400 |  0.02 |
 | F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 65    |          Yes |           - |        Reset |
-| 52    |          Yes |         Set |            - |
-| 76    |          Yes |       Reset |            - |
+| 17    |          Yes |           - |          Set |
+| 73    |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 4     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   18 |     0 |          0 |       125 | 14.40 |
+| Bonded IOB                  |   14 |     0 |          0 |       125 | 11.20 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -113,7 +113,7 @@ Table of Contents
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
+| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |          0 |        16 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         4 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         4 |  0.00 |
@@ -146,19 +146,20 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT1     |  131 |                 LUT |
-| FDRE     |   76 |        Flop & Latch |
-| LUT2     |   67 |                 LUT |
-| FDCE     |   65 |        Flop & Latch |
-| CARRY4   |   56 |          CarryLogic |
-| FDSE     |   52 |        Flop & Latch |
-| LUT5     |   50 |                 LUT |
-| LUT4     |   20 |                 LUT |
-| OBUF     |   12 |                  IO |
-| LUT6     |    6 |                 LUT |
+| FDCE     |   53 |        Flop & Latch |
+| LUT5     |   49 |                 LUT |
+| LUT3     |   23 |                 LUT |
+| LDCE     |   20 |        Flop & Latch |
+| LUT6     |   18 |                 LUT |
+| FDPE     |   17 |        Flop & Latch |
+| OBUF     |    8 |                  IO |
+| LUT4     |    8 |                 LUT |
+| CARRY4   |    8 |          CarryLogic |
 | IBUF     |    6 |                  IO |
-| BUFG     |    2 |               Clock |
-| LUT3     |    1 |                 LUT |
+| FDRE     |    4 |        Flop & Latch |
+| LUT2     |    1 |                 LUT |
+| LUT1     |    1 |                 LUT |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 

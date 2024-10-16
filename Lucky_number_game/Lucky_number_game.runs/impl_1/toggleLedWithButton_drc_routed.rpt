@@ -1,0 +1,127 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Wed Oct 16 21:29:17 2024
+| Host         : MSI running 64-bit major release  (build 9200)
+| Command      : report_drc -file toggleLedWithButton_drc_routed.rpt -pb toggleLedWithButton_drc_routed.pb -rpx toggleLedWithButton_drc_routed.rpx
+| Design       : toggleLedWithButton
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 18
++----------+----------+--------------------+------------+
+| Rule     | Severity | Description        | Violations |
++----------+----------+--------------------+------------+
+| PDRC-153 | Warning  | Gated clock check  | 17         |
+| ZPS7-1   | Warning  | PS7 block required | 1          |
++----------+----------+--------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[0]_P is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[0]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[1]_P_0 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[1]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[2]_P_0 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[2]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[0]_C is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[0]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[1]_C is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[1]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[2]_C is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[2]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[3]_C is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[3]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce0_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[0]_P is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[0]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[1]_P is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[1]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[2]_P is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[2]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[3]_C is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_pressed_hold_flag_reg[3]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_pressed_hold_flag_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[3]_C_0 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[3]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/button_debounce_reg[3]_C_1 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[3]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_press_flag_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/clk_out_reg_6 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[0]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/clk_out_reg_7 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[1]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/clk_out_reg_8 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[2]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net read_button_debounce_inst/frequency_for_button_read_inst/clk_out_reg_9 is a gated clock net sourced by a combinational pin read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[3]_LDC_i_1/O, cell read_button_debounce_inst/frequency_for_button_read_inst/button_debounce1_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+

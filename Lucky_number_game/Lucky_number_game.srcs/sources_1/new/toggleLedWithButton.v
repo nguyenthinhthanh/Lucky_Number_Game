@@ -54,7 +54,6 @@ module toggleLedWithButton(
                     button_read_done[i] <= 1;
                 end
                 else begin
-                    led[i] <= 0;
                     button_read_done[i] <= 0;
                 end
             end

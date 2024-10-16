@@ -75,4 +75,28 @@ Time resolution is 1 ps
                  730 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
                  740 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
                  750 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
-                 760 clk=0 rst=0 but
+                 760 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 770 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 780 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 790 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 800 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 810 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 820 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 830 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 840 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 850 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 860 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 870 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 880 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 890 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 900 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 910 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 920 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 930 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 940 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 950 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 960 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 970 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 980 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 990 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+$finish called at time : 1 us : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/fsmForButton_tb.v" Line 69
