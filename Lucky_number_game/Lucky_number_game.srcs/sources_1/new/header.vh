@@ -6,6 +6,12 @@
                                             button state is hold*/
 `define COUNTER_PRESSED_HOLD    62500000    /*Counter for 500ms*/
 
+/*This macro for button value*/
 `define BUTTON_RELEASED         0
 `define BUTTON_PRESSED          1
 `define BUTTON_PRESSED_HOLD     2
+
+/*This macro for button state in fsm*/
+`define BUTTON_STATE_RELEASED       0
+`define BUTTON_STATE_PRESSED        1
+`define BUTTON_STATE_PRESSED_HOLD   2
