@@ -1,20 +1,78 @@
 Time resolution is 1 ps
-Time no:                    0ns Randon number : xxxx binary  x decimal
-This is test Mode 0 
-
-Time no:                   45ns Randon number : 0111 binary  7 decimal
-Time no:                   65ns Randon number : 0101 binary  5 decimal
-Time no:                   85ns Randon number : 0010 binary  2 decimal
-Time no:                  125ns Randon number : 0000 binary  0 decimal
-Time no:                  145ns Randon number : 1000 binary  8 decimal
-Time no:                  165ns Randon number : 0001 binary  1 decimal
-Time no:                  185ns Randon number : 0100 binary  4 decimal
-Time no:                  205ns Randon number : 0011 binary  3 decimal
-Time no:                  225ns Randon number : 0101 binary  5 decimal
-This is test Mode 1 
-
-Time no:                  345ns Randon number : 0001 binary  1 decimal
-Time no:                  455ns Randon number : 0100 binary  4 decimal
-Time no:                  565ns Randon number : 0011 binary  3 decimal
-Time no:                  675ns Randon number : 0001 binary  1 decimal
-$finish called at time : 740 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v" Line 86
+                   0 clk=0 rst=1 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  10 clk=1 rst=1 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  20 clk=0 rst=1 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  30 clk=1 rst=1 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  40 clk=0 rst=1 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  50 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  60 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  70 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  80 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                  90 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 100 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 110 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 120 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 130 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 140 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 150 clk=1 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 160 clk=0 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 170 clk=1 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 180 clk=0 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 190 clk=1 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 200 clk=0 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 210 clk=1 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 220 clk=0 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 230 clk=1 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 240 clk=0 rst=0 button_in=0001 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 250 clk=1 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 260 clk=0 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 270 clk=1 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 280 clk=0 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 290 clk=1 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 300 clk=0 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 310 clk=1 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 320 clk=0 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 330 clk=1 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 340 clk=0 rst=0 button_in=0010 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 350 clk=1 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 360 clk=0 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 370 clk=1 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 380 clk=0 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 390 clk=1 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 400 clk=0 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 410 clk=1 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 420 clk=0 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 430 clk=1 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 440 clk=0 rst=0 button_in=0100 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 450 clk=1 rst=0 button_in=1000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 460 clk=0 rst=0 button_in=1000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 470 clk=1 rst=0 button_in=1000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 480 clk=0 rst=0 button_in=1000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 490 clk=1 rst=0 button_in=1000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 500 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 510 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 520 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 530 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 540 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 550 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 560 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 570 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 580 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 590 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 600 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 610 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 620 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 630 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 640 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 650 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 660 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 670 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 680 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 690 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 700 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 710 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 720 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 730 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 740 clk=0 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 750 clk=1 rst=0 button_in=0000 | state0=00 state1=00 state2=00 state3=00 | read_done=0000
+                 760 clk=0 rst=0 but

@@ -2,8 +2,8 @@
 # Webtalk v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sat Oct  5 18:32:22 2024
-# Process ID: 9484
+# Start of session at: Tue Oct 15 09:45:50 2024
+# Process ID: 16712
 # Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.sim/sim_1/behav/xsim/xsim.dir/controlSpeedMode0_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.sim/sim_1/behav/xsim/webtalk.log

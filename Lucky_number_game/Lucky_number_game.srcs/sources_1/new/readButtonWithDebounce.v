@@ -39,7 +39,7 @@ module readButtonWithDebounce(
     reg[3:0] button_debounce1;          /*For debonce value*/
     
     integer i;
-    integer counter_pressed_hold_button[3:0] = {0,0,0,0}; /*Counter for 500ms*/   
+    integer counter_pressed_hold_button[3:0];    /*Counter for 500ms*/   
                                         
     parameter TARGET_CLK_FREQ = 100;   /*100Hz for every 10ms read button value */
     
@@ -79,7 +79,7 @@ module readButtonWithDebounce(
                 if(button_debounce0[i] == button_debounce1[i]) begin
                     if(button_debounce0[i] != button_debounce[i] ) begin
                         /*If new value is diff update vaule*/
-                        button_debounce[i] = button_debounce0[i];
+                        button_debounce[i] <= button_debounce0[i];
                         
                         if(button_debounce[i] == `BUTTON_PRESSED) begin
                             counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
