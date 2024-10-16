@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Wed Oct 16 10:21:24 2024
+| Date         : Wed Oct 16 11:02:31 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file toggleLedWithButton_methodology_drc_routed.rpt -pb toggleLedWithButton_methodology_drc_routed.pb -rpx toggleLedWithButton_methodology_drc_routed.rpx
 | Design       : toggleLedWithButton
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 186
-+-----------+------------------+-----------------------------+------------+
-| Rule      | Severity         | Description                 | Violations |
-+-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 186        |
-+-----------+------------------+-----------------------------+------------+
+             Violations found: 187
++-----------+------------------+------------------------------+------------+
+| Rule      | Severity         | Description                  | Violations |
++-----------+------------------+------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 186        |
+| LUTAR-1   | Warning          | LUT drives async reset alert | 1          |
++-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -960,6 +961,18 @@ Related violations: <none>
 TIMING-17#186 Critical Warning
 Non-clocked sequential cell  
 The clock pin read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell read_button_debounce_inst/button_press_flag[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) read_button_debounce_inst/button_press_flag_reg[0]/CLR,
+read_button_debounce_inst/button_press_flag_reg[1]/CLR,
+read_button_debounce_inst/button_press_flag_reg[2]/CLR,
+read_button_debounce_inst/button_press_flag_reg[3]/CLR,
+read_button_debounce_inst/button_pressed_hold_flag_reg[0]/CLR,
+read_button_debounce_inst/button_pressed_hold_flag_reg[1]/CLR,
+read_button_debounce_inst/button_pressed_hold_flag_reg[2]/CLR
+read_button_debounce_inst/button_pressed_hold_flag_reg[3]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 

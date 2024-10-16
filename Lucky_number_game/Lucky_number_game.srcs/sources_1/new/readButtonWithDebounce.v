@@ -32,7 +32,7 @@ module readButtonWithDebounce(
                                                 than 500ms*/
     );
     
-    wire clk_out;                        /*This clk for 100Hz - 10ms read button*/
+    wire clk_out;                        /*This clk for 100Hz - 10ms read button*/     
     
     reg[3:0] button_debounce;           /*For store old stable value*/
     reg[3:0] button_debounce0;          /*For debonce value*/
@@ -52,7 +52,7 @@ module readButtonWithDebounce(
     );
     
     /*Reset, read and update button value debounce*/
-    always @(posedge clk_out or posedge rst) begin
+    always @(posedge clk_out or posedge clk or posedge rst) begin
         if(rst) begin
             button_debounce0 <= 4'b0000;
             button_debounce1 <= 4'b0000;
@@ -61,6 +61,13 @@ module readButtonWithDebounce(
             button_press_flag <= 4'b0000;
             button_pressed_hold_flag <=  4'b0000;
             
+        end
+        else if(clk) begin
+            /*If button is read done we clear the flag*/
+            if(button_read_done[i]) begin
+                button_press_flag[i] <= 0;
+                button_pressed_hold_flag[i] <= 0;
+            end
         end
         else begin
             /*Read new button value and update debounce value*/
@@ -73,11 +80,8 @@ module readButtonWithDebounce(
                     if(button_debounce0[i] != button_debounce[i] ) begin
                         /*If new value is diff update vaule*/
                         button_debounce[i] = button_debounce0[i];
-                        if(button_read_done[i]) begin
-                            button_press_flag[i] <= 0;
-                            button_pressed_hold_flag[i] <= 0;
-                        end
-                        else if(button_debounce[i] == `BUTTON_PRESSED) begin
+                        
+                        if(button_debounce[i] == `BUTTON_PRESSED) begin
                             counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
                             button_press_flag[i] <= 1;
                         end

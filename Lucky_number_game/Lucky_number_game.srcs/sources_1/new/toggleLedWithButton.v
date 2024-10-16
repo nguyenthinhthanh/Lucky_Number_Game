@@ -24,8 +24,6 @@ module toggleLedWithButton(
     input clk,
     input rst,
     input[3:0] button_in,
-    input[3:0] button_press_flag,
-    input[3:0] button_pressed_hold_flag,
     output reg[3:0] button_read_done,
     output reg[3:0] led
     );
