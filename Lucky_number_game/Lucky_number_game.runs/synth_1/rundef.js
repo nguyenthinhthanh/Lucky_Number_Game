@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log controlSpeedMode0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlSpeedMode0.tcl" );
+         "-log toggleLedWithButton.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toggleLedWithButton.tcl" );
 
 
 

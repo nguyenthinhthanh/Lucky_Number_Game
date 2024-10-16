@@ -3,7 +3,8 @@
 Jun 10 2021
 20:04:57
 D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,,,,,,,
-D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v,1728039290,verilog,,,,controlSpeedMode0_tb,,,,,,,,
+D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v,1728880967,verilog,,,,controlSpeedMode0_tb,,,../../../../Lucky_number_game.srcs/sources_1/new,,,,,
 D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/generateRandomNumber_tb.v,1728015228,verilog,,,,generateRandomNumber_tb,,,,,,,,
-D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v,1728128970,verilog,,D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v,,controlSpeedMode0,,,,,,,,
-D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v,1728128661,verilog,,D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v,,generateRandomNumber,,,,,,,,
+D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v,1728128970,verilog,,D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v,,controlSpeedMode0,,,../../../../Lucky_number_game.srcs/sources_1/new,,,,,
+D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v,1728834699,verilog,,D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/controlSpeedMode0_tb.v,,generateRandomNumber,,,../../../../Lucky_number_game.srcs/sources_1/new,,,,,
+D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/header.vh,1728532807,verilog,,D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v,,,,,../../../../Lucky_number_game.srcs/sources_1/new,,,,,
