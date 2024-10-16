@@ -61,6 +61,9 @@ module readButtonWithDebounce(
             button_press_flag <= 4'b0000;
             button_pressed_hold_flag <=  4'b0000;
             
+            for(i=0;i<4;i=i+1) begin
+               counter_pressed_hold_button[i] <= 0; 
+            end
         end
         else if(clk) begin
             /*If button is read done we clear the flag*/
