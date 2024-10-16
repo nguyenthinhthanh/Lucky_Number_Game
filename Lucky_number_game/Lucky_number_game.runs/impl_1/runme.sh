@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log toggleLedWithButton.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source toggleLedWithButton.tcl -notrace
+EAStep vivado -log fsmForButtonState.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source fsmForButtonState.tcl -notrace
 
 
