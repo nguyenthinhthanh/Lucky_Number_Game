@@ -23,9 +23,9 @@
 module fsmForButtonState(
     input clk,
     input rst,
-    input[3:0] button_in,               /*This for read button value from Arty-z7*/
-    output reg[3:0] button_state,       /*This for button state*/
-    output reg[3:0] button_read_done    /*This signal for feedback when read done in button*/
+    input[3:0] button_in,                           /*This for read button value from Arty-z7*/
+    output reg[1:0] button_state[3:0],        /*This for button state*/
+    output reg[3:0] button_read_done                /*This signal for feedback when read done in button*/
     );
     
     wire[3:0] button_press_flag_wire;
@@ -44,7 +44,9 @@ module fsmForButtonState(
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
-            button_state <= 4'b0000;
+            for(i=0;i<`NUM_OF_BUTTON;i++) begin
+                button_state[i] <= `BUTTON_STATE_RELEASED;
+            end
             button_read_done <= 4'b0000;
         end
         else begin
