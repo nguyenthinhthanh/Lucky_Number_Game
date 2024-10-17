@@ -21,17 +21,17 @@
 
 /*This module using Linear Feedback Shift Register (LFSR) to generate random number*/
 module generateRandomNumber(
-    input clk,          // Clock input
-    input rst,          // Reset input
-    input getNumber,    // Get random number when have signal button input
-    output reg done_signal, // Signal when done get random number
-    output reg[3:0]  random_number  // 4-bit random number from 0-9    
+    input clk,                      /*This is clock on Arty-z7*/
+    input rst,                      /*This is reset signal*/
+    input getNumber,                /*This is signal for get random number*/
+    output reg done_signal,         /*This is feedback signal when get random number done*/
+    output reg[3:0]  random_number  /*This is 4-bit random number from 0-9*/   
     );
     
-    reg[7:0] lfsr = 8'b10101010;      // 8 bit LFSR registor default value
+    reg[7:0] lfsr = 8'b10101010;    /*This is 8 bit LFSR registor default value*/
     wire feedback;      
-    // To generate new bit
-    assign feedback = lfsr[7]^lfsr[5]^lfsr[4]^lfsr[3];
+    /*To generate new bit*/
+    assign feedback = lfsr[7]^lfsr[5]^lfsr[4]^lfsr[3];  
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
@@ -39,10 +39,11 @@ module generateRandomNumber(
             lfsr <= 8'b10101010;   
         end
         else begin
-           // Shift LFSR and apply feedback
+            /*Shift LFSR and generate new number
+                with feedback*/
             lfsr <= {lfsr[6:0],feedback};
             if(getNumber) begin
-                // When have button signal generate new random number
+                /*When have button signal get new random number*/
                 random_number <=  lfsr[3:0] % 10;
                 done_signal <= 1; 
             end

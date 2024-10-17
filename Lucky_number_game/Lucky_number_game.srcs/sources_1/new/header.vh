@@ -15,3 +15,10 @@
 `define BUTTON_STATE_RELEASED       0
 `define BUTTON_STATE_PRESSED        1
 `define BUTTON_STATE_PRESSED_HOLD   2
+
+/*This macro for game mode*/
+`define GAME_MODE_0                 3'b000
+`define GAME_MODE_1                 3'b001
+`define GAME_MODE_2                 3'b010
+`define GAME_MODE_3                 3'b011
+`define GAME_MODE_SPECIAL           3'b100
