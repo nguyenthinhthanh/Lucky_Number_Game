@@ -23,25 +23,25 @@
 `include "header.vh"
 
 module readButtonWithDebounce(
-    input clk,
-    input rst,
-    input[3:0] button_in,
-    input[3:0] button_read_done,
+    input clk,                                  /*This is clock on Arty-z7*/
+    input rst,                                  /*This is reset signal*/
+    input[3:0] button_in,                       /*This is button value in Arty-z7*/
+    input[3:0] button_read_done,                /*This is feedback signal when read button done*/
     output reg[3:0] button_press_flag,          /*This flag will set when press button*/
     output reg[3:0] button_pressed_hold_flag    /*This flag will set when pressed more
                                                 than 500ms*/
     );
     
-    wire clk_out;                        /*This clk for 100Hz - 10ms read button*/     
+    wire clk_out;                               /*This clk for 100Hz - 10ms read button*/     
     
-    reg[3:0] button_debounce;           /*For store old stable value*/
-    reg[3:0] button_debounce0;          /*For debonce value*/
-    reg[3:0] button_debounce1;          /*For debonce value*/
+    reg[3:0] button_debounce;                   /*For store old stable value*/
+    reg[3:0] button_debounce0;                  /*For debonce value*/
+    reg[3:0] button_debounce1;                  /*For debonce value*/
     
     integer i;
     integer counter_pressed_hold_button[3:0];    /*Counter for 500ms*/   
                                         
-    parameter TARGET_CLK_FREQ = 100;   /*100Hz for every 10ms read button value */
+    parameter TARGET_CLK_FREQ = 100;            /*For every 10ms read button value */
     
     frequencyDivider #(
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ)
