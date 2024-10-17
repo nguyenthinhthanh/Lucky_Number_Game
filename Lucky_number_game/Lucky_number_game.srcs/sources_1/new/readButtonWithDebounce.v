@@ -19,13 +19,15 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-/*This module use for read button signal with resolve debounce problem */
+/*This module use for read button signal with resolve debounce problem 
+    we will read button signal every 10ms
+*/
 `include "header.vh"
 
 module readButtonWithDebounce(
     input clk,                                  /*This is clock on Arty-z7*/
     input rst,                                  /*This is reset signal*/
-    input[3:0] button_in,                       /*This is button value in Arty-z7*/
+    input[3:0] button_in,                       /*This for read button value from Arty-z7*/
     input[3:0] button_read_done,                /*This is feedback signal when read button done*/
     output reg[3:0] button_press_flag,          /*This flag will set when press button*/
     output reg[3:0] button_pressed_hold_flag    /*This flag will set when pressed more
@@ -38,7 +40,7 @@ module readButtonWithDebounce(
     reg[3:0] button_debounce0;                  /*For debonce value*/
     reg[3:0] button_debounce1;                  /*For debonce value*/
     
-    reg [3:0] button_read_done_sync;
+    reg [3:0] button_read_done_sync;            /*For resolve combinational problem*/
     
     integer i;
     integer counter_pressed_hold_button[3:0];    /*Counter for 500ms*/   
@@ -54,6 +56,7 @@ module readButtonWithDebounce(
     );
     
     always @(posedge clk) begin
+        /*For resolve combinational problem*/
         button_read_done_sync <= button_read_done;
     end
     
@@ -82,7 +85,6 @@ module readButtonWithDebounce(
                     if(button_debounce0[i] != button_debounce[i] ) begin
                         /*If new value is diff update vaule*/
                         button_debounce[i] <= button_debounce0[i];
-                        
                         if(button_debounce[i] == `BUTTON_PRESSED) begin
                             counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
                             button_press_flag[i] <= 1;
@@ -93,14 +95,18 @@ module readButtonWithDebounce(
                     end
                     else begin
                         /*If value is not change that mean
-                        press hold so we increase counter value*/
+                        press hold or release if press hold
+                        so we decrease counter value*/
                         counter_pressed_hold_button[i] <= counter_pressed_hold_button[i] - 1;
                         if(counter_pressed_hold_button[i] <= 0) begin
+                            /*This is hold >= 0.5s*/
                             counter_pressed_hold_button[i] <= `COUNTER_PRESSED_HOLD;
                             if(button_debounce[i] == `BUTTON_PRESSED) begin
+                                /*If button is pressed*/
                                 button_pressed_hold_flag[i] <= 1;
                             end
                             else begin
+                               /* If button is release*/
                                 button_pressed_hold_flag[i] <= 0;
                             end
                         end
