@@ -1,6 +1,6 @@
 Vivado Simulator v2021.1
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado_2021.1/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 0b1c946941c64ea3a8001196648d0756 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot fsmForButton_tb_behav xil_defaultlib.fsmForButton_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vivado_2021.1/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 0b1c946941c64ea3a8001196648d0756 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot toggleLedWithButton_tb_behav xil_defaultlib.toggleLedWithButton_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -10,7 +10,7 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.frequencyDivider(TARGET_CLK_FREQ...
 Compiling module xil_defaultlib.readButtonWithDebounce
-Compiling module xil_defaultlib.fsmForButtonState
-Compiling module xil_defaultlib.fsmForButton_tb
+Compiling module xil_defaultlib.toggleLedWithButton
+Compiling module xil_defaultlib.toggleLedWithButton_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot fsmForButton_tb_behav
+Built simulation snapshot toggleLedWithButton_tb_behav
