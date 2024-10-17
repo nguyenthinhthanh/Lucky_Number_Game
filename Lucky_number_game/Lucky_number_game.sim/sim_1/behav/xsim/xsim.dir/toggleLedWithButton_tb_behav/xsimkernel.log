@@ -1,0 +1,4 @@
+Running: xsim.dir/toggleLedWithButton_tb_behav/xsimk.exe -simmode gui -wdb toggleLedWithButton_tb_behav.wdb -simrunnum 0 -socket 53450
+Design successfully loaded
+Design Loading Memory Usage: 8196 KB (Peak: 8196 KB)
+Design Loading CPU Usage: 15 ms
