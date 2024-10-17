@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log fsmForButtonState.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source fsmForButtonState.tcl -notrace" );
+         "-log toggleLedWithButton.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source toggleLedWithButton.tcl -notrace" );
 
 
 
