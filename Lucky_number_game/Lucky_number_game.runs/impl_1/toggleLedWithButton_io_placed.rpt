@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date                      : Sat Oct 19 09:07:07 2024
+| Date                      : Sat Oct 19 13:25:14 2024
 | Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file toggleLedWithButton_io_placed.rpt
 | Design                    : toggleLedWithButton
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            14 |
+|            11 |
 +---------------+
 
 
@@ -168,10 +168,10 @@ Table of Contents
 | G11        |                     |            | VCCBRAM                 | VCCBRAM     |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G12        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G13        |                     |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| G14        | button_read_done[3] | High Range | IO_0_35                 | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| G14        |                     | High Range | IO_0_35                 | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G15        |                     | High Range | IO_L19N_T3_VREF_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G16        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| G17        | button_read_done[1] | High Range | IO_L16P_T2_35           | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| G17        |                     | High Range | IO_L16P_T2_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G18        |                     | High Range | IO_L16N_T2_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G19        |                     | High Range | IO_L18P_T2_AD13P_35     | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G20        |                     | High Range | IO_L18N_T2_AD13N_35     | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -249,7 +249,7 @@ Table of Contents
 | L12        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L13        |                     |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L14        |                     | High Range | IO_L22P_T3_AD7P_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| L15        | button_read_done[0] | High Range | IO_L22N_T3_AD7N_35      | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| L15        | button_pressed_hold | High Range | IO_L22N_T3_AD7N_35      | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | L16        |                     | High Range | IO_L11P_T1_SRCC_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L17        |                     | High Range | IO_L11N_T1_SRCC_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L18        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
@@ -289,7 +289,7 @@ Table of Contents
 | N12        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | N13        |                     |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N14        |                     |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| N15        | button_read_done[2] | High Range | IO_L21P_T3_DQS_AD14P_35 | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| N15        |                     | High Range | IO_L21P_T3_DQS_AD14P_35 | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N16        | led[2]              | High Range | IO_L21N_T3_DQS_AD14N_35 | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | N17        |                     | High Range | IO_L23P_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N18        |                     | High Range | IO_L13P_T2_MRCC_34      | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
