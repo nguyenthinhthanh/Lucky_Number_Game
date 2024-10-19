@@ -1,4 +1,27 @@
 Time resolution is 1 ps
+<<<<<<< HEAD
 $stop called at time : 310 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/toggleLedWithButton_tb.v" Line 71
 $stop called at time : 310 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/toggleLedWithButton_tb.v" Line 71
 $stop called at time : 310 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/toggleLedWithButton_tb.v" Line 71
+=======
+At time                    0: button_in = 0000, led = 0000
+At time                20000: button_in = 0001, led = 0000
+At time                30000: button_in = 0000, led = 0000
+At time                40000: button_in = 0010, led = 0000
+At time                50000: button_in = 0000, led = 0000
+At time                60000: button_in = 0100, led = 0000
+At time                70000: button_in = 0000, led = 0000
+At time                80000: button_in = 1000, led = 0000
+At time                90000: button_in = 0000, led = 0000
+$finish called at time : 110 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/toggledLedWithButtonv1_tb.v" Line 65
+At time                    0: button_in = 0000, led = 0000
+At time                20000: button_in = 0001, led = 0000
+At time                30000: button_in = 0000, led = 0000
+At time                40000: button_in = 0010, led = 0000
+At time                50000: button_in = 0000, led = 0000
+At time                60000: button_in = 0100, led = 0000
+At time                70000: button_in = 0000, led = 0000
+At time                80000: button_in = 1000, led = 0000
+At time                90000: button_in = 0000, led = 0000
+$finish called at time : 110 ns : File "D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sim_1/new/toggledLedWithButtonv1_tb.v" Line 65
+>>>>>>> toggleLedWithButton_Branch

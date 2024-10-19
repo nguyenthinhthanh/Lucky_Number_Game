@@ -2,6 +2,9 @@ Running: xsim.dir/toggleLedWithButton_tb_behav/xsimk.exe -simmode gui -wdb toggl
 Design successfully loaded
 Design Loading Memory Usage: 8196 KB (Peak: 8196 KB)
 Design Loading CPU Usage: 15 ms
+<<<<<<< HEAD
 Simulation completed
 Simulation Memory Usage: 9252 KB (Peak: 9252 KB)
 Simulation CPU Usage: 15 ms
+=======
+>>>>>>> toggleLedWithButton_Branch

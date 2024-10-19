@@ -21,7 +21,7 @@
 
 /*This module for use to controll speed generateRandomNumber*/
 module frequencyDivider #(
-    parameter TARGET_CLK_FREQ = 1000,           // Disired frequency
+    parameter TARGET_CLK_FREQ = 400,           // Disired frequency
     parameter INPUT_CLK_FREQ = 125000000    // Input clock from Arty-z7
     )
     (
@@ -41,12 +41,14 @@ module frequencyDivider #(
             clk_out <= 0;
         end
         else begin
-            if(counter == (DIVISOR_TOGGLE-1)) begin
-                clk_out <= ~clk_out;
-                counter = 0;
-            end
-            else begin
-                counter <= counter + 1;
+            if(clk) begin
+                if(counter == (DIVISOR_TOGGLE-1)) begin
+                    clk_out <= ~clk_out;
+                    counter = 0;
+                end
+                else begin
+                    counter <= counter + 1;
+                end
             end
         end
     end

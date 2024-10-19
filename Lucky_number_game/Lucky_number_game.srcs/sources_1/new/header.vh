@@ -4,7 +4,7 @@
 
 `define TIME_PRESSED_HOLD       500         /*If button pressed more than 500ms
                                             button state is hold*/
-`define COUNTER_PRESSED_HOLD    62500000    /*Counter for 500ms*/
+`define COUNTER_PRESSED_HOLD    62500000   /*Counter for 500ms using 125Mhz frequency*/
 
 /*This macro for button value*/
 `define BUTTON_RELEASED         0
