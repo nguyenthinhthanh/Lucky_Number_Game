@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Sat Oct 19 13:25:43 2024
+| Date             : Sat Oct 19 17:16:36 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file toggleLedWithButton_power_routed.rpt -pb toggleLedWithButton_power_summary_routed.pb -rpx toggleLedWithButton_power_routed.rpx
 | Design           : toggleLedWithButton
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.121        |
+| Total On-Chip Power (W)  | 1.102        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.001        |
+| Dynamic (W)              | 0.982        |
 | Device Static (W)        | 0.120        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 72.1         |
-| Junction Temperature (C) | 37.9         |
+| Max Ambient (C)          | 72.3         |
+| Junction Temperature (C) | 37.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.485 |      636 |       --- |             --- |
-|   LUT as Logic |     0.398 |      217 |     53200 |            0.41 |
+| Slice Logic    |     0.512 |      636 |       --- |             --- |
+|   LUT as Logic |     0.425 |      217 |     53200 |            0.41 |
 |   CARRY4       |     0.041 |       64 |     13300 |            0.48 |
 |   Register     |     0.040 |      219 |    106400 |            0.21 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       31 |       --- |             --- |
-| Signals        |     0.496 |      501 |       --- |             --- |
+| Signals        |     0.450 |      497 |       --- |             --- |
 | I/O            |     0.020 |       11 |       125 |            8.80 |
 | Static Power   |     0.120 |          |           |                 |
-| Total          |     1.121 |          |           |                 |
+| Total          |     1.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.012 |       1.001 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.993 |       0.982 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -145,18 +145,18 @@ Table of Contents
 +------------------------------------+-----------+
 | Name                               | Power (W) |
 +------------------------------------+-----------+
-| toggleLedWithButton                |     1.001 |
-|   frequency_for_button_read_inst   |     0.272 |
-|   read_button_debounce_inst        |     0.603 |
-|     debounce_button_0_inst         |     0.007 |
-|       d1                           |     0.007 |
-|     debounce_button_1_inst         |     0.013 |
-|       d1                           |     0.013 |
+| toggleLedWithButton                |     0.982 |
+|   frequency_for_button_read_inst   |     0.258 |
+|   read_button_debounce_inst        |     0.592 |
+|     debounce_button_0_inst         |     0.004 |
+|       d1                           |     0.004 |
+|     debounce_button_1_inst         |     0.004 |
+|       d1                           |     0.004 |
 |     debounce_button_2_inst         |     0.007 |
 |       d1                           |     0.007 |
-|     debounce_button_3_inst         |     0.012 |
-|       d1                           |     0.012 |
-|     frequency_for_button_read_inst |     0.265 |
+|     debounce_button_3_inst         |     0.004 |
+|       d1                           |     0.004 |
+|     frequency_for_button_read_inst |     0.269 |
 +------------------------------------+-----------+
 
 

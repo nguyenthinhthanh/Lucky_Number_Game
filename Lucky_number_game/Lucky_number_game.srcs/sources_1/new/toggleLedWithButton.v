@@ -69,7 +69,8 @@ module toggleLedWithButton(
                for(i=0;i<4;i=i+1) begin
                     if(button_pressed_wire[i] || button_pressed_hold_wire[i]) begin
                         first[i] <= 0;
-                        led_state[i] = ~led_state[i];
+                        led_state[i] <= ~led_state[i];
+                        //led[i] <= led[i];
                     end
                 end 
                 led <= led_state;

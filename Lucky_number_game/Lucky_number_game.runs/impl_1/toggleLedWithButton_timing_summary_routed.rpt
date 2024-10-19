@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Sat Oct 19 13:25:43 2024
+| Date         : Sat Oct 19 17:16:36 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file toggleLedWithButton_timing_summary_routed.rpt -pb toggleLedWithButton_timing_summary_routed.pb -rpx toggleLedWithButton_timing_summary_routed.rpx -warn_on_violation
 | Design       : toggleLedWithButton
@@ -54,7 +54,7 @@ Table of Contents
 1. checking no_clock (219)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (626)
+4. checking unconstrained_internal_endpoints (622)
 5. checking no_input_delay (5)
 6. checking no_output_delay (5)
 7. checking multiple_clock (0)
@@ -83,9 +83,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (626)
+4. checking unconstrained_internal_endpoints (622)
 --------------------------------------------------
- There are 626 pins that are not constrained for maximum delay. (HIGH)
+ There are 622 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
