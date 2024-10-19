@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729158219">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729303552">
   <File Type="PA-TCL" Name="toggleLedWithButton.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="toggleLedWithButton_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="toggleLedWithButton_reports.tcl"/>
@@ -41,6 +41,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fsmForButtonState.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -48,6 +49,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/button_test.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -55,6 +57,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/controlSpeedMode0.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -62,6 +65,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/generateRandomNumber.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -91,9 +95,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

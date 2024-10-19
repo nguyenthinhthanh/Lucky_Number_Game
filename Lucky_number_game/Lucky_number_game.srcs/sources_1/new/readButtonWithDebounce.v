@@ -34,7 +34,7 @@ module readButtonWithDebounce(
                                                 than 500ms*/
     );
     
-    wire clk_out;                               /*This clk for 100Hz - 10ms read button*/     
+    wire clk_out;                               /*This clk for 400Hz - 2.5ms read button*/     
     
     reg[3:0] button_debounce;                   /*For store old stable value*/
     reg[3:0] button_debounce0;                  /*For debonce value*/

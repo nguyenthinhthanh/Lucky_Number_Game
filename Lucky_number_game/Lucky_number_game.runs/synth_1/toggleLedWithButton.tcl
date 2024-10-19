@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -92,10 +91,6 @@ read_verilog -library xil_defaultlib {
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/frequencyDivider.v
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/readButtonWithDebounce.v
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/toggleLedWithButton.v
-  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/fsmForButtonState.v
-  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/button_test.v
-  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlSpeedMode0.v
-  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/generateRandomNumber.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
