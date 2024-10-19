@@ -27,7 +27,7 @@ module controlSpeedMode0(
     input clk,               /*This is clock on Arty-z7*/
     input rst,               /*This is reset signal*/
     input done_signal,       /*This is feedback signal when get random number done*/
-    input[1:0] button_state, /*This is BTN0 value*/
+    input[1:0] button_state0, /*This is BTN0 value*/
     input[2:0] game_mode,    /*This is game mode between 0 to 4*/
     output reg getNumber     /*This is signal for get random number*/
     );
@@ -49,6 +49,24 @@ module controlSpeedMode0(
         /*Reset signal get random number when have mode change*/
         getNumber <= 0;
         counter <= 0;
+        
+        if(game_mode == `GAME_MODE_0) begin
+            /*We will improve later now just get number immediately*/
+            speed <= FAST_SPEED_COUNTER;
+        end
+        else if(game_mode == `GAME_MODE_1) begin
+            speed <= NORMAL_SPEED_COUNTER;
+        end
+        else if(game_mode == `GAME_MODE_2) begin
+            
+        end
+        else if(game_mode == `GAME_MODE_3) begin
+        
+        end
+        else begin
+            /*This is game_mode == `GAME_MODE_SPECIAL*/
+            
+        end
     end
     
     always @(posedge clk or posedge rst) begin
@@ -66,7 +84,7 @@ module controlSpeedMode0(
                /*Mode 0 : Press and release BTN0
                  we will improve later now just get number immediately*/
                 `GAME_MODE_0: begin
-                    if(button_state == `BUTTON_STATE_PRESSED) begin
+                    if(button_state0 == `BUTTON_STATE_PRESSED) begin
                         /*Get random number*/
                         getNumber <= 1;   
                     end
@@ -78,7 +96,7 @@ module controlSpeedMode0(
                 /*Mode 1: Press and hold BTN0 speed constraint, release stop
                   We will implement 0.25s will generate new random number */
                 `GAME_MODE_1: begin
-                    if(button) begin
+                    if(button_state0) begin
                         counter <= counter + 1;
                         if(counter >= speed || counter >= TEST_SPEED_COUNTER) begin
                             getNumber <= 1;
