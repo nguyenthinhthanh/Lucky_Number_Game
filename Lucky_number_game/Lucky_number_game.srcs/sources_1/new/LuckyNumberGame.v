@@ -24,12 +24,16 @@ module LuckyNumberGame(
     input clk,
     input rst,
     input[3:0] button,
-    output reg[3:0] led,
-    output reg button_pressed_hold
+    output reg[3:0] led
+    //output reg button_pressed_hold
     );
     
     wire clk_out;                               /*This clk for 400Hz - 2.5ms read button*/  
-    wire button_state_wire;
+    wire [3:0]led_reg;
+    wire [7:0]button_state_wire;
+    wire button_pressed_hold_reg;
+    
+    reg[3:0] led_state;
                                         
     parameter TARGET_CLK_FREQ = 400;            /*For every 10ms read button value */
     
@@ -42,7 +46,8 @@ module LuckyNumberGame(
     );
     
     fsmForButtonState fsm_for_button_state_inst(
-        .clk(clk_out),
+        .clk(clk),
+        .clk_out(clk_out),
         .rst(rst),
         .button_in(button),
         .button_state(button_state_wire)
@@ -51,9 +56,23 @@ module LuckyNumberGame(
     toggleLedTop toggle_led_inst(
         .clk(clk_out),
         .rst(rst),
-        .led(led),
-        .button_state(button_state_wire),
-        .button_pressed_hold(button_pressed_hold)
+        .led(led_reg),
+        .button_state(button_state_wire)
+        //.button_pressed_hold(button_pressed_hold_reg)
     );
     
+    integer i;
+    
+    always @(posedge clk_out or posedge rst) begin
+        if(rst) begin
+           led <= 4'b0000;
+        end
+        else begin
+            for(i=0;i<4;i=i+1) begin
+                if(led_reg[i]) begin
+                    led[i] <= ~led[i];
+                end   
+            end
+        end
+    end
 endmodule

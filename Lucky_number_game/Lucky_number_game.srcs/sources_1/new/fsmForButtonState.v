@@ -22,6 +22,7 @@
 
 module fsmForButtonState(
     input clk,                                      /*This clk for 400Hz - 2.5ms read button*/
+    input clk_out,
     input rst,                                      /*This is reset signal*/
     input[3:0] button_in,                           /*This for read button value from Arty-z7*/
     output reg[7:0] button_state                   /*This is for button state button_state[i*2 +:2] = 
@@ -44,12 +45,14 @@ module fsmForButtonState(
     integer i;
     
     /*Check Fsm_for_button.drawio for FSM*/
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk_out or posedge rst) begin
         if(rst) begin
             //button_read_done <= 4'b0000;
             button_state <= 8'b00000000;
         end
         else begin
+            
+          if(clk_out) begin  
             for(i=0;i<4;i=i+1) begin
                 case(button_state[i*2 +:2])
                     `BUTTON_STATE_RELEASED: begin
@@ -91,6 +94,7 @@ module fsmForButtonState(
                     end
                 endcase      
             end
+          end ///////////// end if  
         end    
     end
     

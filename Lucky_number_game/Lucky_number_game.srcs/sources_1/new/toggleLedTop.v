@@ -24,19 +24,19 @@ module toggleLedTop(
     input clk,
     input rst,
     input[7:0] button_state,
-    output reg[3:0] led,
-    output reg button_pressed_hold
+    output reg[3:0] led
+    //output reg button_pressed_hold
     );
     
-    wire[3:0] button_pressed_wire;
-    wire[3:0] button_pressed_hold_wire;
+    /*wire[3:0] button_pressed_wire;
+    wire[3:0] button_pressed_hold_wire;*/
+      
+    integer i;
+    reg[3:0] first;
     
     reg[3:0] led_state;
     
-
-   
-    integer i;
-    reg[3:0] first;
+    integer i = 0;
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin
@@ -46,16 +46,14 @@ module toggleLedTop(
         end
         else begin
             if(clk) begin
-                button_pressed_hold <= button_pressed_hold_wire[0];
-            
                for(i=0;i<4;i=i+1) begin
-                    if(button_pressed_wire[i] || button_pressed_hold_wire[i]) begin
-                        first[i] <= 0;
-                        led_state[i] <= ~led_state[i];
-                        //led[i] <= led[i];
-                    end
-                end 
-                led <= led_state;
+                        if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
+                            first[i] <= 0;
+                            led_state[i] <= ~led_state[i];
+                            //led[i] <= led[i];
+                        end
+                    end 
+                    led <= led_state;
             end
         end    
     end
