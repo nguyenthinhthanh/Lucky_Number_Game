@@ -1,7 +1,15 @@
 version:1
+<<<<<<< HEAD
 57656254616c6b5472616e736d697373696f6e417474656d70746564:7
 6d6f64655f636f756e7465727c4755494d6f6465:38
 79797979:0
 79797979797979790d0d0d0d0d0d0b0a0c:0
 7979797979fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f:0
+=======
+57656254616c6b5472616e736d697373696f6e417474656d70746564:4
+6d6f64655f636f756e7465727c4755494d6f6465:42
+79797979:0
+79797979797979790d0d0d0d0d0d0b0a0c:0
+7979797979fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f:0
+>>>>>>> fsmForResultChecker
 eof:

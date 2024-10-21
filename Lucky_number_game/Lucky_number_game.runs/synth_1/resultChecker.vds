@@ -1,18 +1,14 @@
-
-*** Running vivado
-<<<<<<< HEAD
-    with args -log LuckyNumberGame.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl
-
-=======
-    with args -log resultChecker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source resultChecker.tcl
-
-
-
-****** Vivado v2021.1 (64-bit)
-  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
-  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Oct 21 12:58:42 2024
+# Process ID: 19300
+# Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
+# Command line: vivado.exe -log resultChecker.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source resultChecker.tcl
+# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/resultChecker.vds
+# Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
 source resultChecker.tcl -notrace
 Command: synth_design -top resultChecker -part xc7z020clg400-1
 Starting synth_design
@@ -242,4 +238,3 @@ INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WA
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/resultChecker.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file resultChecker_utilization_synth.rpt -pb resultChecker_utilization_synth.pb
 INFO: [Common 17-206] Exiting Vivado at Mon Oct 21 12:59:06 2024...
->>>>>>> fsmForResultChecker

@@ -2,6 +2,7 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+<<<<<<< HEAD
 # Start of session at: Mon Oct 21 14:49:29 2024
 # Process ID: 7216
 # Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
@@ -10,3 +11,13 @@
 # Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source LuckyNumberGame.tcl -notrace
+=======
+# Start of session at: Mon Oct 21 12:58:42 2024
+# Process ID: 19300
+# Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
+# Command line: vivado.exe -log resultChecker.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source resultChecker.tcl
+# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/resultChecker.vds
+# Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source resultChecker.tcl -notrace
+>>>>>>> fsmForResultChecker

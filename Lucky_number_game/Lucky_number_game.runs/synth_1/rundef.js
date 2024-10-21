@@ -23,7 +23,11 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
+<<<<<<< HEAD
          "-log LuckyNumberGame.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl" );
+=======
+         "-log resultChecker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source resultChecker.tcl" );
+>>>>>>> fsmForResultChecker
 
 
 
