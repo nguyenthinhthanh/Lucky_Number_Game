@@ -21,39 +21,30 @@
 
 
 module toggleLedTop(
-    input clk,
-    input rst,
-    input[7:0] button_state,
-    output reg[3:0] led
-    //output reg button_pressed_hold
+    input clk_button,                    /*This clk for 400Hz - 2.5ms read button*/
+    input rst,                           /*This is reset signal*/
+    input[7:0] button_state,             /*This is button state from @fsmForButtonState module*/
+    output reg[3:0] led                  /*This is output led*/
     );
-    
-    /*wire[3:0] button_pressed_wire;
-    wire[3:0] button_pressed_hold_wire;*/
-      
-    integer i;
-    reg[3:0] first;
     
     reg[3:0] led_state;
     
-    integer i = 0;
+    integer i;
     
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk_button or posedge rst) begin
         if(rst) begin
             led <= 4'b0000;      
             led_state <= 4'b0000;
-            first <= 4'b1111; 
         end
         else begin
-            if(clk) begin
+            if(clk_button) begin
                for(i=0;i<4;i=i+1) begin
-                        if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
-                            first[i] <= 0;
-                            led_state[i] <= ~led_state[i];
-                            //led[i] <= led[i];
-                        end
-                    end 
-                    led <= led_state;
+                    if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
+                        led_state[i] <= ~led_state[i];
+                        //led[i] <= led[i];
+                    end
+               end 
+               led <= led_state;
             end
         end    
     end

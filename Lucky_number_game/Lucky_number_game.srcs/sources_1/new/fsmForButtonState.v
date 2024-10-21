@@ -21,13 +21,12 @@
 `include "header.vh"
 
 module fsmForButtonState(
-    input clk,                                      /*This clk for 400Hz - 2.5ms read button*/
-    input clk_out,
+    input clk,                                      /*This is clk from Arty-z7*/
+    input clk_button,                               /*This clk for 400Hz - 2.5ms read button*/
     input rst,                                      /*This is reset signal*/
     input[3:0] button_in,                           /*This for read button value from Arty-z7*/
-    output reg[7:0] button_state                   /*This is for button state button_state[i*2 +:2] = 
+    output reg[7:0] button_state                    /*This is for button state button_state[i*2 +:2] = 
                                                         button i*/
-    //output reg[3:0] button_read_done                /*This signal for feedback when read done in button*/
     );
     
     wire[3:0] button_pressed_wire;
@@ -35,66 +34,50 @@ module fsmForButtonState(
       
     readButtonWithDebounce read_button_debounce_inst(
     .clk(clk),
+    .clk_button(clk_button),
     .rst(rst),
     .button_in(button_in),
     .button_pressed(button_pressed_wire),
     .button_pressed_hold(button_pressed_hold_wire)
-    //.button_read_done(button_read_done)
     );
     
     integer i;
     
     /*Check Fsm_for_button.drawio for FSM*/
-    always @(posedge clk_out or posedge rst) begin
+    always @(posedge clk_button or posedge rst) begin
         if(rst) begin
-            //button_read_done <= 4'b0000;
             button_state <= 8'b00000000;
         end
         else begin
-            
-          if(clk_out) begin  
+          if(clk_button) begin  
             for(i=0;i<4;i=i+1) begin
                 case(button_state[i*2 +:2])
                     `BUTTON_STATE_RELEASED: begin
                         if(button_pressed_wire[i]) begin
                             button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED;
-                            //button_read_done[i] <= 1;
-                        end
-                        else begin
-                            //button_read_done[i] <= 0;
                         end
                     end
                     `BUTTON_STATE_PRESSED: begin
                         if(!button_pressed_wire[i]) begin
                             button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
-                            //button_read_done[i] <= 1;
                         end
                         else begin
                             if(button_pressed_hold_wire[i]) begin
                                 button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
-                                //button_read_done[i] <= 1;
-                            end
-                            else begin
-                                //button_read_done[i] <= 0;
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED_HOLD: begin
                         if(!button_pressed_wire[i]) begin
                             button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
-                            //button_read_done <= 1;
-                        end
-                        else begin
-                            //button_read_done <= 0;
-                        end                
+                        end              
                     end
                     default: begin
                         button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
-                        //button_read_done[i] <= 0;
                     end
                 endcase      
             end
-          end ///////////// end if  
+          end /*End if clk*/  
         end    
     end
     

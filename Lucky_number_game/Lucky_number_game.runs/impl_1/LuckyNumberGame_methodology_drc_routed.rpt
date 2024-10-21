@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Mon Oct 21 17:34:59 2024
+| Date         : Mon Oct 21 19:09:09 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LuckyNumberGame_methodology_drc_routed.rpt -pb LuckyNumberGame_methodology_drc_routed.pb -rpx LuckyNumberGame_methodology_drc_routed.rpx
 | Design       : LuckyNumberGame
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 230
+             Violations found: 197
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 230        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 197        |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -959,225 +959,60 @@ Related violations: <none>
 
 TIMING-17#186 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/clk_out_reg/C is not reached by a timing clock
+The clock pin led_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#187 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[0]/C is not reached by a timing clock
+The clock pin led_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#188 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[10]/C is not reached by a timing clock
+The clock pin led_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#189 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[11]/C is not reached by a timing clock
+The clock pin led_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#190 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[12]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#191 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[13]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#192 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[14]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#193 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[15]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#194 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[16]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#195 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[17]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#196 Critical Warning
 Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[18]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#197 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[19]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#198 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#199 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[20]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#200 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[21]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#201 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[22]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#202 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[23]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#203 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[24]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#204 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[25]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#205 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[26]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#206 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[27]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#207 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[28]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#208 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[29]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#209 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#210 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[30]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#211 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[31]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#212 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#213 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#214 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#215 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#216 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#217 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[8]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#218 Critical Warning
-Non-clocked sequential cell  
-The clock pin fsm_for_button_state_inst/read_button_debounce_inst/frequency_for_button_read_inst/counter_reg[9]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#219 Critical Warning
-Non-clocked sequential cell  
-The clock pin led_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#220 Critical Warning
-Non-clocked sequential cell  
-The clock pin led_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#221 Critical Warning
-Non-clocked sequential cell  
-The clock pin led_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#222 Critical Warning
-Non-clocked sequential cell  
-The clock pin led_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#223 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#224 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#225 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#226 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#227 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_state_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#228 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_state_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#229 Critical Warning
-Non-clocked sequential cell  
 The clock pin toggle_led_inst/led_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#230 Critical Warning
+TIMING-17#197 Critical Warning
 Non-clocked sequential cell  
 The clock pin toggle_led_inst/led_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>

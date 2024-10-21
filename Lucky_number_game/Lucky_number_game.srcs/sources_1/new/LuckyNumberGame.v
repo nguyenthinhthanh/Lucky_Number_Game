@@ -19,51 +19,48 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/********************** This is top level module **********************/
 module LuckyNumberGame(
-    input clk,
-    input rst,
-    input[3:0] button,
-    output reg[3:0] led
-    //output reg button_pressed_hold
+    input clk,                                  /*This is clk from Arty-z7*/
+    input rst,                                  /*This is reset signal*/
+    input[3:0] button,                          /*This is button read from Arty-z7*/
+    output reg[3:0] led                         /*This is output led*/
     );
     
-    wire clk_out;                               /*This clk for 400Hz - 2.5ms read button*/  
+    wire clk_button;                               /*This clk for 400Hz - 2.5ms read button*/  
+    
     wire [3:0]led_reg;
     wire [7:0]button_state_wire;
     wire button_pressed_hold_reg;
-    
-    reg[3:0] led_state;
-                                        
-    parameter TARGET_CLK_FREQ = 400;            /*For every 10ms read button value */
+                  
+    parameter TARGET_CLK_FREQ = 400;            /*For every 2.5ms read button value */
     
     frequencyDivider #(
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ)
     ) frequency_for_button_read_inst(
         .clk(clk),
         .rst(rst),
-        .clk_out(clk_out)
+        .clk_out(clk_button)
     );
     
     fsmForButtonState fsm_for_button_state_inst(
         .clk(clk),
-        .clk_out(clk_out),
+        .clk_button(clk_button),
         .rst(rst),
         .button_in(button),
         .button_state(button_state_wire)
     );
     
     toggleLedTop toggle_led_inst(
-        .clk(clk_out),
+        .clk_button(clk_button),
         .rst(rst),
         .led(led_reg),
         .button_state(button_state_wire)
-        //.button_pressed_hold(button_pressed_hold_reg)
     );
     
     integer i;
     
-    always @(posedge clk_out or posedge rst) begin
+    always @(posedge clk_button or posedge rst) begin
         if(rst) begin
            led <= 4'b0000;
         end
