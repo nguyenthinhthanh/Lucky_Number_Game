@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729494877">
-  <File Type="ROUTE-PWR" Name="toggleLedWithButton_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="toggleLedWithButton.tcl"/>
-  <File Type="BITSTR-MMI" Name="toggleLedWithButton.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="toggleLedWithButton_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="toggleLedWithButton_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="toggleLedWithButton_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="toggleLedWithButton_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="toggleLedWithButton_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="toggleLedWithButton_opt.dcp"/>
-  <File Type="OPT-DRC" Name="toggleLedWithButton_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="toggleLedWithButton.hwdef"/>
-  <File Type="PWROPT-DCP" Name="toggleLedWithButton_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="toggleLedWithButton_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="toggleLedWithButton_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="toggleLedWithButton_placed.dcp"/>
-  <File Type="PLACE-IO" Name="toggleLedWithButton_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="toggleLedWithButton_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="toggleLedWithButton_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="toggleLedWithButton_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="toggleLedWithButton_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="toggleLedWithButton_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="toggleLedWithButton_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="toggleLedWithButton.bin"/>
-  <File Type="PLACE-TIMING" Name="toggleLedWithButton_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="toggleLedWithButton_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="toggleLedWithButton.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="toggleLedWithButton_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="toggleLedWithButton_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="toggleLedWithButton_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="toggleLedWithButton.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="toggleLedWithButton_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="toggleLedWithButton_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="toggleLedWithButton_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="toggleLedWithButton_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="toggleLedWithButton_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="toggleLedWithButton_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="toggleLedWithButton_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="toggleLedWithButton_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="toggleLedWithButton_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="toggleLedWithButton_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="toggleLedWithButton_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="toggleLedWithButton_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="toggleLedWithButton_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="toggleLedWithButton_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="toggleLedWithButton_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="toggleLedWithButton_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="toggleLedWithButton_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="toggleLedWithButton_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="toggleLedWithButton_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="toggleLedWithButton_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="toggleLedWithButton_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="toggleLedWithButton_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="toggleLedWithButton_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="toggleLedWithButton_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="toggleLedWithButton_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="toggleLedWithButton_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="toggleLedWithButton_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="toggleLedWithButton.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="toggleLedWithButton_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="toggleLedWithButton_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="toggleLedWithButton.nky"/>
-  <File Type="BITSTR-BMM" Name="toggleLedWithButton_bd.bmm"/>
-  <File Type="PDI-FILE" Name="toggleLedWithButton.pdi"/>
-  <File Type="RCFI_FILE" Name="toggleLedWithButton.rcfi"/>
-  <File Type="CFI_FILE" Name="toggleLedWithButton.cfi"/>
-  <File Type="RNPI_FILE" Name="toggleLedWithButton.rnpi"/>
-  <File Type="NPI_FILE" Name="toggleLedWithButton.npi"/>
-  <File Type="RBD_FILE" Name="toggleLedWithButton.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729496966">
+  <File Type="ROUTE-PWR" Name="LuckyNumberGame_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="LuckyNumberGame.tcl"/>
+  <File Type="BITSTR-MMI" Name="LuckyNumberGame.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="LuckyNumberGame_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="LuckyNumberGame_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="LuckyNumberGame_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="LuckyNumberGame_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="LuckyNumberGame_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="LuckyNumberGame_opt.dcp"/>
+  <File Type="OPT-DRC" Name="LuckyNumberGame_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="LuckyNumberGame.hwdef"/>
+  <File Type="PWROPT-DCP" Name="LuckyNumberGame_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="LuckyNumberGame_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="LuckyNumberGame_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="LuckyNumberGame_placed.dcp"/>
+  <File Type="PLACE-IO" Name="LuckyNumberGame_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="LuckyNumberGame_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="LuckyNumberGame_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="LuckyNumberGame_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="LuckyNumberGame_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="LuckyNumberGame.bin"/>
+  <File Type="PLACE-TIMING" Name="LuckyNumberGame_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="LuckyNumberGame_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="LuckyNumberGame.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="LuckyNumberGame_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="LuckyNumberGame_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="LuckyNumberGame_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="LuckyNumberGame.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="LuckyNumberGame_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="LuckyNumberGame_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="LuckyNumberGame_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="LuckyNumberGame_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="LuckyNumberGame_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="LuckyNumberGame_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="LuckyNumberGame_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="LuckyNumberGame_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="LuckyNumberGame_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="LuckyNumberGame_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="LuckyNumberGame_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="LuckyNumberGame_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="LuckyNumberGame_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="LuckyNumberGame_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="LuckyNumberGame_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="LuckyNumberGame_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="LuckyNumberGame_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="LuckyNumberGame_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="LuckyNumberGame_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="LuckyNumberGame_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="LuckyNumberGame_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="LuckyNumberGame_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="LuckyNumberGame_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="LuckyNumberGame_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="LuckyNumberGame_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="LuckyNumberGame_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="LuckyNumberGame.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="LuckyNumberGame_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="LuckyNumberGame_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="LuckyNumberGame.nky"/>
+  <File Type="BITSTR-BMM" Name="LuckyNumberGame_bd.bmm"/>
+  <File Type="PDI-FILE" Name="LuckyNumberGame.pdi"/>
+  <File Type="RCFI_FILE" Name="LuckyNumberGame.rcfi"/>
+  <File Type="CFI_FILE" Name="LuckyNumberGame.cfi"/>
+  <File Type="RNPI_FILE" Name="LuckyNumberGame.rnpi"/>
+  <File Type="NPI_FILE" Name="LuckyNumberGame.npi"/>
+  <File Type="RBD_FILE" Name="LuckyNumberGame.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="toggleLedWithButton.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="toggleLedWithButton.sysdef"/>
-  <File Type="BG-BGN" Name="toggleLedWithButton.bgn"/>
-  <File Type="BG-DRC" Name="toggleLedWithButton.drc"/>
-  <File Type="RDI-RDI" Name="toggleLedWithButton.vdi"/>
+  <File Type="BITSTR-LTX" Name="LuckyNumberGame.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="LuckyNumberGame.sysdef"/>
+  <File Type="BG-BGN" Name="LuckyNumberGame.bgn"/>
+  <File Type="BG-DRC" Name="LuckyNumberGame.drc"/>
+  <File Type="RDI-RDI" Name="LuckyNumberGame.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -81,6 +81,20 @@
       <FileInfo>
         <Attr Name="IsGlobalInclude" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/button_test.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controlSpeedMode0.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -92,6 +106,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/frequencyDivider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/generateRandomNumber.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -119,17 +140,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/button_test.v">
+    <File Path="$PSRCDIR/sources_1/new/LuckyNumberGame.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/controlSpeedMode0.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -137,15 +149,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fsmForButtonState.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/generateRandomNumber.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -153,7 +156,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/resultChecker.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -161,7 +163,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fsmForResultChecker.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/toggleLedTop.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -169,8 +177,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="toggleLedWithButton"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="LuckyNumberGame"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

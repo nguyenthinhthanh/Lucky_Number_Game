@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729494877">
-  <File Type="PA-TCL" Name="toggleLedWithButton.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="toggleLedWithButton_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="toggleLedWithButton_reports.tcl"/>
-  <File Type="RDS-RDS" Name="toggleLedWithButton.vds"/>
-  <File Type="RDS-UTIL" Name="toggleLedWithButton_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="toggleLedWithButton_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="toggleLedWithButton.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="toggleLedWithButton_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="toggleLedWithButton_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1729496966">
+  <File Type="PA-TCL" Name="LuckyNumberGame.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="LuckyNumberGame_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="LuckyNumberGame_reports.tcl"/>
+  <File Type="RDS-RDS" Name="LuckyNumberGame.vds"/>
+  <File Type="RDS-UTIL" Name="LuckyNumberGame_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="LuckyNumberGame_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="LuckyNumberGame.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="LuckyNumberGame_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="LuckyNumberGame_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/header.vh">
       <FileInfo>
         <Attr Name="IsGlobalInclude" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/button_test.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controlSpeedMode0.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -26,6 +40,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/frequencyDivider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/generateRandomNumber.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -53,17 +74,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/button_test.v">
+    <File Path="$PSRCDIR/sources_1/new/LuckyNumberGame.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/controlSpeedMode0.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -71,15 +83,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fsmForButtonState.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/generateRandomNumber.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -87,7 +90,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/resultChecker.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -95,7 +97,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/fsmForResultChecker.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/toggleLedTop.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -103,8 +111,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="toggleLedWithButton"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="LuckyNumberGame"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

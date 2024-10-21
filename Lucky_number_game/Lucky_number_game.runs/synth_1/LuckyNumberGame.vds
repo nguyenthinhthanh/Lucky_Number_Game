@@ -10,3 +10,5 @@
 # Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source LuckyNumberGame.tcl -notrace
+ERROR: [Common 17-69] Command failed: File 'D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/resultChecker.v' does not exist
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 21 14:49:32 2024...
