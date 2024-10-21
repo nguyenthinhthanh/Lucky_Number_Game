@@ -12,9 +12,9 @@
 `define BUTTON_PRESSED_HOLD     2
 
 /*This macro for button state in fsm*/
-`define BUTTON_STATE_RELEASED       0
-`define BUTTON_STATE_PRESSED        1
-`define BUTTON_STATE_PRESSED_HOLD   2
+`define BUTTON_STATE_RELEASED       2'b00
+`define BUTTON_STATE_PRESSED        2'b01
+`define BUTTON_STATE_PRESSED_HOLD   2'b10
 
 /*This macro for game mode*/
 `define GAME_MODE_0                 3'b000
@@ -60,8 +60,8 @@
 `define FSM_STATE_STRAIGHT_INC_PLAY    10        /*Fsm state share for 10,17,24,31 state*/
 `define FSM_STATE_STRAIGHT_DEC_PLAY    11        /*Fsm state share for 11,18,25,32 state*/
 
-/*This macro for result checker state in fsm*/
-`define RESULT_NORMAL_STATE             3'b000        /*Init state when not played*/
-`define RESULT_LOSE_STATE               3'b001        /*Lose this game*/
-`define RESULT_WIN_STATE                3'b010        /*Win in normal game*/
-`define RESULT_SPECIAL_WIN_STATE        3'b011        /*Win in special game*/
+/*This macro for result checker*/
+`define RESULT_NORMAL               3'b000        /*Init state when not played*/
+`define RESULT_LOSE                 3'b001        /*Lose this game*/
+`define RESULT_WIN                  3'b010        /*Win in normal game*/
+`define RESULT_SPECIAL_WIN          3'b011        /*Win in special game*/

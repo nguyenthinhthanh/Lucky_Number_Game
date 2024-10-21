@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log toggleLedWithButton.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toggleLedWithButton.tcl
+EAStep vivado -log resultChecker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source resultChecker.tcl
