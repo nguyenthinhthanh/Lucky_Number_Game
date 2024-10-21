@@ -59,3 +59,5 @@
 `define FSM_STATE_NO_STRAIGHT_PLAY     9         /*Fsm state share for 9,16,23,30 state*/
 `define FSM_STATE_STRAIGHT_INC_PLAY    10        /*Fsm state share for 10,17,24,31 state*/
 `define FSM_STATE_STRAIGHT_DEC_PLAY    11        /*Fsm state share for 11,18,25,32 state*/
+
+
