@@ -28,7 +28,7 @@
 `define GAME_CONTROL_PLAY_MODE      1
 
 /*This macro for game straight*/
-`define GAME_NO_STARIGHT            0
+`define GAME_NO_STRAIGHT            0
 `define GAME_STRAIGHT               1
 
 /*This macro for game type of straight*/
@@ -59,3 +59,9 @@
 `define FSM_STATE_NO_STRAIGHT_PLAY     9         /*Fsm state share for 9,16,23,30 state*/
 `define FSM_STATE_STRAIGHT_INC_PLAY    10        /*Fsm state share for 10,17,24,31 state*/
 `define FSM_STATE_STRAIGHT_DEC_PLAY    11        /*Fsm state share for 11,18,25,32 state*/
+
+/*This macro for result checker state in fsm*/
+`define RESULT_NORMAL_STATE             3'b000        /*Init state when not played*/
+`define RESULT_LOSE_STATE               3'b001        /*Lose this game*/
+`define RESULT_WIN_STATE                3'b010        /*Win in normal game*/
+`define RESULT_SPECIAL_WIN_STATE        3'b011        /*Win in special game*/
