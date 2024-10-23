@@ -23,7 +23,7 @@
 module debounceButton(
     input clk,                      /*This clk for 400Hz - 2.5ms read button*/
     input button,                   /*This for read button value from Arty-z7*/
-    output button_pressed       /*This value will set when press button after debounce*/
+    output button_pressed           /*This value will set when press button after debounce*/
     );
     
     wire Q0,Q1,Q2,Q2_bar;
@@ -34,5 +34,5 @@ module debounceButton(
     
     assign Q2_bar = ~Q2;
     assign button_pressed = Q1 & Q2_bar;    /*If Q1 = 1 & Q2 = 0,that mean press first time then
-                                    Q2 = 1 so we not update value for button */
+                                            Q2 = 1 so we not update value for button */
 endmodule

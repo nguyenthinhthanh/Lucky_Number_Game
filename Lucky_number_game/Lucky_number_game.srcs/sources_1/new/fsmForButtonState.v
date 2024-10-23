@@ -56,6 +56,11 @@ module fsmForButtonState(
                         if(button_pressed_wire[i]) begin
                             button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED;
                         end
+                        else begin
+                            if(button_pressed_hold_wire[i]) begin
+                                button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
+                            end
+                        end
                     end
                     `BUTTON_STATE_PRESSED: begin
                         if(!button_pressed_wire[i]) begin

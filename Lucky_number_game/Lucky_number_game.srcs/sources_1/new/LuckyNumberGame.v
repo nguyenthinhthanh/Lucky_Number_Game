@@ -24,10 +24,10 @@ module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
-    output[3:0] led                         /*This is output led*/
+    output[3:0] led                             /*This is output led*/
     );
     
-    wire clk_button;                               /*This clk for 400Hz - 2.5ms read button*/  
+    wire clk_button;                            /*This clk for 400Hz - 2.5ms read button*/  
     
     wire [3:0]led_reg;
     wire [7:0]button_state_wire;

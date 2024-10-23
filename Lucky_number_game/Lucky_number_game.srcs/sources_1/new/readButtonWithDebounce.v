@@ -35,11 +35,12 @@ module readButtonWithDebounce(
     );
     
     reg[3:0] button_debounce;                   /*This is for button pressed hold*/
+    reg[3:0] button_pressed_hold_reg;
      
     integer i;
     integer counter_pressed_hold_button[3:0];    /*Counter for 500ms*/   
                                         
-    /*parameter TARGET_CLK_FREQ = 400;            *//*For every 10ms read button value *//*
+    /*parameter TARGET_CLK_FREQ = 400;           *//*For every 2.5ms read button value *//*
     
     frequencyDivider #(
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ)
@@ -78,6 +79,7 @@ module readButtonWithDebounce(
     always @(posedge clk or posedge rst) begin
         if(rst) begin
             button_pressed_hold <=  4'b0000;
+            button_pressed_hold_reg <= 4'b0000;
             
             for(i=0;i<4;i=i+1) begin
                counter_pressed_hold_button[i] <= 0; 
@@ -92,13 +94,15 @@ module readButtonWithDebounce(
                         end
                         else begin
                             counter_pressed_hold_button[i] <= 0;
-                            button_pressed_hold[i] <= 1;
+                            button_pressed_hold_reg[i] <= 1;
                         end
                     end
                     else begin
-                        counter_pressed_hold_button[i] <=0 ;
-                        button_pressed_hold[i] <= 0;
+                        counter_pressed_hold_button[i] <= 0 ;
+                        button_pressed_hold_reg[i] <= 0;
                     end
+                    
+                    button_pressed_hold[i] <= button_pressed_hold_reg[i];
                end
             end
         end
