@@ -86,9 +86,9 @@ module readButtonWithDebounce(
         else begin
             if(clk) begin
                for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
-                    if(button_in[i]) begin
+                    if(button_in[i] == `BUTTON_PRESSED) begin
                         if(counter_pressed_hold_button[i] < `COUNTER_PRESSED_HOLD) begin
-                            counter_pressed_hold_button[i] = counter_pressed_hold_button[i] + 1;
+                            counter_pressed_hold_button[i] <= counter_pressed_hold_button[i] + 1;
                         end
                         else begin
                             counter_pressed_hold_button[i] <= 0;

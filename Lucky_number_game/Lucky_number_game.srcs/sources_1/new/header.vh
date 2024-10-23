@@ -65,3 +65,14 @@
 `define RESULT_LOSE                 3'b001        /*Lose this game*/
 `define RESULT_WIN                  3'b010        /*Win in normal game*/
 `define RESULT_SPECIAL_WIN          3'b011        /*Win in special game*/
+
+/*This macro for play mode state*/
+`define FSM_STATE_NO_33             33              /*See fsm table for detail*/
+`define FSM_STATE_NO_34             34              /*See fsm table for detail*/
+`define FSM_STATE_NO_35             35              /*See fsm table for detail*/
+`define FSM_STATE_NO_36             36              /*See fsm table for detail*/
+`define FSM_STATE_NO_37             37              /*See fsm table for detail*/
+`define FSM_STATE_NO_38             38              /*See fsm table for detail*/
+`define FSM_STATE_NO_39             39              /*See fsm table for detail*/
+`define FSM_STATE_NO_40             40              /*See fsm table for detail*/
+

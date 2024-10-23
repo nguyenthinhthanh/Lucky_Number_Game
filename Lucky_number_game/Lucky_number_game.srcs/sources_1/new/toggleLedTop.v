@@ -39,7 +39,7 @@ module toggleLedTop(
         else begin
             if(clk_button) begin
                for(i=0;i<4;i=i+1) begin
-                    if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
+                    if((button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) || (button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD)) begin
                         led_state[i] <= ~led_state[i];
                         //led[i] <= led[i];
                     end

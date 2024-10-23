@@ -24,7 +24,7 @@ module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
-    output reg[3:0] led                         /*This is output led*/
+    output[3:0] led                         /*This is output led*/
     );
     
     wire clk_button;                               /*This clk for 400Hz - 2.5ms read button*/  
@@ -54,13 +54,13 @@ module LuckyNumberGame(
     toggleLedTop toggle_led_inst(
         .clk_button(clk_button),
         .rst(rst),
-        .led(led_reg),
+        .led(led),
         .button_state(button_state_wire)
     );
     
     integer i;
     
-    always @(posedge clk_button or posedge rst) begin
+    /*always @(posedge clk_button or posedge rst) begin
         if(rst) begin
            led <= 4'b0000;
         end
@@ -71,5 +71,5 @@ module LuckyNumberGame(
                 end   
             end
         end
-    end
+    end*/
 endmodule
