@@ -24,14 +24,16 @@ module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
-    output[3:0] led                             /*This is output led*/
+    output[3:0] led,                             /*This is output led*/
+    output[15:0] bcd
     );
     
     wire clk_button;                            /*This clk for 400Hz - 2.5ms read button*/  
     
-    wire [3:0]led_reg;
     wire [7:0]button_state_wire;
     wire button_pressed_hold_reg;
+    
+    integer i;
                   
     parameter TARGET_CLK_FREQ = 400;            /*For every 2.5ms read button value */
     
@@ -58,18 +60,12 @@ module LuckyNumberGame(
         .button_state(button_state_wire)
     );
     
-    integer i;
+    speedController speed_controller_inst(
+        .clk(clk),
+        .rst(rst),
+        .clk_button(clk_button),
+        .button_state(button_state_wire),
+        .random_number(bcd)
+    );
     
-    /*always @(posedge clk_button or posedge rst) begin
-        if(rst) begin
-           led <= 4'b0000;
-        end
-        else begin
-            for(i=0;i<4;i=i+1) begin
-                if(led_reg[i]) begin
-                    led[i] <= ~led[i];
-                end   
-            end
-        end
-    end*/
 endmodule

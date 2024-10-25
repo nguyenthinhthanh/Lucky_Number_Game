@@ -6,6 +6,13 @@
                                             button state is hold*/
 `define COUNTER_PRESSED_HOLD    125000000   /*Counter for 1000ms using 125Mhz frequency*/
 
+/*This macro for controll speed in mode*/
+`define CLK_FREQ_NORMAL_SPEED   25          /*Clk for generate random number constrain mode 2 (40ms)*/
+
+/*This macro for speed in mode 3*/
+`define MIN_SPEED_COUNTER       100         /*That mean 250ms = 100T clk button to get random number*/
+`define MAX_SPEED_COUNTER       4           /*That mean 10ms = 4T clk button to get random number*/
+
 /*This macro for button value*/
 `define BUTTON_RELEASED         0
 `define BUTTON_PRESSED          1
