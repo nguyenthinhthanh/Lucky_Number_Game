@@ -31,6 +31,8 @@ module fsmForButtonState(
     
     wire[3:0] button_pressed_wire;
     wire[3:0] button_pressed_hold_wire;
+    
+    reg[7:0] button_state_reg;
       
     readButtonWithDebounce read_button_debounce_inst(
     .clk(clk),
@@ -46,7 +48,9 @@ module fsmForButtonState(
     /*Check Fsm_for_button.drawio for FSM*/
     always @(posedge clk_button or posedge rst) begin
         if(rst) begin
-            button_state <= 8'b00000000;
+            button_state <= 8'b00_00_00_00;
+            
+            button_state_reg <= 8'b00_00_00_00;
         end
         else begin
           if(clk_button) begin  
@@ -54,34 +58,42 @@ module fsmForButtonState(
                 case(button_state[i*2 +:2])
                     `BUTTON_STATE_RELEASED: begin
                         if(button_pressed_wire[i]) begin
-                            button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED;
+                            button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED;
+                            /*button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED;*/
                         end
                         else begin
                             if(button_pressed_hold_wire[i]) begin
-                                button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
+                                button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
+                                /*button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;*/
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED: begin
                         if(!button_pressed_wire[i]) begin
-                            button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
+                            button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
+                            /*button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;*/
                         end
                         else begin
                             if(button_pressed_hold_wire[i]) begin
-                                button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
+                                button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
+                                /*button_state[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;*/
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED_HOLD: begin
-                        if(!button_pressed_wire[i]) begin
-                            button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
+                        if(!button_pressed_hold_wire[i]) begin
+                            button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
+                            /*button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;*/
                         end              
                     end
                     default: begin
-                        button_state[i*2 +:2] <= `BUTTON_STATE_RELEASED;
+                        button_state_reg[i*2 +:2] <= button_state_reg[i*2 +:2];
                     end
                 endcase      
             end
+            
+            button_state <= button_state_reg;
+            
           end /*End if clk*/  
         end    
     end
