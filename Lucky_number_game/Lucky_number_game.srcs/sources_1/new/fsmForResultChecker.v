@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 `include "header.vh"
 
-module fsmForResultChecker(
-    input clk,                      /*This is clock on Arty-z7*/
+module fsmForResultChecker(         /***************************** Need to change name *****************************/   
+    input clk_button,                      /*This is clock on Arty-z7*/
     input rst,                      /*This is reset signal*/
     input game_straight,            /*This is game play have straight to win or not*/
     input type_of_straight,         /*This is straight increase or decrease*/
@@ -34,7 +34,7 @@ module fsmForResultChecker(
     output reg[2:0] result_state    /*This is result state*/
     );
     
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk_button or posedge rst) begin
         if(rst) begin
             /*Init state*/
             result_state <= `RESULT_NORMAL;

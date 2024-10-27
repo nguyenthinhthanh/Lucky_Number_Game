@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Oct 25 21:55:13 2024
+| Date         : Sun Oct 27 16:04:44 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LuckyNumberGame_utilization_synth.rpt -pb LuckyNumberGame_utilization_synth.pb
 | Design       : LuckyNumberGame
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  294 |     0 |          0 |     53200 |  0.55 |
-|   LUT as Logic          |  294 |     0 |          0 |     53200 |  0.55 |
+| Slice LUTs*             |  315 |     0 |          0 |     53200 |  0.59 |
+|   LUT as Logic          |  315 |     0 |          0 |     53200 |  0.59 |
 |   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |  314 |     0 |          0 |    106400 |  0.30 |
-|   Register as Flip Flop |  314 |     0 |          0 |    106400 |  0.30 |
+| Slice Registers         |  324 |     0 |          0 |    106400 |  0.30 |
+|   Register as Flip Flop |  324 |     0 |          0 |    106400 |  0.30 |
 |   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
@@ -54,8 +54,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 20    |          Yes |           - |          Set |
-| 278   |          Yes |           - |        Reset |
+| 16    |          Yes |           - |          Set |
+| 292   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 16    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   26 |     0 |          0 |       125 | 20.80 |
+| Bonded IOB                  |   28 |     0 |          0 |       125 | 22.40 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -146,17 +146,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  278 |        Flop & Latch |
+| FDCE     |  292 |        Flop & Latch |
 | LUT3     |  153 |                 LUT |
-| LUT2     |  108 |                 LUT |
-| LUT5     |  102 |                 LUT |
+| LUT2     |  114 |                 LUT |
+| LUT5     |   91 |                 LUT |
 | CARRY4   |   68 |          CarryLogic |
-| LUT4     |   49 |                 LUT |
-| OBUF     |   20 |                  IO |
-| LUT6     |   20 |                 LUT |
-| FDPE     |   20 |        Flop & Latch |
+| LUT4     |   51 |                 LUT |
+| LUT6     |   37 |                 LUT |
+| OBUF     |   22 |                  IO |
 | FDRE     |   16 |        Flop & Latch |
-| LUT1     |   11 |                 LUT |
+| FDPE     |   16 |        Flop & Latch |
+| LUT1     |   15 |                 LUT |
 | IBUF     |    6 |                  IO |
 | BUFG     |    2 |               Clock |
 +----------+------+---------------------+

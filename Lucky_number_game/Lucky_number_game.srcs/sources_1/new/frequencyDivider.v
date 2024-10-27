@@ -19,21 +19,21 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-/*This module for use to controll speed generateRandomNumber*/
+/*This module for use to divide clk Arty-z7 to clk we want*/
 module frequencyDivider #(
-    parameter TARGET_CLK_FREQ = 400,           // Disired frequency
-    parameter INPUT_CLK_FREQ = 125000000    // Input clock from Arty-z7
+    parameter TARGET_CLK_FREQ = 400,            /*Disired frequency*/
+    parameter INPUT_CLK_FREQ = 125000000        /*Input clock from Arty-z7*/
     )
     (
-    input clk,
-    input rst,
-    output reg clk_out
+    input clk,                                  /*This is clk from Arty-z7*/
+    input rst,                                  /*This is reset signal*/
+    output reg clk_out                          /*This is clk out we want*/
     );
     
     // Calculate the number of clock cycles needed to achieve the target frequency
     localparam integer DIVISOR_TOGGLE = INPUT_CLK_FREQ / (2*TARGET_CLK_FREQ);
     
-    reg[31:0] counter;
+    reg[31:0] counter;                          /*This is counter for divider*/
     
     always @(posedge clk or posedge rst) begin
         if(rst) begin

@@ -21,10 +21,10 @@
 
 /*This module using Linear Feedback Shift Register (LFSR) to generate random number*/
 module generateRandomNumber(
-    input clk,                      /*This is clock on Arty-z7*/
+    input clk,                      /*This is clock for generate random number*/
     input rst,                      /*This is reset signal*/
-    //input getNumber,                /*This is signal for get random number*/
-    //output reg done_signal,         /*This is feedback signal when get random number done*/
+    //input getNumber,              /*This is signal for get random number*/
+    //output reg done_signal,       /*This is feedback signal when get random number done*/
     output reg[3:0]  random_number  /*This is 4-bit random number from 0-9*/   
     );
     

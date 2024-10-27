@@ -67,12 +67,6 @@
 `define FSM_STATE_STRAIGHT_INC_PLAY    10        /*Fsm state share for 10,17,24,31 state*/
 `define FSM_STATE_STRAIGHT_DEC_PLAY    11        /*Fsm state share for 11,18,25,32 state*/
 
-/*This macro for result checker*/
-`define RESULT_NORMAL               3'b000        /*Init state when not played*/
-`define RESULT_LOSE                 3'b001        /*Lose this game*/
-`define RESULT_WIN                  3'b010        /*Win in normal game*/
-`define RESULT_SPECIAL_WIN          3'b011        /*Win in special game*/
-
 /*This macro for play mode state*/
 `define FSM_STATE_NO_33             33              /*See fsm table for detail*/
 `define FSM_STATE_NO_34             34              /*See fsm table for detail*/
@@ -83,3 +77,8 @@
 `define FSM_STATE_NO_39             39              /*See fsm table for detail*/
 `define FSM_STATE_NO_40             40              /*See fsm table for detail*/
 
+/*This macro for result checker*/
+`define RESULT_NORMAL               3'b000        /*Init state when not played*/
+`define RESULT_LOSE                 3'b001        /*Lose this game*/
+`define RESULT_WIN                  3'b010        /*Win in normal game*/
+`define RESULT_SPECIAL_WIN          3'b011        /*Win in special game*/
