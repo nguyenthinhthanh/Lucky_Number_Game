@@ -55,7 +55,7 @@ module fsmForButtonState(
         else begin
           if(clk_system) begin  
             for(i=0;i<4;i=i+1) begin
-                case(button_state[i*2 +:2])
+                case(button_state_reg[i*2 +:2])
                     `BUTTON_STATE_RELEASED: begin
                         if(button_pressed_wire[i]) begin    /*If button[i] is pressed*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED;
