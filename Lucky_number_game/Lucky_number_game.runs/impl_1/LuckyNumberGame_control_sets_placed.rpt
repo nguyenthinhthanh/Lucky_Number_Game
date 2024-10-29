@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Sun Oct 27 16:05:12 2024
+| Date         : Tue Oct 29 20:08:15 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file LuckyNumberGame_control_sets_placed.rpt
 | Design       : LuckyNumberGame
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              12 |            7 |
+| No           | No                    | No                     |              12 |            6 |
 | No           | No                    | Yes                    |             168 |           40 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               4 |            1 |
-| Yes          | No                    | Yes                    |             140 |           60 |
+| Yes          | No                    | Yes                    |             140 |           62 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,29 +73,29 @@ Table of Contents
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
 |                        Clock Signal                       |                                      Enable Signal                                     | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[0]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[1]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[2]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[3]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
-|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[11]_i_1_n_0                                        | rst_IBUF         |                2 |              4 |         2.00 |
-|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[15]_i_1_n_0                                        | rst_IBUF         |                1 |              4 |         4.00 |
-|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[7]_i_1_n_0                                         | rst_IBUF         |                3 |              4 |         1.33 |
-|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[3]_i_1__0_n_0                                      | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[0]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                            | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[2]_i_1_n_0 | rst_IBUF         |                1 |              1 |         1.00 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[11]_i_1_n_0                                        | rst_IBUF         |                3 |              4 |         1.33 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[3]_i_1__0_n_0                                      | rst_IBUF         |                3 |              4 |         1.33 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[7]_i_1_n_0                                         | rst_IBUF         |                2 |              4 |         2.00 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/random_number[15]_i_1_n_0                                        | rst_IBUF         |                2 |              4 |         2.00 |
 |  speed_controller_inst/frequency_for_button_read_inst/CLK | speed_controller_inst/generate_random_number0_inst/p_0_in                              |                  |                1 |              4 |         4.00 |
 |  Q_reg_i_1_n_0                                            | speed_controller_inst/speed[3][7]_i_1_n_0                                              | rst_IBUF         |                3 |              6 |         2.00 |
-|  Q_reg_i_1_n_0                                            | speed_controller_inst/speed[1][7]_i_1_n_0                                              | rst_IBUF         |                3 |              6 |         2.00 |
-|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[0]_1[0]                                     | rst_IBUF         |                3 |              6 |         2.00 |
-|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[4]_1[0]                                     | rst_IBUF         |                3 |              6 |         2.00 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/speed[0][7]_i_1_n_0                                              | rst_IBUF         |                3 |              6 |         2.00 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/speed[2][7]_i_1_n_0                                              | rst_IBUF         |                3 |              6 |         2.00 |
+|  Q_reg_i_1_n_0                                            | speed_controller_inst/speed[1][7]_i_1_n_0                                              | rst_IBUF         |                2 |              6 |         3.00 |
+|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[0]_0[0]                                     | rst_IBUF         |                2 |              8 |         4.00 |
 |  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/E[0]                                                         | rst_IBUF         |                3 |              8 |         2.67 |
-|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[0]_0[0]                                     | rst_IBUF         |                3 |              8 |         2.67 |
-|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[4]_0[0]                                     | rst_IBUF         |                2 |              8 |         4.00 |
 |  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[2]_0[0]                                     | rst_IBUF         |                2 |              8 |         4.00 |
-|  speed_controller_inst/frequency_for_button_read_inst/CLK |                                                                                        | rst_IBUF         |                2 |              8 |         4.00 |
-|  Q_reg_i_1_n_0                                            |                                                                                        |                  |                7 |             12 |         1.71 |
-|  Q_reg_i_1_n_0                                            |                                                                                        | rst_IBUF         |                7 |             26 |         3.71 |
+|  Q_reg_i_1_n_0                                            | fsm_for_button_state_inst/button_state_reg[4]_0[0]                                     | rst_IBUF         |                2 |              8 |         4.00 |
+|  speed_controller_inst/frequency_for_button_read_inst/CLK |                                                                                        | rst_IBUF         |                3 |              8 |         2.67 |
+|  Q_reg_i_1_n_0                                            |                                                                                        |                  |                6 |             12 |         2.00 |
+|  Q_reg_i_1_n_0                                            |                                                                                        | rst_IBUF         |                9 |             26 |         2.89 |
+|  clk_IBUF_BUFG                                            | frequency_for_button_read_inst/counter_0                                               | rst_IBUF         |               16 |             32 |         2.00 |
 |  clk_IBUF_BUFG                                            | speed_controller_inst/frequency_for_button_read_inst/counter                           | rst_IBUF         |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG                                            | frequency_for_button_read_inst/counter_0                                               | rst_IBUF         |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG                                            |                                                                                        | rst_IBUF         |               31 |            134 |         4.32 |
+|  clk_IBUF_BUFG                                            |                                                                                        | rst_IBUF         |               28 |            134 |         4.79 |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
 
 

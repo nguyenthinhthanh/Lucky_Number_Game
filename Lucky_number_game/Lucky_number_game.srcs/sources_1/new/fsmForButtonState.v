@@ -86,7 +86,7 @@ module fsmForButtonState(
                     end
                 endcase      
             end
-            /*Update button state value*/
+            /*Sync button state value*/
             button_state <= button_state_reg;
           end /*End if clk*/  
         end    
