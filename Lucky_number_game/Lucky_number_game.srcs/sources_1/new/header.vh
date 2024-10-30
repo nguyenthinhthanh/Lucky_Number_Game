@@ -2,6 +2,12 @@
 
 `define NUM_OF_BUTTON           4           /*Num of button*/
 
+`define NUM_OF_7SEG_MODE_0          3       /*Num of 7seg led in mode*/
+`define NUM_OF_7SEG_MODE_1          3       /*Num of 7seg led in mode*/
+`define NUM_OF_7SEG_MODE_2          3       /*Num of 7seg led in mode*/
+`define NUM_OF_7SEG_MODE_3          3       /*Num of 7seg led in mode*/
+`define NUM_OF_7SEG_MODE_SPECIAL    2       /*Num of 7seg led in mode*/
+
 `define TIME_PRESSED_HOLD       500         /*If button pressed more than 500ms
                                             button state is hold*/
 `define COUNTER_PRESSED_HOLD    125000000   /*Counter for 1000ms using 125Mhz frequency*/
@@ -76,6 +82,10 @@
 `define FSM_STATE_NO_38             38              /*See fsm table for detail*/
 `define FSM_STATE_NO_39             39              /*See fsm table for detail*/
 `define FSM_STATE_NO_40             40              /*See fsm table for detail*/
+`define FSM_STATE_NO_42             42              /*See fsm table for detail*/
+`define FSM_STATE_NO_43             43              /*See fsm table for detail*/
+
+`define FSM_STATE_FINAL_RESULT      41              /*This is state for final result*/
 
 /*This macro for result checker*/
 `define RESULT_NORMAL               3'b000        /*Init state when not played*/

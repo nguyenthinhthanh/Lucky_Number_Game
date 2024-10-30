@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Oct 29 20:08:35 2024
+| Date         : Wed Oct 30 17:34:29 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LuckyNumberGame_methodology_drc_routed.rpt -pb LuckyNumberGame_methodology_drc_routed.pb -rpx LuckyNumberGame_methodology_drc_routed.rpx
 | Design       : LuckyNumberGame
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 324
+             Violations found: 317
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 324        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 317        |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -1019,635 +1019,600 @@ Related violations: <none>
 
 TIMING-17#198 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/check0_reg/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#199 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/check1_reg/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#200 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][0]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#201 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][1]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#202 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][2]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#203 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][3]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#204 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][4]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#205 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][5]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#206 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][6]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#207 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[0][7]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/fsm_state_reg_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#208 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][0]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#209 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][1]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#210 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][2]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#211 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][3]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#212 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][4]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#213 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][5]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_mode_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#214 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][6]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_straight_reg__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#215 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[1][7]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/game_straight_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#216 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][0]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/type_of_straight_reg__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#217 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][1]/C is not reached by a timing clock
+The clock pin fsm_for_lucky_number_game_inst/type_of_straight_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#218 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][2]/C is not reached by a timing clock
+The clock pin result_checker/result_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#219 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][3]/C is not reached by a timing clock
+The clock pin result_checker/result_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#220 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][4]/C is not reached by a timing clock
+The clock pin result_checker/result_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#221 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][5]/C is not reached by a timing clock
+The clock pin result_checker/result_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#222 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/check0_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#223 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[2][7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/check1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#224 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][0]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#225 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][1]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#226 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#227 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#228 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#229 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#230 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#231 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/counter_speed_reg[3][7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[0][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#232 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/clk_out_reg/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#233 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[0]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#234 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[10]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#235 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[11]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#236 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[12]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#237 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[13]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#238 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[14]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#239 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[15]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[1][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#240 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[16]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#241 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[17]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#242 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[18]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#243 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[19]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#244 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[1]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#245 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[20]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#246 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[21]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#247 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[22]/C is not reached by a timing clock
+The clock pin speed_controller_inst/counter_speed_reg[2][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#248 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[23]/C is not reached by a timing clock
+The clock pin speed_controller_inst/done_mode_0_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#249 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[24]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/clk_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#250 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[25]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#251 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[26]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#252 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[27]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#253 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[28]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#254 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[29]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#255 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#256 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[30]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#257 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[31]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#258 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#259 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#260 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#261 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#262 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#263 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[8]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#264 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[9]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#265 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[0]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#266 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[1]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#267 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#268 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#269 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#270 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#271 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#272 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#273 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/random_number_reg[0]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#274 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/random_number_reg[1]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#275 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/random_number_reg[2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#276 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/generate_random_number0_inst/random_number_reg[3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#277 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[0]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#278 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[10]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#279 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[11]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#280 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[12]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#281 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[13]/C is not reached by a timing clock
+The clock pin speed_controller_inst/frequency_for_button_read_inst/counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#282 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[14]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#283 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[15]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#284 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[1]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#285 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#286 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#287 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#288 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#289 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/lfsr_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#290 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/generate_random_number0_inst/random_number_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#291 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[8]/C is not reached by a timing clock
+The clock pin speed_controller_inst/random_number_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#292 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/random_number_reg[9]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#293 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#294 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#295 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#296 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#297 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[0][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#298 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[0][7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#299 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#300 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#301 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#302 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#303 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[1][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#304 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[1][7]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#305 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][2]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#306 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][3]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#307 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][4]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#308 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][5]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#309 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][6]/C is not reached by a timing clock
+The clock pin speed_controller_inst/speed_reg[2][7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#310 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[2][7]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#311 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][2]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#312 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][3]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#313 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][4]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#314 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][5]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#315 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][6]/C is not reached by a timing clock
+The clock pin toggle_led_inst/led_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#316 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/speed_reg[3][7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#317 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#318 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#319 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#320 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#321 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_state_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#322 Critical Warning
-Non-clocked sequential cell  
-The clock pin toggle_led_inst/led_state_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#323 Critical Warning
-Non-clocked sequential cell  
 The clock pin toggle_led_inst/led_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#324 Critical Warning
+TIMING-17#317 Critical Warning
 Non-clocked sequential cell  
 The clock pin toggle_led_inst/led_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>

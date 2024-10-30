@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Oct 29 20:08:34 2024
+| Date         : Wed Oct 30 17:34:29 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_drc -file LuckyNumberGame_drc_routed.rpt -pb LuckyNumberGame_drc_routed.pb -rpx LuckyNumberGame_drc_routed.rpx
 | Design       : LuckyNumberGame

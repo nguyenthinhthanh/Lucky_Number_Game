@@ -29,8 +29,8 @@ module fsmForLuckyNumberGame(
     input clk_system,                       /*This clk 400Hz - 2.5ms for system*/
     input rst,                              /*This is reset signal*/
     input[1:0] winner,                      /*This is two switch to control winner, just for demo*/
-    input [2:0] result_state,               /* This is result state @from : resultChecker module*/
-    input [7:0] button_state,               /*This is button state @from : fsmForButtonState module*/
+    input[2:0] result_state,                /* This is result state @from : resultChecker module*/
+    input[7:0] button_state,                /*This is button state @from : fsmForButtonState module*/
     output reg game_straight,               /*This is configure of game straight*/
     output reg type_of_straight,            /*This is configure type of game straight*/
     output reg control_mode,                /*This is configure of setting mode or playing mode*/
@@ -492,19 +492,28 @@ module fsmForLuckyNumberGame(
                             else if(game_mode == `GAME_MODE_3) begin
                                 fsm_state_reg <= `FSM_STATE_NO_33;
                             end
-                            else begin
-                                /*Mode 1,2 need to pressed and hold*/
+                            /*else begin
+                                *//*Mode 1,2 need to pressed and hold*//*
                                 fsm_state_reg <= fsm_state_reg;
-                            end
+                            end*/
                         end
                         else if(button_state[1:0] == `BUTTON_STATE_PRESSED_HOLD) begin
                             /*BTN0 pressed and hold to play game*/
-                            fsm_state_reg <= `FSM_STATE_NO_34;
+                            if(game_mode == `GAME_MODE_1) begin
+                                fsm_state_reg <= `FSM_STATE_NO_42;
+                            end
+                            else if(game_mode == `GAME_MODE_2) begin
+                                fsm_state_reg <= `FSM_STATE_NO_43;
+                            end
+                            /*else begin
+                                *//*No change state*//*
+                                fsm_state_reg <= fsm_state_reg;
+                            end*/
                         end
-                        else begin
-                            /*No change state*/
+                        /*else begin
+                            *//*No change state*//*
                             fsm_state_reg <= fsm_state_reg;
-                        end
+                        end*/
                     end
                     `FSM_STATE_NO_33: begin     /*State 33*/    
                         if(button_state[1:0] == `BUTTON_STATE_PRESSED) begin
@@ -516,7 +525,32 @@ module fsmForLuckyNumberGame(
                             fsm_state_reg <= `FSM_STATE_NO_33;
                         end
                     end
-                    `FSM_STATE_NO_34: begin    /*State 34*/  
+                    
+                    `FSM_STATE_NO_34: begin     /*State 34*/    
+                        /*This is a buffer state just for make sure
+                            game is ready for result checkker*/
+                        fsm_state_reg <= `FSM_STATE_FINAL_RESULT;
+                    end
+                    
+                    `FSM_STATE_NO_42: begin    /*State 42*/  
+                        if(button_state[1:0] == `BUTTON_STATE_RELEASED) begin
+                            fsm_state_reg <= `FSM_STATE_NO_34;
+                        end
+                        else begin
+                            /*No change state*/
+                            fsm_state_reg <= `FSM_STATE_NO_42;
+                        end
+                    end
+                    `FSM_STATE_NO_43: begin    /*State 43*/  
+                        if(button_state[1:0] == `BUTTON_STATE_RELEASED) begin
+                            fsm_state_reg <= `FSM_STATE_NO_34;
+                        end
+                        else begin
+                            /*No change state*/
+                            fsm_state_reg <= `FSM_STATE_NO_43;
+                        end
+                    end
+                    `FSM_STATE_FINAL_RESULT: begin    /*State 41*/  
                         if(result_state == `RESULT_LOSE) begin
                             /*When player lose the game*/
                             fsm_state_reg <= `FSM_STATE_NO_35;
@@ -527,7 +561,7 @@ module fsmForLuckyNumberGame(
                         end
                         else begin
                             /*No change state*/
-                            fsm_state_reg <= `FSM_STATE_NO_34;
+                            fsm_state_reg <= `FSM_STATE_FINAL_RESULT;
                         end
                     end
                     `FSM_STATE_NO_35: begin    /*State 35*/  
@@ -555,6 +589,10 @@ module fsmForLuckyNumberGame(
                     `FSM_STATE_NO_36: begin    /*State 36*/  
                         if(button_state[1:0] == `BUTTON_STATE_PRESSED) begin
                             /*BTN1 press to "Yes", play special mode*/
+                            
+                            /*Set enviroment for next step*/
+                            game_mode_reg <= `GAME_MODE_SPECIAL;
+                            
                             fsm_state_reg <= `FSM_STATE_SET_MODE_SPECIAL;
                         end
                         else if(button_state[3:2] == `BUTTON_STATE_PRESSED) begin

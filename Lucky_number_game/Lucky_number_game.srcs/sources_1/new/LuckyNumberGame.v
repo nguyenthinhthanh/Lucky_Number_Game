@@ -24,6 +24,7 @@
 module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal*/
+    input[1:0] winner,                          /*This is two switch to control winner*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
     output[3:0] led,                            /*This is output led*/
     output[15:0] bcd,                           /*This is output bcd 16 bit Io26 to Io41*/
@@ -33,8 +34,19 @@ module LuckyNumberGame(
     
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
     
-    wire [7:0]button_state_wire;                /*This is button state wire for connect between modules*/
-    wire button_pressed_hold_reg;               /*Just for debug*/
+    wire[7:0] button_state_wire;                /*This is button state wire for connect between modules*/
+    wire button_pressed_hold_wire;              /*Just for debug*/
+    
+    wire game_straight_wire;                    /*This is game straight wire for connect between modules*/
+    wire type_of_straight_wire;                 /*This is type of straight wire for connect between modules*/
+    wire control_mode_wire;                     /*This is control mode wire for connect between modules*/
+    wire[2:0] game_mode_wire;                   /*This is game mode wire for connect between modules*/
+    wire[7:0] fsm_state_wire;                   /*This is fsm state wire for connect between modules*/
+    
+    wire[2:0] result_state_wire;                /*This is result state wire for connect between modules*/
+    
+    wire random_number_wire;
+    assign bcd = random_number_wire;
     
     integer i;                                  /*This integer for travels between buttons*/
                   
@@ -56,21 +68,46 @@ module LuckyNumberGame(
         .button_state(button_state_wire)
     );
     
-    toggleLedTop toggle_led_inst(                   /*Just for debug*/
-        .clk_button(clk_system),
+    fsmForLuckyNumberGame fsm_for_lucky_number_game_inst(
+        .clk_system(clk_system),
         .rst(rst),
-        .led(led),
-        .button_state(button_state_wire)
+        .winner(winner),
+        .result_state(result_state_wire),
+        .button_state(button_state_wire),
+        .game_straight(game_straight_wire),
+        .type_of_straight(type_of_straight_wire),
+        .control_mode(control_mode_wire),
+        .game_mode(game_mode_wire),
+        .fsm_state(fsm_state_wire)
+    );
+    
+    resultChecker result_checker(
+        .clk_system(clk_system),
+        .rst(rst),
+        .game_straight(game_straight_wire),
+        .type_of_straight(type_of_straight_wire),
+        .play_again(button_state_wire[5:4]),
+        .game_mode(game_mode_wire),
+        .random_number(random_number_wire),
+        .result(result_state_wire)
     );
     
     speedController speed_controller_inst(          /*This is speed controller for each mode*/
         .clk(clk),                                  //  @input : button_state[7:0] @ref: fsmForButtonState module
         .rst(rst),                                  //  @output : random_number[15:0] 
         .clk_system(clk_system),
-        .button_state(button_state_wire),
-        .random_number(bcd),
+        .game_mode(game_mode_wire),
+        .fsm_state(fsm_state_wire),
+        .random_number(random_number_wire),
         .check0(check0),
         .check1(check1)
+    );
+    
+    toggleLedTop toggle_led_inst(                   /*Just for debug*/
+        .clk_button(clk_system),
+        .rst(rst),
+        .led(led),
+        .button_state(button_state_wire)
     );
     
 endmodule

@@ -25,10 +25,9 @@ module speedController(
     input clk,                          /*This is clk from Arty-z7*/
     input rst,                          /*This is reset signal*/
     input clk_system,                   /*This clk 400Hz - 2.5ms for read button and system*/
-    /*input control_mode,
-    input[2:0] game_mode,
-    input[7:0] fsm_state,*/
-    input[7:0] button_state,            /*This is button state from @fsmForButtonState module*/
+    input[2:0] game_mode,               /*This is configure of game mode @from : fsmForLuckyNumberGame module*/
+    input[7:0] fsm_state,               /*This is fsm state @from : fsmForLuckyNumberGame module*/
+    //input[7:0] button_state,            /*This is button state @from : fsmForButtonState module*/
     output reg[15:0] random_number,     /*This is random number output*/ 
     output reg check0,                  /*Just for debug*/
     output reg check1                   /*Just for debug*/
@@ -46,6 +45,8 @@ module speedController(
      
     reg[7:0] counter_speed[3:0];                            /*This is counter for speed*/
     reg[7:0] speed[3:0];                                    /*This is speed we will increase and decrease*/
+    
+    reg done_mode_0;
     
     frequencyDivider #(                                     /*This is frequency divider*/
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ_NORMAL)            //  @input : parameter TARGET_CLK_FREQ*/
@@ -87,21 +88,72 @@ module speedController(
             check0 <= 0;                                    /*Just for debug*/
             check1 <= 0;                                    /*Just for debug*/
             
+            done_mode_0 <= 0;
+            
             for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
                 counter_speed[i] <= 8'b0000_0000;
                 speed[i] <= MIN_SPEED_COUNTER;
             end
         end
         else begin
+            /*Display game mode in 7seg 3th*/
+            random_number[15:12] <= game_mode;
+        
             if(clk_system) begin
-                for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
-                    if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
+                if(fsm_state == `FSM_STATE_NO_33) begin
+                   /*Play mode 3*/
+                   for(i=0;i<`NUM_OF_7SEG_MODE_3;i=i+1) begin
+                        /*7seg will spin ramdom number continuos*/
+                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                   end
+                end
+                else if(fsm_state == `FSM_STATE_NO_34) begin
+                    if(game_mode == `GAME_MODE_0) begin
+                        if(!done_mode_0) begin
+                            for(i=0;i<`NUM_OF_7SEG_MODE_0;i=i+1) begin
+                                random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                            end
+                            /*Spin 1 time*/
+                            /*************May be not use done_mode_0*************/
+                            done_mode_0 <= 1;
+                        end
+                    end
+                    else if(game_mode == `GAME_MODE_1) begin
+                        /*Stop spin random number and check result*/
+                        //random_number <= random_number;
+                    end
+                    else if(game_mode == `GAME_MODE_2) begin
+                        /*When button realeased speed decrease*/
+                        for(i=0;i<3;i=i+1) begin
+                            counter_speed[i] <= counter_speed[i] + 1;
+                            if (counter_speed[i] >= speed[i]) begin
+                                counter_speed[i] <= 0;
+                                if(speed[i] < MIN_SPEED_COUNTER) begin
+                                    speed[i] <= speed[i] + 4;
+                       
+                                    check0 <= ~check0;      /*Just for debug*/
+                                    /*Update random number depend of speed*/
+                                    random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                                end
+                            end
+                        end
+                    end
+                    else if(game_mode == `GAME_MODE_3) begin
+                        /*Stop spin random number and check result*/
+                        //random_number <= random_number;
+                    end
+                    else begin
+                        //random_number <= random_number;
+                    end
+                end
+                else if(fsm_state == `FSM_STATE_NO_42) begin
+                    for(i=0;i<`NUM_OF_7SEG_MODE_1;i=i+1) begin
+                        /*7seg will spin ramdom number continuos*/
                         random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                     end
-                    /*else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
-                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
-                    end*/
-                    else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
+                end
+                else if(fsm_state == `FSM_STATE_NO_43) begin
+                    for(i=0;i<3;i=i+1) begin
                         counter_speed[i] <= counter_speed[i] + 1;
                         if (counter_speed[i] >= speed[i]) begin
                             counter_speed[i] <= 0;
@@ -115,6 +167,35 @@ module speedController(
                             random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                         end
                     end
+                end
+                else begin
+                    /*Reset done signal in mode 0*/
+                    done_mode_0 <= 0;
+                    
+                    //random_number <= random_number;
+                end
+            
+                /*for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
+                    if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
+                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                    end
+                    *//*else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
+                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                    end*//*
+                    else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
+                        counter_speed[i] <= counter_speed[i] + 1;
+                        if (counter_speed[i] >= speed[i]) begin
+                            counter_speed[i] <= 0;
+                            if(speed[i] > MAX_SPEED_COUNTER) begin
+                                speed[i] <= speed[i] - 4;
+                                
+                                check1 <= ~check1;      *//*Just for debug*//*
+                            end
+                            
+                            *//*Update random number depend of speed*//*
+                            random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                        end
+                    end
                     else if(button_state[i*2 +:2] == `BUTTON_STATE_RELEASED) begin
                         counter_speed[i] <= counter_speed[i] + 1;
                         if (counter_speed[i] >= speed[i]) begin
@@ -122,13 +203,13 @@ module speedController(
                             if(speed[i] < MIN_SPEED_COUNTER) begin
                                 speed[i] <= speed[i] + 4;
                    
-                                check0 <= ~check0;      /*Just for debug*/
-                                /*Update random number depend of speed*/
+                                check0 <= ~check0;      *//*Just for debug*//*
+                                *//*Update random number depend of speed*//*
                                 random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                             end
                         end
                     end
-                end
+                end*/
             end
         end
     end
