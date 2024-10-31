@@ -27,7 +27,7 @@ module LuckyNumberGame(
     input[1:0] winner,                          /*This is two switch to control winner*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
     output[3:0] led,                            /*This is output led*/
-    output[15:0] bcd,                           /*This is output bcd 16 bit Io26 to Io41*/
+    output reg[15:0] bcd,                       /*This is output bcd 16 bit Io26 to Io41*/
     output check0,                              /*Just for debug*/
     output check1                               /*Just for debug*/
     );
@@ -45,8 +45,11 @@ module LuckyNumberGame(
     
     wire[2:0] result_state_wire;                /*This is result state wire for connect between modules*/
     
-    wire random_number_wire;
-    assign bcd = random_number_wire;
+    wire[15:0] random_number_wire;
+ 
+    always @(*) begin
+        bcd <= random_number_wire;
+    end
     
     integer i;                                  /*This integer for travels between buttons*/
                   

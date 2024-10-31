@@ -48,6 +48,8 @@ module speedController(
     
     reg done_mode_0;
     
+    reg[1:0] seed[3:0];                                          /*This is seed for generate random number*/
+    
     frequencyDivider #(                                     /*This is frequency divider*/
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ_NORMAL)            //  @input : parameter TARGET_CLK_FREQ*/
     ) frequency_for_button_read_inst(                       //  @output : clk for generate random number
@@ -59,24 +61,28 @@ module speedController(
     generateRandomNumber generate_random_number0_inst(      /*This is module for generate random number*/
         .clk(clk_random_number),                            /*using Linear Feedback Shift Register (LFSR)*/
         .rst(rst),                                          // @input : clk random number @ref : frequencyDivider
+        .seed(seed[0]),
         .random_number(random_number_wire[3:0])             // @output : random number from 0 to 9
     );
     
     generateRandomNumber generate_random_number1_inst(      /*This is module for generate random number*/
         .clk(clk_random_number),                            /*using Linear Feedback Shift Register (LFSR)*/
         .rst(rst),                                          // @input : clk random number @ref : frequencyDivider
+        .seed(seed[1]),
         .random_number(random_number_wire[7:4])             // @output : random number from 0 to 9
     );
     
     generateRandomNumber generate_random_number2_inst(      /*This is module for generate random number*/
         .clk(clk_random_number),                            /*using Linear Feedback Shift Register (LFSR)*/
         .rst(rst),                                          // @input : clk random number @ref : frequencyDivider
+        .seed(seed[2]),
         .random_number(random_number_wire[11:8])            // @output : random number from 0 to 9
     );
     
     generateRandomNumber generate_random_number3_inst(      /*This is module for generate random number*/
         .clk(clk_random_number),                            /*using Linear Feedback Shift Register (LFSR)*/
         .rst(rst),                                          // @input : clk random number @ref : frequencyDivider
+        .seed(seed[3]),
         .random_number(random_number_wire[15:12])           // @output : random number from 0 to 9
     );
     
@@ -91,6 +97,8 @@ module speedController(
             done_mode_0 <= 0;
             
             for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
+                seed[i] = i;
+            
                 counter_speed[i] <= 8'b0000_0000;
                 speed[i] <= MIN_SPEED_COUNTER;
             end

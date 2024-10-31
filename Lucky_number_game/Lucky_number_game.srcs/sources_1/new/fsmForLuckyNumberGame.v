@@ -57,6 +57,11 @@ module fsmForLuckyNumberGame(
             control_mode <= `GAME_CONTROL_SETTING_MODE;     /*Default control mode is setting mode*/ 
             game_mode <= `GAME_MODE_0;                      /*Default mode is 0*/
             
+            game_straight_reg <= `GAME_NO_STRAIGHT;             /*Default game is no have straight*/
+            type_of_straight_reg <= `GAME_STRAIGHT_INC;         /*Just don't care because game no straight default*/
+            control_mode_reg <= `GAME_CONTROL_SETTING_MODE;     /*Default control mode is setting mode*/ 
+            game_mode_reg <= `GAME_MODE_0;                      /*Default mode is 0*/
+            
             fsm_state <= `FSM_STATE_SET_MODE_0;             /*This is init state*/
             fsm_state_reg <= `FSM_STATE_SET_MODE_0;         /*This is init state reg*/
         end
@@ -529,7 +534,7 @@ module fsmForLuckyNumberGame(
                     `FSM_STATE_NO_34: begin     /*State 34*/    
                         /*This is a buffer state just for make sure
                             game is ready for result checkker*/
-                        fsm_state_reg <= `FSM_STATE_FINAL_RESULT;
+                        //fsm_state_reg <= `FSM_STATE_FINAL_RESULT;
                     end
                     
                     `FSM_STATE_NO_42: begin    /*State 42*/  

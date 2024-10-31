@@ -25,6 +25,7 @@ module generateRandomNumber(
     input rst,                      /*This is reset signal*/
     //input getNumber,              /*This is signal for get random number*/
     //output reg done_signal,       /*This is feedback signal when get random number done*/
+    input[1:0] seed,                     /*This is seed for diff random number*/
     output reg[3:0]  random_number  /*This is 4-bit random number from 0-9*/   
     );
     
@@ -36,7 +37,19 @@ module generateRandomNumber(
     always @(posedge clk or posedge rst) begin
         if(rst) begin
             //done_signal <= 0;
-            lfsr <= 8'b10101010;   
+            if(seed == 0) begin
+                lfsr <= 8'b10101010; 
+            end
+            else if(seed == 1) begin
+                lfsr <= 8'b10111011; 
+            end
+            else if(seed == 2) begin
+                lfsr <= 8'b01001110; 
+            end
+            else begin
+                /*seed == 3;*/
+                lfsr <= 8'b10001010; 
+            end  
         end
         else begin
             /*Shift LFSR and generate new number
