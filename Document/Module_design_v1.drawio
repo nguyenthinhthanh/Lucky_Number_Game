@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.8.2">
+  <diagram name="Trang-1" id="_Kgdst20RLDARL7_TV8L">
+    <mxGraphModel dx="1498" dy="389" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-1" target="vWVMO-xU8ZEmeTkblkzG-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j5ymkjZYho3_YVoNhxPD-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-1" target="j5ymkjZYho3_YVoNhxPD-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-1" value="module LuckyNumberGame (&lt;br&gt;    input clk,&lt;br&gt;    input rst,&lt;br&gt;    input [1:0] switch,&lt;div&gt;input [3:0] button,&lt;/div&gt;&lt;div&gt;output [5:0] rgb,&lt;/div&gt;&lt;div&gt;&lt;div&gt;    output [3:0] led&lt;/div&gt;&lt;div&gt;output [15:0] bcd,&lt;/div&gt;&lt;div&gt;output [15:0] lcd&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="321" y="125" width="186" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqZeJ_RI2WUfUHeWkt50-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="ys7UZcbF6yQOfyPPHSMO-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-2" value="module fsmForLuckyNumberGame(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;input [1:0] switch,&lt;/div&gt;&lt;div&gt;input [2:0] result_state,&lt;/div&gt;&lt;div&gt;input [7:0] button_state,&lt;/div&gt;&lt;div&gt;output game_straight,&lt;br&gt;&lt;/div&gt;&lt;div&gt;output type_of_straight,&lt;br&gt;&lt;/div&gt;&lt;div&gt;output control_mode,&lt;/div&gt;&lt;div&gt;output [2:0] game_mode,&lt;/div&gt;&lt;div&gt;output [7:0] fsm_state&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="298" y="385" width="232" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="BqZeJ_RI2WUfUHeWkt50-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-6" target="vWVMO-xU8ZEmeTkblkzG-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-6" value="module fsmForButtonState(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;output [3:0] button_read_done,&lt;/div&gt;&lt;div&gt;output [7:0] button_state&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="465" y="635" width="192" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-8" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Top level module&lt;/font&gt;" style="text;strokeColor=#d79b00;align=center;fillColor=#ffe6cc;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="340" y="25" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BqZeJ_RI2WUfUHeWkt50-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-10" target="vWVMO-xU8ZEmeTkblkzG-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-10" value="module buttonReadWithDebounce(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;input [3:0] button,&lt;/div&gt;&lt;div&gt;input [3:0] button_read_done,&lt;/div&gt;&lt;div&gt;output [3:0]&amp;nbsp; button_press_flag,&lt;/div&gt;&lt;div&gt;output [3:0] button_press_hold_flag&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="455" y="805" width="212" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-13" value="&lt;div&gt;module frequencyDivider #(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; parameter TARGET_CLK_FREQ = 1000,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; parameter INPUT_CLK_FREQ = 125000000,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; )&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; (&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input rst,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg clk_out&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; );&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="985" width="292" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-16" target="vWVMO-xU8ZEmeTkblkzG-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-16" value="module lcdController(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;input game_straight,&lt;/div&gt;&lt;div&gt;input type_of_straight,&lt;/div&gt;&lt;div&gt;input control_mode,&lt;/div&gt;&lt;div&gt;input [2:0] game_mode,&lt;/div&gt;&lt;div&gt;input [7:0] fsm_state,&lt;/div&gt;&lt;div&gt;output [15:0] lcd&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-110" y="635" width="232" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-19" value="helper module" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-88" y="915" width="188" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-24" target="vWVMO-xU8ZEmeTkblkzG-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-24" value="module ledController(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;&lt;div&gt;input game_straight,&lt;/div&gt;&lt;div&gt;input type_of_straight,&lt;/div&gt;&lt;div&gt;input control_mode,&lt;/div&gt;&lt;div&gt;input [2:0] game_mode,&lt;/div&gt;&lt;div&gt;input [7:0] fsm_state,&lt;/div&gt;&lt;/div&gt;&lt;div&gt;output [2:0] rgb0,&lt;/div&gt;&lt;div&gt;output [2:0] rgb1,&lt;/div&gt;&lt;div&gt;output [3:0] led&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="714" y="635" width="232" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-29" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-284.0000000000002" y="915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-29" value="module bcdController(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;&lt;div&gt;input game_straight,&lt;/div&gt;&lt;div&gt;input type_of_straight,&lt;/div&gt;&lt;div&gt;input control_mode,&lt;/div&gt;&lt;div&gt;input [2:0] game_mode,&lt;/div&gt;&lt;div&gt;input [7:0] fsm_state,&lt;/div&gt;&lt;/div&gt;&lt;div&gt;output [3:0] bcd0,&lt;/div&gt;&lt;div&gt;output [3:0] bcd1,&lt;/div&gt;&lt;div&gt;output[3:0] bcd2,&lt;/div&gt;&lt;div&gt;output[3:0] bcd3&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-400" y="635" width="232" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-31" target="vWVMO-xU8ZEmeTkblkzG-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-31" value="module speedController(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;&lt;div&gt;input control_mode,&lt;/div&gt;&lt;div&gt;input [2:0] game_mode,&lt;/div&gt;&lt;div&gt;input [7:0] fsm_state,&lt;span style=&quot;background-color: initial;&quot;&gt;,&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;output [3:0] random_number0,&lt;/div&gt;&lt;div&gt;output [3:0] random_number1,&lt;/div&gt;&lt;div&gt;output [3:0] random_number2,&lt;/div&gt;&lt;div&gt;output[3:0] random_number3&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1014" y="635" width="232" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-37" value="&lt;div&gt;module generateRandomNumber(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input rst,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input get_number,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output done_signal,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output [3:0]&amp;nbsp; random_number&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; );&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1006" y="915" width="248" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-43" value="helper module" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="-378" y="915" width="188" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-44" value="helper module" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="736" y="915" width="188" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ys7UZcbF6yQOfyPPHSMO-8" value="module resultChecker(&lt;div&gt;input clk,&lt;/div&gt;&lt;div&gt;input rst,&lt;/div&gt;&lt;div&gt;input game_straight,&lt;/div&gt;&lt;div&gt;input type_of_straight,&lt;/div&gt;&lt;div&gt;input [2:0] game_mode,&lt;/div&gt;&lt;div&gt;input [3:0] random_number0,&lt;/div&gt;&lt;div&gt;input [3:0] random_number1,&lt;/div&gt;&lt;div&gt;input [3:0] random_number2,&lt;/div&gt;&lt;div&gt;input [3:0] random_number3,&lt;/div&gt;&lt;div&gt;output [2:0] result_state&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="180" y="635" width="174" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="BqZeJ_RI2WUfUHeWkt50-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.555;entryY=0.014;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j5ymkjZYho3_YVoNhxPD-1" value="module playMusic(&lt;br&gt;    input clk,&lt;br&gt;    input rst,&lt;br&gt;output reg music&lt;br&gt;&lt;div&gt;&lt;div&gt;);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="730" y="125" width="186" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="j5ymkjZYho3_YVoNhxPD-3" value="Just for expand" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="763" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
