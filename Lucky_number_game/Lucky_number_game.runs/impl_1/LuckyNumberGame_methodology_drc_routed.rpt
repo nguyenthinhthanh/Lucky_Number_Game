@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Oct 31 10:45:43 2024
+| Date         : Mon Nov  4 21:02:50 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LuckyNumberGame_methodology_drc_routed.rpt -pb LuckyNumberGame_methodology_drc_routed.pb -rpx LuckyNumberGame_methodology_drc_routed.rpx
 | Design       : LuckyNumberGame
@@ -1269,7 +1269,7 @@ Related violations: <none>
 
 TIMING-17#248 Critical Warning
 Non-clocked sequential cell  
-The clock pin speed_controller_inst/done_mode_0_reg/C is not reached by a timing clock
+The clock pin speed_controller_inst/done_mode_2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#249 Critical Warning

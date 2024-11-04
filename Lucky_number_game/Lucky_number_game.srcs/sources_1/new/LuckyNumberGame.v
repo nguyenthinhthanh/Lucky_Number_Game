@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "header.vh"
 /********************** This is top level module **********************/
 /*Check https://github.com/nguyenthinhthanh/Lucky_Number_Game for FSM design and more detail*/
 module LuckyNumberGame(
@@ -27,9 +28,10 @@ module LuckyNumberGame(
     input[1:0] winner,                          /*This is two switch to control winner*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
     output[3:0] led,                            /*This is output led*/
-    output reg[15:0] bcd,                       /*This is output bcd 16 bit Io26 to Io41*/
+    output[15:0] bcd,                       /*This is output bcd 16 bit Io26 to Io41*/
     output check0,                              /*Just for debug*/
-    output check1                               /*Just for debug*/
+    output check1,                               /*Just for debug*/
+    output check2                                /*Just for debug*/
     );
     
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
@@ -41,15 +43,17 @@ module LuckyNumberGame(
     wire type_of_straight_wire;                 /*This is type of straight wire for connect between modules*/
     wire control_mode_wire;                     /*This is control mode wire for connect between modules*/
     wire[2:0] game_mode_wire;                   /*This is game mode wire for connect between modules*/
-    wire[7:0] fsm_state_wire;                   /*This is fsm state wire for connect between modules*/
+    wire[15:0] fsm_state_wire;                   /*This is fsm state wire for connect between modules*/
     
     wire[2:0] result_state_wire;                /*This is result state wire for connect between modules*/
     
-    wire[15:0] random_number_wire;
- 
-    always @(*) begin
-        bcd <= random_number_wire;
-    end
+    wire[15:0] random_number_wire;              /*This is random number wire for connect betwwen modules*/
+    
+    wire done_mode_2_wire;                           /*This is done mode 2 wire for connect between modules*/
+    ////////////////////////////////////////////////////
+    
+    assign bcd = random_number_wire;
+    //assign bcd = fsm_state_wire;                /*Just for debug*/
     
     integer i;                                  /*This integer for travels between buttons*/
                   
@@ -77,11 +81,13 @@ module LuckyNumberGame(
         .winner(winner),
         .result_state(result_state_wire),
         .button_state(button_state_wire),
+        .done_mode_2(done_mode_2_wire),
         .game_straight(game_straight_wire),
         .type_of_straight(type_of_straight_wire),
         .control_mode(control_mode_wire),
         .game_mode(game_mode_wire),
-        .fsm_state(fsm_state_wire)
+        .fsm_state(fsm_state_wire),
+        .check2(check2)
     );
     
     resultChecker result_checker(
@@ -101,6 +107,7 @@ module LuckyNumberGame(
         .clk_system(clk_system),
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
+        .done_mode_2(done_mode_2_wire),
         .random_number(random_number_wire),
         .check0(check0),
         .check1(check1)

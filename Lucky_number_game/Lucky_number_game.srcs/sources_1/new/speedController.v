@@ -26,8 +26,9 @@ module speedController(
     input rst,                          /*This is reset signal*/
     input clk_system,                   /*This clk 400Hz - 2.5ms for read button and system*/
     input[2:0] game_mode,               /*This is configure of game mode @from : fsmForLuckyNumberGame module*/
-    input[7:0] fsm_state,               /*This is fsm state @from : fsmForLuckyNumberGame module*/
-    //input[7:0] button_state,            /*This is button state @from : fsmForButtonState module*/
+    input[15:0] fsm_state,               /*This is fsm state @from : fsmForLuckyNumberGame module*/
+    //input[7:0] button_state,          /*This is button state @from : fsmForButtonState module*/
+    output reg done_mode_2,             /*This signal will set when we done in mode 2*/   
     output reg[15:0] random_number,     /*This is random number output*/ 
     output reg check0,                  /*Just for debug*/
     output reg check1                   /*Just for debug*/
@@ -94,7 +95,8 @@ module speedController(
             check0 <= 0;                                    /*Just for debug*/
             check1 <= 0;                                    /*Just for debug*/
             
-            done_mode_0 <= 0;
+            done_mode_0 <= 0;                               /*This signal will set when we done mode 0*/
+            done_mode_2 <= 0;                               /*This signal will set when we done mode 2*/
             
             for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
                 seed[i] = i;
@@ -104,10 +106,10 @@ module speedController(
             end
         end
         else begin
-            /*Display game mode in 7seg 3th*/
-            random_number[15:12] <= game_mode;
-        
             if(clk_system) begin
+                /*Display game mode in 7seg 3th*/
+                random_number[15:12] <= game_mode;
+            
                 if(fsm_state == `FSM_STATE_NO_33) begin
                    /*Play mode 3*/
                    for(i=0;i<`NUM_OF_7SEG_MODE_3;i=i+1) begin
@@ -117,13 +119,17 @@ module speedController(
                 end
                 else if(fsm_state == `FSM_STATE_NO_34) begin
                     if(game_mode == `GAME_MODE_0) begin
-                        if(!done_mode_0) begin
+                        /*if(!done_mode_0) begin
                             for(i=0;i<`NUM_OF_7SEG_MODE_0;i=i+1) begin
                                 random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                             end
-                            /*Spin 1 time*/
-                            /*************May be not use done_mode_0*************/
+                            *//*Spin 1 time
+                            ************May be not use done_mode_0*************//*
                             done_mode_0 <= 1;
+                        end*/
+                        
+                        for(i=0;i<`NUM_OF_7SEG_MODE_0;i=i+1) begin
+                            random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                         end
                     end
                     else if(game_mode == `GAME_MODE_1) begin
@@ -143,8 +149,14 @@ module speedController(
                                     /*Update random number depend of speed*/
                                     random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                                 end
+                                else begin
+                                    done_mode_2 <= 1;
+                                end
                             end
                         end
+                        
+                        /*Bug in here*/
+                        //done_mode_2 <= 1;
                     end
                     else if(game_mode == `GAME_MODE_3) begin
                         /*Stop spin random number and check result*/
@@ -177,9 +189,9 @@ module speedController(
                     end
                 end
                 else begin
-                    /*Reset done signal in mode 0*/
+                    /*Reset done signal in mode 0 and 2*/
                     done_mode_0 <= 0;
-                    
+                    //done_mode_2 <= 0;
                     //random_number <= random_number;
                 end
             

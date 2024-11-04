@@ -13,7 +13,7 @@ set_property -dict { PACKAGE_PIN M20    IOSTANDARD LVCMOS33 } [get_ports { rst }
 
 ## RGB LEDs
 set_property -dict { PACKAGE_PIN L15    IOSTANDARD LVCMOS33 } [get_ports { check0 }]; #IO_L22N_T3_AD7P_35 Sch=LED4_B
-#set_property -dict { PACKAGE_PIN G17    IOSTANDARD LVCMOS33 } [get_ports {  }]; #IO_L16P_T2_35 Sch=LED4_G
+set_property -dict { PACKAGE_PIN G17    IOSTANDARD LVCMOS33 } [get_ports { check2 }]; #IO_L16P_T2_35 Sch=LED4_G
 #set_property -dict { PACKAGE_PIN N15    IOSTANDARD LVCMOS33 } [get_ports { button_read_done[2] }]; #IO_L21P_T3_DQS_AD14P_35 Sch=LED4_R
 set_property -dict { PACKAGE_PIN G14    IOSTANDARD LVCMOS33 } [get_ports { check1 }]; #IO_0_35 Sch=LED5_B
 #set_property -dict { PACKAGE_PIN L14    IOSTANDARD LVCMOS33 } [get_ports { led5_g }]; #IO_L22P_T3_AD7P_35 Sch=LED5_G

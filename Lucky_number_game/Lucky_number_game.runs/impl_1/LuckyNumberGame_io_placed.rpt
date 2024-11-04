@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date                      : Thu Oct 31 10:45:25 2024
+| Date                      : Mon Nov  4 21:02:30 2024
 | Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file LuckyNumberGame_io_placed.rpt
 | Design                    : LuckyNumberGame
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            30 |
+|            31 |
 +---------------+
 
 
@@ -171,7 +171,7 @@ Table of Contents
 | G14        | check1      | High Range | IO_0_35                 | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G15        |             | High Range | IO_L19N_T3_VREF_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G16        |             |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| G17        |             | High Range | IO_L16P_T2_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| G17        | check2      | High Range | IO_L16P_T2_35           | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G18        |             | High Range | IO_L16N_T2_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G19        |             | High Range | IO_L18P_T2_AD13P_35     | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G20        |             | High Range | IO_L18N_T2_AD13N_35     | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

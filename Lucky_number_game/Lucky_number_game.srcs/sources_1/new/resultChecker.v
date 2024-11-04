@@ -47,7 +47,7 @@ module resultChecker(
             end
             else if((game_mode == `GAME_MODE_0) || (game_mode == `GAME_MODE_1) || (game_mode == `GAME_MODE_2) || (game_mode == `GAME_MODE_3)) begin
                 if(game_straight == `GAME_NO_STRAIGHT) begin
-                   if((random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8])) begin
+                   if((random_number[3:0] != 0) && (random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8])) begin
                         result_state <= `RESULT_WIN;
                    end
                    else begin
@@ -57,7 +57,7 @@ module resultChecker(
                 else begin
                     /*game_straight == `GAME_STRAIGHT*/
                     if(type_of_straight == `GAME_STRAIGHT_INC) begin
-                        if(((random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8]))
+                        if(((random_number[3:0] != 0) && (random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8]))
                         || ((random_number[7:4] == random_number[3:0] + 1) && (random_number[11:8] == random_number[7:4] + 1))) begin
                             result_state <= `RESULT_WIN;
                         end
@@ -67,7 +67,7 @@ module resultChecker(
                     end
                     else begin
                         /*type_of_straight == `GAME_STRAIGHT_DEC*/
-                        if(((random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8]))
+                        if(((random_number[3:0] != 0) && (random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8]))
                         || ((random_number[7:4] == random_number[11:8] + 1) && (random_number[3:0] == random_number[7:4] + 1))) begin
                             result_state <= `RESULT_WIN;
                         end
