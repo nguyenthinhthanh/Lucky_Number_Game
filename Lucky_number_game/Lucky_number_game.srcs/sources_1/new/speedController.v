@@ -26,7 +26,7 @@ module speedController(
     input rst,                          /*This is reset signal*/
     input clk_system,                   /*This clk 400Hz - 2.5ms for read button and system*/
     input[2:0] game_mode,               /*This is configure of game mode @from : fsmForLuckyNumberGame module*/
-    input[15:0] fsm_state,               /*This is fsm state @from : fsmForLuckyNumberGame module*/
+    input[15:0] fsm_state,              /*This is fsm state @from : fsmForLuckyNumberGame module*/
     //input[7:0] button_state,          /*This is button state @from : fsmForButtonState module*/
     output reg done_mode_2,             /*This signal will set when we done in mode 2*/   
     output reg[15:0] random_number,     /*This is random number output*/ 
@@ -41,15 +41,15 @@ module speedController(
     
     parameter TARGET_CLK_FREQ_NORMAL = `CLK_FREQ_NORMAL_SPEED;      /*For every 40ms generate random number*/
     
-    localparam MIN_SPEED_COUNTER = `MIN_SPEED_COUNTER;      /*For counter speed in mode 3*/
-    localparam MAX_SPEED_COUNTER = `MAX_SPEED_COUNTER;      /*For counter speed in mode 3*/
+    localparam MIN_SPEED_COUNTER = `MIN_SPEED_COUNTER;              /*For counter speed in mode 3*/
+    localparam MAX_SPEED_COUNTER = `MAX_SPEED_COUNTER;              /*For counter speed in mode 3*/
      
-    reg[7:0] counter_speed[3:0];                            /*This is counter for speed*/
-    reg[7:0] speed[3:0];                                    /*This is speed we will increase and decrease*/
+    reg[7:0] counter_speed[3:0];                                    /*This is counter for speed*/
+    reg[7:0] speed[3:0];                                            /*This is speed we will increase and decrease*/
     
     reg done_mode_0;
     
-    reg[1:0] seed[3:0];                                          /*This is seed for generate random number*/
+    reg[1:0] seed[3:0];                                     /*This is seed for generate random number*/
     
     frequencyDivider #(                                     /*This is frequency divider*/
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ_NORMAL)            //  @input : parameter TARGET_CLK_FREQ*/
@@ -90,7 +90,7 @@ module speedController(
     
     always @(posedge clk_system or posedge rst) begin
         if(rst) begin
-            random_number <= 16'b0000_0000_0000;
+            random_number <= 16'b0000_0000_0000;            /*Reset random_number default*/
             
             check0 <= 0;                                    /*Just for debug*/
             check1 <= 0;                                    /*Just for debug*/
@@ -99,18 +99,25 @@ module speedController(
             done_mode_2 <= 0;                               /*This signal will set when we done mode 2*/
             
             for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
-                seed[i] = i;
+                seed[i] = i;                                /*This is seed for diff random number*/
             
-                counter_speed[i] <= 8'b0000_0000;
-                speed[i] <= MIN_SPEED_COUNTER;
+                counter_speed[i] <= 8'b0000_0000;           /*This is counter speed for mode 2*/
+                speed[i] <= MIN_SPEED_COUNTER;              /*This is min speed default for mode 2*/
             end
         end
         else begin
             if(clk_system) begin
                 /*Display game mode in 7seg 3th*/
                 random_number[15:12] <= game_mode;
-            
-                if(fsm_state == `FSM_STATE_NO_33) begin
+                
+                if(fsm_state == `FSM_STATE_SET_MODE_0) begin
+                    /*Reset done signal in mode 0 and 2*/
+                    done_mode_0 <= 0;
+                    done_mode_2 <= 0;
+                
+                    random_number <= 16'b0000_0000_0000;
+                end
+                else if(fsm_state == `FSM_STATE_NO_33) begin
                    /*Play mode 3*/
                    for(i=0;i<`NUM_OF_7SEG_MODE_3;i=i+1) begin
                         /*7seg will spin ramdom number continuos*/
@@ -132,10 +139,10 @@ module speedController(
                             random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                         end
                     end
-                    else if(game_mode == `GAME_MODE_1) begin
-                        /*Stop spin random number and check result*/
+                    /*else if(game_mode == `GAME_MODE_1) begin
+                        *//*Stop spin random number and check result*//*
                         //random_number <= random_number;
-                    end
+                    end*/
                     else if(game_mode == `GAME_MODE_2) begin
                         /*When button realeased speed decrease*/
                         for(i=0;i<3;i=i+1) begin
@@ -154,16 +161,13 @@ module speedController(
                                 end
                             end
                         end
-                        
-                        /*Bug in here*/
-                        //done_mode_2 <= 1;
                     end
-                    else if(game_mode == `GAME_MODE_3) begin
-                        /*Stop spin random number and check result*/
+                    /*else if(game_mode == `GAME_MODE_3) begin
+                        *//*Stop spin random number and check result*//*
                         //random_number <= random_number;
-                    end
+                    end*/
                     else begin
-                        //random_number <= random_number;
+                        random_number <= random_number;
                     end
                 end
                 else if(fsm_state == `FSM_STATE_NO_42) begin
@@ -191,7 +195,7 @@ module speedController(
                 else begin
                     /*Reset done signal in mode 0 and 2*/
                     done_mode_0 <= 0;
-                    //done_mode_2 <= 0;
+                    done_mode_2 <= 0;
                     //random_number <= random_number;
                 end
             

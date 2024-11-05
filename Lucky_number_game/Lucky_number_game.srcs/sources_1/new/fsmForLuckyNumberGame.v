@@ -36,8 +36,8 @@ module fsmForLuckyNumberGame(
     output reg type_of_straight,            /*This is configure type of game straight*/
     output reg control_mode,                /*This is configure of setting mode or playing mode*/
     output reg[2:0] game_mode,              /*This is configure of game mode between 0 to 3*/
-    output reg[15:0] fsm_state,               /*This is output fsm state for all module to read and do something in this state*/
-    output reg check2                      /*Just for debug*/
+    output reg[15:0] fsm_state,             /*This is output fsm state for all module to read and do something in this state*/
+    output reg check2                       /*Just for debug*/
     );
     
     reg game_straight_reg;                  /*This just reg for store game_straight value*/
