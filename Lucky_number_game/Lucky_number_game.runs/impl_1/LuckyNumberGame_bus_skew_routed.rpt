@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Nov  5 11:55:39 2024
+| Date         : Thu Nov  7 09:40:23 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_bus_skew -warn_on_violation -file LuckyNumberGame_bus_skew_routed.rpt -pb LuckyNumberGame_bus_skew_routed.pb -rpx LuckyNumberGame_bus_skew_routed.rpx
 | Design       : LuckyNumberGame

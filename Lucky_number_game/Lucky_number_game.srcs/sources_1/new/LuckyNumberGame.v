@@ -28,10 +28,11 @@ module LuckyNumberGame(
     input[1:0] winner,                          /*This is two switch to control winner*/
     input[3:0] button,                          /*This is button read from Arty-z7*/
     output[3:0] led,                            /*This is output led*/
-    output[15:0] bcd,                           /*This is output bcd 16 bit Io26 to Io41*/
-    output check0,                              /*Just for debug*/
-    output check1,                              /*Just for debug*/
-    output check2                               /*Just for debug*/
+    output[5:0] rgb,
+    output[15:0] bcd                            /*This is output bcd 16 bit Io26 to Io41*/
+    //output check0,                              /*Just for debug*/
+    //output check1,                              /*Just for debug*/
+    //output check2                               /*Just for debug*/
     );
     
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
@@ -85,8 +86,8 @@ module LuckyNumberGame(
         .type_of_straight(type_of_straight_wire),
         .control_mode(control_mode_wire),
         .game_mode(game_mode_wire),
-        .fsm_state(fsm_state_wire),
-        .check2(check2)
+        .fsm_state(fsm_state_wire)
+        //.check2(check2)
     );
     
     resultChecker result_checker(                  /*This is result checker for check result when done play*/
@@ -107,16 +108,27 @@ module LuckyNumberGame(
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
         .done_mode_2(done_mode_2_wire),
-        .random_number(random_number_wire),
-        .check0(check0),
-        .check1(check1)
+        .random_number(random_number_wire)
+        //.check0(check0),
+        //.check1(check1)
     );
     
-    toggleLedTop toggle_led_inst(                   /*Just for debug*/
+    /*toggleLedTop toggle_led_inst(                   *//*Just for debug*//*
         .clk_button(clk_system),
         .rst(rst),
         .led(led),
         .button_state(button_state_wire)
+    );*/
+    
+    LED_Controller led_controller_inst(
+        .clk(clk_system),
+        .rst(rst),
+        .game_straight(game_straight_wire),
+        .type_of_straight(type_of_straight_wire),
+        .game_mode(game_mode_wire),
+        .fsm_state(fsm_state_wire),
+        .rgb(rgb),
+        .led(led)
     );
     
 endmodule

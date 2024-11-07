@@ -29,9 +29,9 @@ module speedController(
     input[15:0] fsm_state,              /*This is fsm state @from : fsmForLuckyNumberGame module*/
     //input[7:0] button_state,          /*This is button state @from : fsmForButtonState module*/
     output reg done_mode_2,             /*This signal will set when we done in mode 2*/   
-    output reg[15:0] random_number,     /*This is random number output*/ 
-    output reg check0,                  /*Just for debug*/
-    output reg check1                   /*Just for debug*/
+    output reg[15:0] random_number     /*This is random number output*/ 
+    //output reg check0,                  /*Just for debug*/
+    //output reg check1                   /*Just for debug*/
     );
     
     wire clk_random_number;             /*This clk for generate random number*/
@@ -92,8 +92,8 @@ module speedController(
         if(rst) begin
             random_number <= 16'b0000_0000_0000;            /*Reset random_number default*/
             
-            check0 <= 0;                                    /*Just for debug*/
-            check1 <= 0;                                    /*Just for debug*/
+            //check0 <= 0;                                    /*Just for debug*/
+            //check1 <= 0;                                    /*Just for debug*/
             
             done_mode_0 <= 0;                               /*This signal will set when we done mode 0*/
             done_mode_2 <= 0;                               /*This signal will set when we done mode 2*/
@@ -152,7 +152,7 @@ module speedController(
                                 if(speed[i] < MIN_SPEED_COUNTER) begin
                                     speed[i] <= speed[i] + 4;
                        
-                                    check0 <= ~check0;      /*Just for debug*/
+                                    //check0 <= ~check0;      /*Just for debug*/
                                     /*Update random number depend of speed*/
                                     random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                                 end
@@ -184,7 +184,7 @@ module speedController(
                             if(speed[i] > MAX_SPEED_COUNTER) begin
                                 speed[i] <= speed[i] - 4;
                                 
-                                check1 <= ~check1;      /*Just for debug*/
+                                //check1 <= ~check1;      /*Just for debug*/
                             end
                             
                             /*Update random number depend of speed*/

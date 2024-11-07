@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Nov  5 11:55:39 2024
+| Date         : Thu Nov  7 09:40:23 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file LuckyNumberGame_timing_summary_routed.rpt -pb LuckyNumberGame_timing_summary_routed.pb -rpx LuckyNumberGame_timing_summary_routed.rpx -warn_on_violation
 | Design       : LuckyNumberGame
@@ -41,7 +41,7 @@ Timing Summary Report
 
 Rule       Severity          Description                  Violations  
 ---------  ----------------  ---------------------------  ----------  
-TIMING-17  Critical Warning  Non-clocked sequential cell  370         
+TIMING-17  Critical Warning  Non-clocked sequential cell  442         
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -51,12 +51,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (370)
+1. checking no_clock (442)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (870)
+4. checking unconstrained_internal_endpoints (1079)
 5. checking no_input_delay (7)
-6. checking no_output_delay (21)
+6. checking no_output_delay (25)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -64,11 +64,11 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (370)
+1. checking no_clock (442)
 --------------------------
  There are 202 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 132 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
+ There are 204 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
 
  There are 36 register/latch pins with no clock driven by root clock pin: speed_controller_inst/frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
 
@@ -83,9 +83,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (870)
---------------------------------------------------
- There are 870 pins that are not constrained for maximum delay. (HIGH)
+4. checking unconstrained_internal_endpoints (1079)
+---------------------------------------------------
+ There are 1079 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -97,9 +97,9 @@ Table of Contents
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (21)
+6. checking no_output_delay (25)
 --------------------------------
- There are 21 ports with no output delay specified. (HIGH)
+ There are 25 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
