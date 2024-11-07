@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Nov  7 09:40:04 2024
+| Date         : Thu Nov  7 10:18:42 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file LuckyNumberGame_control_sets_placed.rpt
 | Design       : LuckyNumberGame
@@ -81,18 +81,18 @@ Table of Contents
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[2]_3[0]                                   | rst_IBUF         |                1 |              4 |         4.00 |
 |  clk_system_BUFG     | led_controller_inst/wingame/led[3]_i_1__0_n_0                                          |                  |                2 |              4 |         2.00 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg0                                          | rst_IBUF         |                4 |              5 |         1.25 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_0[0]                                   | rst_IBUF         |                2 |              6 |         3.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_1[0]                                   | rst_IBUF         |                3 |              6 |         2.00 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[0]                                                    | rst_IBUF         |                3 |              6 |         2.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[2]_1[1]                                   | rst_IBUF         |                3 |              8 |         2.67 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_1[0]                                   | rst_IBUF         |                3 |              6 |         2.00 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_0[0]                                   | rst_IBUF         |                2 |              6 |         3.00 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[2]_1[2]                                   | rst_IBUF         |                3 |              8 |         2.67 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[2]_1[1]                                   | rst_IBUF         |                3 |              8 |         2.67 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[2]_1[0]                                   | rst_IBUF         |                3 |              8 |         2.67 |
 |  lfsr_reg[3]_i_1_n_0 | speed_controller_inst/generate_random_number2_inst/E[0]                                |                  |                2 |             12 |         6.00 |
 |  clk_system_BUFG     |                                                                                        |                  |                7 |             15 |         2.14 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_2[0]                                   | rst_IBUF         |                7 |             24 |         3.43 |
 |  lfsr_reg[3]_i_1_n_0 |                                                                                        | rst_IBUF         |                4 |             24 |         6.00 |
-|  clk_system_BUFG     | led_controller_inst/led_state                                                          | rst_IBUF         |                7 |             32 |         4.57 |
 |  clk_system_BUFG     | led_controller_inst/rgb_state_reg_0                                                    | rst_IBUF         |                7 |             32 |         4.57 |
+|  clk_system_BUFG     | led_controller_inst/led_state                                                          | rst_IBUF         |                7 |             32 |         4.57 |
 |  clk_IBUF_BUFG       | speed_controller_inst/frequency_for_button_read_inst/counter_0                         | rst_IBUF         |               15 |             32 |         2.13 |
 |  clk_IBUF_BUFG       | frequency_for_button_read_inst/counter                                                 | rst_IBUF         |               13 |             32 |         2.46 |
 |  clk_system_BUFG     |                                                                                        | rst_IBUF         |               20 |             43 |         2.15 |

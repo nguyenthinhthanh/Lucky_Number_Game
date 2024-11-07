@@ -204,21 +204,21 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/ADMINS/Downloads/Led_Controller.v">
+      <File Path="$PSRCDIR/sources_1/new/makeRgbBlinky.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/ADMINS/Downloads/makeRgbBlinky.v">
+      <File Path="$PSRCDIR/sources_1/new/Led_Controller.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/ADMINS/Downloads/makeLedBlinky.v">
+      <File Path="$PSRCDIR/sources_1/new/makeLedBlinky.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
