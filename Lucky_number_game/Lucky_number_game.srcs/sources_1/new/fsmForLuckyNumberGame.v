@@ -90,10 +90,13 @@ module fsmForLuckyNumberGame(
                 end
                 else if(winner[0] && !winner[1]) begin
                     /*If sw0 == 1 && sw1 == 0, win normal game*/
-                    fsm_state_reg <= `FSM_STATE_NO_40;
+                    //fsm_state_reg <= `FSM_STATE_NO_40;
+                    game_mode_reg <= `GAME_MODE_SPECIAL;
+                    fsm_state_reg <= `FSM_STATE_SET_MODE_SPECIAL;
                 end
                 else if(winner[0] && winner[1]) begin
                     /*If sw0 == 1 && sw1 == 1, win special game*/
+                    game_mode_reg <= `GAME_MODE_SPECIAL;
                     fsm_state_reg <= `FSM_STATE_NO_39;
                 end
                 else begin

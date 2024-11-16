@@ -24,30 +24,27 @@ module makeRgbBlinky(
     input clk,
     input rst,
     input rgb_state,
+    input [5:0] rgb_cur,
     output reg [5:0] rgb
     );
     
+    /*counter and flag for blinking led*/
     integer counter_b;
     reg flag_b;
     
-    localparam integer FREQ_BLINKY = 200; 
-    localparam TURN_ON_LED_CYAN = 6'b110110;   
-    localparam TURN_OFF_ALL_LED = 6'b0;         
+    /*frequency for led blinking*/
+    localparam integer FREQ_BLINKY = 200;         
+  
     
-    
-    initial begin
-        counter_b = 0;      //counter for blinking led
-        flag_b = 0;
-        rgb = TURN_ON_LED_CYAN;
-    end
     always @(posedge clk or posedge rst)   begin 
         if(rst) begin 
             counter_b <= 0;
-            flag_b <= 0;
+            flag_b <= 1;
         end      
         else    begin
             case(rgb_state)
                 1'b1:   begin
+                    /*count to FREQ_BLINKY*/
                     if(counter_b < FREQ_BLINKY)    begin
                         counter_b <= counter_b + 1;
                         
@@ -61,13 +58,15 @@ module makeRgbBlinky(
                         counter_b <= 0;
                     end    
                     
+                    /*Check flag to change led color*/
                     if(flag_b)
-                        rgb <= TURN_ON_LED_CYAN;
+                        rgb <= 6'b0;
                     else 
-                        rgb <= TURN_OFF_ALL_LED;   
+                        rgb <= rgb_cur;   
                 end 
                 default: ;   
             endcase
         end
     end
 endmodule
+

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Nov  7 10:18:14 2024
+| Date         : Sat Nov 16 08:08:10 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LuckyNumberGame_utilization_synth.rpt -pb LuckyNumberGame_utilization_synth.pb
 | Design       : LuckyNumberGame
@@ -30,12 +30,12 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  501 |     0 |          0 |     53200 |  0.94 |
-|   LUT as Logic          |  501 |     0 |          0 |     53200 |  0.94 |
+| Slice LUTs*             |  560 |     0 |          0 |     53200 |  1.05 |
+|   LUT as Logic          |  560 |     0 |          0 |     53200 |  1.05 |
 |   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
-| Slice Registers         |  429 |     0 |          0 |    106400 |  0.40 |
-|   Register as Flip Flop |  429 |     0 |          0 |    106400 |  0.40 |
-|   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
+| Slice Registers         |  484 |     0 |          0 |    106400 |  0.45 |
+|   Register as Flip Flop |  478 |     0 |          0 |    106400 |  0.45 |
+|   Register as Latch     |    6 |     0 |          0 |    106400 | <0.01 |
 | F7 Muxes                |    2 |     0 |          0 |     26600 | <0.01 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 23    |          Yes |           - |          Set |
-| 366   |          Yes |           - |        Reset |
-| 1     |          Yes |         Set |            - |
-| 39    |          Yes |       Reset |            - |
+| 34    |          Yes |           - |          Set |
+| 420   |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 30    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,21 +146,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  366 |        Flop & Latch |
-| LUT2     |  233 |                 LUT |
-| LUT3     |  162 |                 LUT |
-| LUT5     |  135 |                 LUT |
-| LUT6     |  100 |                 LUT |
-| CARRY4   |   91 |          CarryLogic |
-| LUT4     |   64 |                 LUT |
-| FDRE     |   39 |        Flop & Latch |
+| FDCE     |  414 |        Flop & Latch |
+| LUT2     |  282 |                 LUT |
+| LUT3     |  174 |                 LUT |
+| LUT5     |  144 |                 LUT |
+| CARRY4   |  103 |          CarryLogic |
+| LUT6     |  101 |                 LUT |
+| LUT4     |   80 |                 LUT |
+| FDPE     |   34 |        Flop & Latch |
+| FDRE     |   30 |        Flop & Latch |
 | OBUF     |   26 |                  IO |
-| FDPE     |   23 |        Flop & Latch |
-| LUT1     |   16 |                 LUT |
+| LUT1     |   13 |                 LUT |
 | IBUF     |    8 |                  IO |
+| LDCE     |    6 |        Flop & Latch |
 | BUFG     |    3 |               Clock |
 | MUXF7    |    2 |               MuxFx |
-| FDSE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
 

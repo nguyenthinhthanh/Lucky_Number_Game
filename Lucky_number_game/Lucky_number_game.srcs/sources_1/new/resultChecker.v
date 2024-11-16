@@ -79,7 +79,7 @@ module resultChecker(
             end
             else begin
                 /*game_mode == `GAME_MODE_SPECIAL*/
-                if(random_number[3:0] == random_number[7:4]) begin
+                if((random_number[3:0] == random_number[7:4]) && (random_number[3:0] != 0)) begin
                     result_state <= `RESULT_SPECIAL_WIN;
                 end
                 else begin

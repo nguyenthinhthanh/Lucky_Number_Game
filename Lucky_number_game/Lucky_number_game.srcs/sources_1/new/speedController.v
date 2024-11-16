@@ -192,6 +192,14 @@ module speedController(
                         end
                     end
                 end
+                else if(fsm_state == `FSM_STATE_SET_MODE_SPECIAL) begin
+                    for(i=0;i<`NUM_OF_7SEG_MODE_SPECIAL;i=i+1) begin
+                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                    end
+                end
+                else if(fsm_state == `FSM_STATE_NO_37) begin
+                    random_number[7:4] <= random_number_wire[7:4];
+                end
                 else begin
                     /*Reset done signal in mode 0 and 2*/
                     done_mode_0 <= 0;

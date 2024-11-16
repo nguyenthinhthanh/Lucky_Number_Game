@@ -123,8 +123,9 @@ module LuckyNumberGame(
     LED_Controller led_controller_inst(
         .clk(clk_system),
         .rst(rst),
-        .game_straight(game_straight_wire),
-        .type_of_straight(type_of_straight_wire),
+        //.game_straight(game_straight_wire),
+        //.type_of_straight(type_of_straight_wire),
+        .control_mode(control_mode_wire),
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
         .rgb(rgb),

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Nov  7 10:18:59 2024
+| Date         : Sat Nov 16 08:09:01 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file LuckyNumberGame_timing_summary_routed.rpt -pb LuckyNumberGame_timing_summary_routed.pb -rpx LuckyNumberGame_timing_summary_routed.rpx -warn_on_violation
 | Design       : LuckyNumberGame
@@ -39,9 +39,11 @@ Timing Summary Report
 | ------------------
 ------------------------------------------------------------------------------------------------
 
-Rule       Severity          Description                  Violations  
----------  ----------------  ---------------------------  ----------  
-TIMING-17  Critical Warning  Non-clocked sequential cell  442         
+Rule       Severity          Description                   Violations  
+---------  ----------------  ----------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell   491         
+LUTAR-1    Warning           LUT drives async reset alert  12          
+TIMING-20  Warning           Non-clocked latch             6           
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -51,10 +53,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (442)
+1. checking no_clock (503)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (1079)
+4. checking unconstrained_internal_endpoints (1224)
 5. checking no_input_delay (7)
 6. checking no_output_delay (25)
 7. checking multiple_clock (0)
@@ -64,11 +66,25 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (442)
+1. checking no_clock (503)
 --------------------------
  There are 202 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 204 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
+ There are 6 register/latch pins with no clock driven by root clock pin: rst (HIGH)
+
+ There are 253 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/special_m/rgb_reg[4]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/special_m/rgb_reg[5]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[0]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[1]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[2]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[3]/Q (HIGH)
 
  There are 36 register/latch pins with no clock driven by root clock pin: speed_controller_inst/frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
 
@@ -83,9 +99,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (1079)
+4. checking unconstrained_internal_endpoints (1224)
 ---------------------------------------------------
- There are 1079 pins that are not constrained for maximum delay. (HIGH)
+ There are 1224 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
