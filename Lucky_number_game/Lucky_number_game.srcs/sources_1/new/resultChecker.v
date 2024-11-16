@@ -28,6 +28,7 @@ module resultChecker(
     input[1:0] play_again,          /*This is button value when want to play again*/
     input[2:0] game_mode,           /*This is game mode from @fsmForLuckyNumberGame module*/
     input[15:0] random_number,     /*This is random number from @speedController module*/
+    input[15:0] fsm_state,          /*This is fsm state from @fsmForLuckyNumberGame module*/
     output reg[2:0] result          /*This is result state*/
     );
     
@@ -45,7 +46,7 @@ module resultChecker(
             if(play_again == `BUTTON_STATE_PRESSED) begin
                 result_state <= `RESULT_NORMAL;
             end
-            else if((game_mode == `GAME_MODE_0) || (game_mode == `GAME_MODE_1) || (game_mode == `GAME_MODE_2) || (game_mode == `GAME_MODE_3)) begin
+            else if((game_mode == `GAME_MODE_0) || (game_mode == `GAME_MODE_1) || (game_mode == `GAME_MODE_2) || (game_mode == `GAME_MODE_3) && (fsm_state == `FSM_STATE_FINAL_RESULT)) begin
                 if(game_straight == `GAME_NO_STRAIGHT) begin
                    if((random_number[3:0] != 0) && (random_number[3:0] == random_number[7:4]) && (random_number[7:4] == random_number[11:8])) begin
                         result_state <= `RESULT_WIN;
@@ -77,7 +78,7 @@ module resultChecker(
                     end
                 end
             end
-            else begin
+            else if((game_mode == `GAME_MODE_SPECIAL) && (fsm_state == `FSM_STATE_NO_38))begin
                 /*game_mode == `GAME_MODE_SPECIAL*/
                 if((random_number[3:0] == random_number[7:4]) && (random_number[3:0] != 0)) begin
                     result_state <= `RESULT_SPECIAL_WIN;
@@ -85,6 +86,9 @@ module resultChecker(
                 else begin
                     result_state <= `RESULT_LOSE;
                 end
+            end
+            else begin
+                result_state <= `RESULT_NORMAL;
             end
             /*Sync result value*/
             result <= result_state;

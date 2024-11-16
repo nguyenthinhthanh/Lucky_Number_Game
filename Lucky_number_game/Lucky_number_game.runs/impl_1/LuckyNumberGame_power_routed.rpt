@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Sat Nov 16 08:09:01 2024
+| Date             : Sat Nov 16 08:34:20 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file LuckyNumberGame_power_routed.rpt -pb LuckyNumberGame_power_summary_routed.pb -rpx LuckyNumberGame_power_routed.rpx
 | Design           : LuckyNumberGame
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.378        |
+| Total On-Chip Power (W)  | 1.377        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.252        |
+| Dynamic (W)              | 1.251        |
 | Device Static (W)        | 0.126        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 69.1         |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.587 |     1447 |       --- |             --- |
-|   LUT as Logic |     0.491 |      559 |     53200 |            1.05 |
+| Slice Logic    |     0.588 |     1453 |       --- |             --- |
+|   LUT as Logic |     0.492 |      563 |     53200 |            1.06 |
 |   CARRY4       |     0.049 |      103 |     13300 |            0.77 |
 |   Register     |     0.040 |      497 |    106400 |            0.47 |
 |   BUFG         |     0.006 |        3 |        32 |            9.38 |
 |   Others       |     0.000 |       48 |       --- |             --- |
 |   F7/F8 Muxes  |     0.000 |        2 |     53200 |           <0.01 |
-| Signals        |     0.637 |     1120 |       --- |             --- |
+| Signals        |     0.635 |     1130 |       --- |             --- |
 | I/O            |     0.028 |       34 |       125 |           27.20 |
 | Static Power   |     0.126 |          |           |                 |
-| Total          |     1.378 |          |           |                 |
+| Total          |     1.377 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.265 |       1.252 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.264 |       1.251 |      0.013 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,20 +146,20 @@ Table of Contents
 +------------------------------------+-----------+
 | Name                               | Power (W) |
 +------------------------------------+-----------+
-| LuckyNumberGame                    |     1.252 |
-|   frequency_for_button_read_inst   |     0.279 |
-|   fsm_for_button_state_inst        |     0.329 |
-|     read_button_debounce_inst      |     0.315 |
-|       debounce_button_0_inst       |     0.001 |
+| LuckyNumberGame                    |     1.251 |
+|   frequency_for_button_read_inst   |     0.307 |
+|   fsm_for_button_state_inst        |     0.334 |
+|     read_button_debounce_inst      |     0.320 |
+|       debounce_button_0_inst       |     0.002 |
 |       debounce_button_1_inst       |     0.002 |
 |       debounce_button_2_inst       |     0.002 |
 |       debounce_button_3_inst       |     0.002 |
-|   fsm_for_lucky_number_game_inst   |     0.033 |
-|   led_controller_inst              |     0.135 |
-|     special_m                      |     0.056 |
-|     wingame                        |     0.079 |
-|   speed_controller_inst            |     0.295 |
-|     frequency_for_button_read_inst |     0.287 |
+|   fsm_for_lucky_number_game_inst   |     0.027 |
+|   led_controller_inst              |     0.108 |
+|     special_m                      |     0.057 |
+|     wingame                        |     0.051 |
+|   speed_controller_inst            |     0.301 |
+|     frequency_for_button_read_inst |     0.292 |
 +------------------------------------+-----------+
 
 
