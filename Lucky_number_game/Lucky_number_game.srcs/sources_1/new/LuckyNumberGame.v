@@ -98,6 +98,7 @@ module LuckyNumberGame(
         .play_again(button_state_wire[5:4]),
         .game_mode(game_mode_wire),
         .random_number(random_number_wire),
+        .fsm_state(fsm_state_wire),
         .result(result_state_wire)
     );
     
