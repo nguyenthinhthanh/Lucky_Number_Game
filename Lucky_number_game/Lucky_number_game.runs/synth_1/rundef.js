@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log LuckyNumberGame.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl" );
+         "-log lcdController.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lcdController.tcl" );
 
 
 
