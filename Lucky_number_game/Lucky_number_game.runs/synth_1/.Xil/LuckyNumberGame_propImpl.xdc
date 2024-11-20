@@ -31,10 +31,10 @@ set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN L20    IOSTANDARD LVCMOS33 } [get_ports { button[2] }]; #IO_L9N_T1_DQS_AD3N_35 Sch=BTN2
 set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L19    IOSTANDARD LVCMOS33 } [get_ports { button[3] }]; #IO_L9P_T1_DQS_AD3P_35 Sch=BTN3
-set_property src_info {type:XDC file:1 line:102 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { winner[0] }]; #IO_L23N_T3_34           Sch=CK_IO12
-set_property src_info {type:XDC file:1 line:103 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { winner[1] }]; #IO_L23P_T3_34           Sch=CK_IO13
+set_property src_info {type:XDC file:1 line:90 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { winner[0]  }]; #IO_L5P_T0_34            Sch=CK_IO0
+set_property src_info {type:XDC file:1 line:91 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { winner[1]  }]; #IO_L2N_T0_34            Sch=CK_IO1
 set_property src_info {type:XDC file:1 line:106 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { bcd[0] }]; #IO_L19N_T3_VREF_13  Sch=CK_IO26
 set_property src_info {type:XDC file:1 line:107 export:INPUT save:INPUT read:READ} [current_design]
@@ -67,3 +67,5 @@ set_property src_info {type:XDC file:1 line:120 export:INPUT save:INPUT read:REA
 set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { bcd[14] }]; #IO_L16N_T2_13       Sch=CK_IO40
 set_property src_info {type:XDC file:1 line:121 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { bcd[15] }]; #IO_L14P_T2_SRCC_13  Sch=CK_IO41
+set_property src_info {type:XDC file:1 line:141 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y11   IOSTANDARD LVCMOS33 } [get_ports { buzzer }]; #IO_L18N_T2_13      Sch=CK_A0

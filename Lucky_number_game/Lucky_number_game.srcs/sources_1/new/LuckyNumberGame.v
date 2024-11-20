@@ -29,10 +29,11 @@ module LuckyNumberGame(
     input[3:0] button,                          /*This is button read from Arty-z7*/
     output[3:0] led,                            /*This is output led*/
     output[5:0] rgb,
-    output[15:0] bcd                            /*This is output bcd 16 bit Io26 to Io41*/
+    output[15:0] bcd,                            /*This is output bcd 16 bit Io26 to Io41*/
     //output check0,                              /*Just for debug*/
     //output check1,                              /*Just for debug*/
     //output check2                               /*Just for debug*/
+    output buzzer
     );
     
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
@@ -131,6 +132,12 @@ module LuckyNumberGame(
         .fsm_state(fsm_state_wire),
         .rgb(rgb),
         .led(led)
+    );
+    
+    playMusic play_music_inst(
+        .clk(clk),
+        .reset(rst),
+        .buzzer(buzzer)
     );
     
 endmodule
