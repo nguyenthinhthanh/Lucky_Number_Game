@@ -33,6 +33,10 @@ module LuckyNumberGame(
     //output check0,                              /*Just for debug*/
     //output check1,                              /*Just for debug*/
     //output check2                               /*Just for debug*/
+    output rs,
+    output rw,
+    output en,
+    output [7:0] data,
     output buzzer
     );
     
@@ -138,6 +142,27 @@ module LuckyNumberGame(
         .clk(clk),
         .reset(rst),
         .buzzer(buzzer)
+    );
+    
+    /*lcdController lcd_controller_inst(
+        .clk(clk),
+        .rst(rst),
+        .fsm_state(fsm_state_wire),
+        .rs(rs),
+        .rw(rw),
+        .en(en),
+        .data(data)
+    );*/
+    
+    lcdControllerUpdated lcd_controller_inst(
+        .clk(clk),
+        .clk_system(clk_system),
+        .rst(rst),
+        .fsm_state(fsm_state_wire),
+        .rs(rs),
+        .rw(rw),
+        .en(en),
+        .data(data)
     );
     
 endmodule

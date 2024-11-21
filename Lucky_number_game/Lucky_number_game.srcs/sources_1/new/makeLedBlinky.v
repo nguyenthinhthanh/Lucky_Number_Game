@@ -34,6 +34,7 @@ module makeLedBlinky(
     reg flag_b;
     reg [3:0] led_j;
     
+    reg [3:0] led_reg;
     
     /*frequency for led blinking*/
     localparam integer FREQ_BLINKY = 200;  
@@ -46,7 +47,7 @@ module makeLedBlinky(
             flag_b <= 1;
             led_j <= 4'b0001;
         end      
-        else    begin
+        else begin
             case(led_state)
             /*State led blinky*/
                 2'b01:   begin
@@ -56,6 +57,8 @@ module makeLedBlinky(
                         if(counter_b == FREQ_BLINKY)    begin
                             counter_b <= 0;
                             flag_b <= ~flag_b;
+                            
+                            
                         end
                     end
                     else    begin
