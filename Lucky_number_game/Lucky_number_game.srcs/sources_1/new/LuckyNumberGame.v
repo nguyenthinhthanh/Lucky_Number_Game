@@ -24,20 +24,17 @@
 /*Check https://github.com/nguyenthinhthanh/Lucky_Number_Game for FSM design and more detail*/
 module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
-    input rst,                                  /*This is reset signal*/
-    input[1:0] winner,                          /*This is two switch to control winner*/
-    input[3:0] button,                          /*This is button read from Arty-z7*/
-    output[3:0] led,                            /*This is output led*/
-    output[5:0] rgb,
-    output[15:0] bcd,                            /*This is output bcd 16 bit Io26 to Io41*/
-    //output check0,                              /*Just for debug*/
-    //output check1,                              /*Just for debug*/
-    //output check2                               /*Just for debug*/
-    output rs,
-    output rw,
-    output en,
-    output [7:0] data,
-    output buzzer
+    input rst,                                  /*This is reset signal SW0, reset if SW0 == 1 on Arty-z7*/
+    input[1:0] winner,                          /*This is two switch to control winner SW0 and SW1 on Extension board Io0 to Io1*/
+    input[3:0] button,                          /*This is button read from Arty-z7 BTN0 to BTN3*/
+    output buzzer,                              /*This is output for buzzer active play music A0*/
+    output rs,                                  /*This is rs signal for lcd 16x2 Io10*/
+    output rw,                                  /*This is rw signal for lcd 16x2 Io11*/
+    output en,                                  /*This is rw signal for lcd 16x2 Io12*/
+    output[3:0] led,                            /*This is output led LD0 to LD3*/
+    output[5:0] rgb,                            /*This is output for rgb led LD4 and LD5*/
+    output [7:0] data,                          /*This is output data for lcd 16x2 Io2 to Io9*/
+    output[15:0] bcd                            /*This is output bcd 16 bit Io26 to Io41*/
     );
     
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
@@ -64,17 +61,17 @@ module LuckyNumberGame(
                   
     parameter TARGET_CLK_FREQ = 400;            /*This clk for every 400Hz - 2.5ms read button value */
     
-    frequencyDivider #(                                 /*This is frequency divider*/ 
-        .TARGET_CLK_FREQ(TARGET_CLK_FREQ)               //  @input : parameter TARGET_CLK_FREQ*/
-    ) frequency_for_button_read_inst(                   //  @output : clk for systems
+    frequencyDivider #(                                     /*This is frequency divider to make clk for systems*/ 
+        .TARGET_CLK_FREQ(TARGET_CLK_FREQ)                   //  @input : parameter TARGET_CLK_FREQ*/
+    ) frequency_for_button_read_inst(                       //  @output : clk for systems
         .clk(clk),
         .rst(rst),
         .clk_out(clk_system)
     );
     
-    fsmForButtonState fsm_for_button_state_inst(        /*This is fsm for button state*/
-        .clk(clk),                                      //  @input : button_in[3:0] from Arty-z7
-        .clk_system(clk_system),                        //  @output : button_state[7:0] @ref : BUTTON_STATE macro from header.vh
+    fsmForButtonState fsm_for_button_state_inst(            /*This is fsm for button state*/
+        .clk(clk),                                          //  @input : button_in[3:0] from Arty-z7
+        .clk_system(clk_system),                            //  @output : button_state[7:0] @ref : BUTTON_STATE macro from header.vh
         .rst(rst),
         .button_in(button),
         .button_state(button_state_wire)
@@ -95,11 +92,11 @@ module LuckyNumberGame(
         //.check2(check2)
     );
     
-    resultChecker result_checker(                  /*This is result checker for check result when done play*/
-        .clk_system(clk_system),                   //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
-        .rst(rst),                                 //  @input : game configuration @from: fsmForLuckyNumberGame module 
-        .game_straight(game_straight_wire),        //  @input : random_number[15:0] @from: speedController module
-        .type_of_straight(type_of_straight_wire),  //  @output : result_state[2:0] @ref : RESULT macro from header.vh
+    resultChecker result_checker(                           /*This is result checker for check result when done play*/
+        .clk_system(clk_system),                            //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
+        .rst(rst),                                          //  @input : game configuration @from: fsmForLuckyNumberGame module 
+        .game_straight(game_straight_wire),                 //  @input : random_number[15:0] @from: speedController module
+        .type_of_straight(type_of_straight_wire),           //  @output : result_state[2:0] @ref : RESULT macro from header.vh
         .play_again(button_state_wire[5:4]),
         .game_mode(game_mode_wire),
         .random_number(random_number_wire),
@@ -107,10 +104,10 @@ module LuckyNumberGame(
         .result(result_state_wire)
     );
     
-    speedController speed_controller_inst(          /*This is speed controller for each mode*/
-        .clk(clk),                                  //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
-        .rst(rst),                                  //  @input : game configuration @from: fsmForLuckyNumberGame module 
-        .clk_system(clk_system),                    //  @output : random_numner[15:0]
+    speedController speed_controller_inst(                  /*This is speed controller for each mode*/
+        .clk(clk),                                          //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
+        .rst(rst),                                          //  @input : game configuration @from: fsmForLuckyNumberGame module 
+        .clk_system(clk_system),                            //  @output : random_numner[15:0]
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
         .done_mode_2(done_mode_2_wire),
@@ -118,13 +115,6 @@ module LuckyNumberGame(
         //.check0(check0),
         //.check1(check1)
     );
-    
-    /*toggleLedTop toggle_led_inst(                   *//*Just for debug*//*
-        .clk_button(clk_system),
-        .rst(rst),
-        .led(led),
-        .button_state(button_state_wire)
-    );*/
     
     LED_Controller led_controller_inst(
         .clk(clk_system),
@@ -138,26 +128,16 @@ module LuckyNumberGame(
         .led(led)
     );
     
-    playMusic play_music_inst(
-        .clk(clk),
-        .reset(rst),
+    playMusic play_music_inst(                              /*This is play music module using active buzzer*/
+        .clk(clk),                                          //  @output : buzzer freqency
+        .rst(rst),
         .buzzer(buzzer)
     );
     
-    /*lcdController lcd_controller_inst(
-        .clk(clk),
-        .rst(rst),
-        .fsm_state(fsm_state_wire),
-        .rs(rs),
-        .rw(rw),
-        .en(en),
-        .data(data)
-    );*/
-    
-    lcdControllerUpdated lcd_controller_inst(
-        .clk(clk),
-        .clk_system(clk_system),
-        .rst(rst),
+    lcdControllerUpdated lcd_controller_inst(               /*This is lcd controller for display*/
+        .clk(clk),                                          //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
+        .clk_system(clk_system),                            //  @output : rs, rw, en for lcd 
+        .rst(rst),                                          //  @output : data[7:0] data for lcd
         .fsm_state(fsm_state_wire),
         .rs(rs),
         .rw(rw),

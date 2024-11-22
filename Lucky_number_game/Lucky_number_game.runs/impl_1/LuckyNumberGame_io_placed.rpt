@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date                      : Thu Nov 21 12:08:46 2024
+| Date                      : Fri Nov 22 12:26:24 2024
 | Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file LuckyNumberGame_io_placed.rpt
 | Design                    : LuckyNumberGame

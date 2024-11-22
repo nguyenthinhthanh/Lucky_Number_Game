@@ -22,7 +22,7 @@
 
 module playMusic(
     input wire clk,          // Clock 125 MHz t? Arty-Z7
-    input wire reset,        // Nút reset
+    input wire rst,        // Nút reset
     output reg buzzer        // Tín hi?u xu?t ??n buzzer
 );
     // T?n s? các n?t nh?c (theo Hz) - C5, D5, E5, F5, G5
@@ -45,8 +45,8 @@ module playMusic(
 
     wire [15:0] current_note = notes[note_index]; // N?t nh?c hi?n t?i
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
             buzzer <= 0;
             counter <= 0;
             duration_counter <= 0;
