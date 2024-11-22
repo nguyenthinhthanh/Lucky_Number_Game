@@ -89,7 +89,6 @@ module LuckyNumberGame(
         .control_mode(control_mode_wire),
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire)
-        //.check2(check2)
     );
     
     resultChecker result_checker(                           /*This is result checker for check result when done play*/
@@ -112,15 +111,11 @@ module LuckyNumberGame(
         .fsm_state(fsm_state_wire),
         .done_mode_2(done_mode_2_wire),
         .random_number(random_number_wire)
-        //.check0(check0),
-        //.check1(check1)
     );
     
     LED_Controller led_controller_inst(
         .clk(clk_system),
         .rst(rst),
-        //.game_straight(game_straight_wire),
-        //.type_of_straight(type_of_straight_wire),
         .control_mode(control_mode_wire),
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
