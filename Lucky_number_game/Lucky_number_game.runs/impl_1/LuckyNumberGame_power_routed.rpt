@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Fri Nov 22 12:41:30 2024
+| Date             : Sat Nov 23 16:23:31 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file LuckyNumberGame_power_routed.rpt -pb LuckyNumberGame_power_summary_routed.pb -rpx LuckyNumberGame_power_routed.rpx
 | Design           : LuckyNumberGame
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.852        |
+| Total On-Chip Power (W)  | 4.193        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.677        |
-| Device Static (W)        | 0.175        |
+| Dynamic (W)              | 3.946        |
+| Device Static (W)        | 0.247        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 52.1         |
-| Junction Temperature (C) | 57.9         |
+| Max Ambient (C)          | 36.6         |
+| Junction Temperature (C) | 73.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.839 |     2160 |       --- |             --- |
-|   LUT as Logic |     0.684 |      832 |     53200 |            1.56 |
-|   CARRY4       |     0.081 |      130 |     13300 |            0.98 |
-|   Register     |     0.068 |      767 |    106400 |            0.72 |
+| Slice Logic    |     1.325 |     3404 |       --- |             --- |
+|   LUT as Logic |     1.087 |     1437 |     53200 |            2.70 |
+|   Register     |     0.150 |     1358 |    106400 |            1.28 |
+|   CARRY4       |     0.082 |      152 |     13300 |            1.14 |
 |   BUFG         |     0.006 |        3 |        32 |            9.38 |
-|   Others       |     0.000 |       52 |       --- |             --- |
-|   F7/F8 Muxes  |     0.000 |       17 |     53200 |            0.03 |
-| Signals        |     0.876 |     1564 |       --- |             --- |
+|   Others       |     0.000 |       53 |       --- |             --- |
+|   F7/F8 Muxes  |     0.000 |       18 |     53200 |            0.03 |
+| Signals        |     1.660 |     2712 |       --- |             --- |
 | I/O            |     0.962 |       46 |       125 |           36.80 |
-| Static Power   |     0.175 |          |           |                 |
-| Total          |     2.852 |          |           |                 |
+| Static Power   |     0.247 |          |           |                 |
+| Total          |     4.193 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,8 +72,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.769 |       1.744 |      0.026 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.055 |       0.034 |      0.020 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     3.061 |       3.013 |      0.048 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.063 |       0.034 |      0.029 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.265 |       0.264 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -81,11 +81,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.048 |       0.000 |      0.048 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.080 |       0.000 |      0.080 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,23 +146,23 @@ Table of Contents
 +------------------------------------+-----------+
 | Name                               | Power (W) |
 +------------------------------------+-----------+
-| LuckyNumberGame                    |     2.677 |
-|   frequency_for_button_read_inst   |     0.288 |
-|   fsm_for_button_state_inst        |     0.331 |
+| LuckyNumberGame                    |     3.946 |
+|   frequency_for_button_read_inst   |     0.265 |
+|   fsm_for_button_state_inst        |     0.332 |
 |     read_button_debounce_inst      |     0.319 |
 |       debounce_button_0_inst       |     0.002 |
 |       debounce_button_1_inst       |     0.002 |
-|       debounce_button_2_inst       |     0.002 |
-|       debounce_button_3_inst       |     0.001 |
-|   fsm_for_lucky_number_game_inst   |     0.025 |
-|   lcd_controller_inst              |     0.290 |
-|     write_lcd_inst                 |     0.290 |
-|   led_controller_inst              |     0.115 |
-|     special_m                      |     0.059 |
-|     wingame                        |     0.057 |
-|   play_music_inst                  |     0.257 |
-|   speed_controller_inst            |     0.281 |
-|     frequency_for_button_read_inst |     0.272 |
+|       debounce_button_2_inst       |     0.001 |
+|       debounce_button_3_inst       |     0.002 |
+|   fsm_for_lucky_number_game_inst   |     0.027 |
+|   lcd_controller_inst              |     1.469 |
+|     write_lcd_inst                 |     1.469 |
+|   led_controller_inst              |     0.134 |
+|     special_m                      |     0.070 |
+|     wingame                        |     0.064 |
+|   play_music_inst                  |     0.260 |
+|   speed_controller_inst            |     0.296 |
+|     frequency_for_button_read_inst |     0.285 |
 +------------------------------------+-----------+
 
 

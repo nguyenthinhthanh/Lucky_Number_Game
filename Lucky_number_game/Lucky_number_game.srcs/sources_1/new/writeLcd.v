@@ -39,6 +39,10 @@ module writeLcd(
     reg rw_reg;
     reg en_reg;
     reg[7:0] data_reg;
+    
+    reg[127:0] line1_prev;
+    reg[127:0] line2_prev;
+    
 
     // Các l?nh LCD
     parameter FUNCTION_SET    = 8'h38;    
@@ -70,6 +74,7 @@ module writeLcd(
         line2[8]  <= " "; line2[9]  <= "b"; line2[10] <= "e"; line2[11] <= "s";*/
         
     end
+    
 
     always @(posedge rst or posedge clk) begin
         if (rst) begin
@@ -87,6 +92,9 @@ module writeLcd(
             
             data <= 8'hFF;
             data_reg <= 8'hFF;
+            
+            line1_prev <= line1;
+            line2_prev <= line2;
             
         end else begin
             counter <= counter + 1;
@@ -168,8 +176,16 @@ module writeLcd(
                         35: begin data <= line2[12*8 +: 8]; state <= state + 1; end
                         36: begin data <= line2[13*8 +: 8]; state <= state + 1; end
                         37: begin data <= line2[14*8 +: 8]; state <= state + 1; end
-                        38: begin data <= line2[15*8 +: 8]; state <= 0; end
-                        
+                        38: begin data <= line2[15*8 +: 8]; state <= state + 1; end
+                        39: begin
+                            if(line1_prev != line1 || line2_prev != line2) begin
+                                state <= 0;
+                            end
+                            else begin
+                                state <= state + 0;
+                            end
+                        end 
+                                               
                         default: state <= state + 1;
                     endcase
                 end
