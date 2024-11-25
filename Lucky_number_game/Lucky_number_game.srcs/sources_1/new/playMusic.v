@@ -23,6 +23,7 @@
 module playMusic(
     input clk,               /*This is clk from Arty-z7*/
     input rst,               /*This is reset signal*/
+    input music,             /*This is enable music*/
     output reg buzzer        /*This is output for buzzer active play music*/
 );
     
@@ -45,8 +46,8 @@ module playMusic(
 
     wire [15:0] current_note = notes[note_index];   // Current note 
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge rst or posedge music) begin
+        if (rst || music) begin
             buzzer <= 0;
             counter <= 0;
             duration_counter <= 0;

@@ -99,7 +99,8 @@ module writeLcd(
         end else begin
             counter <= counter + 1;
             
-            if (counter == 5000000) begin    // Kho?ng ch? gi?a các tr?ng thái
+            // 5000000
+            if (counter == 1000000) begin    // Kho?ng ch? gi?a các tr?ng thái
                 counter <= 0;
                 
                 // T?o tín hi?u Enable pulse
@@ -179,9 +180,12 @@ module writeLcd(
                         38: begin data <= line2[15*8 +: 8]; state <= state + 1; end
                         39: begin
                             if(line1_prev != line1 || line2_prev != line2) begin
+                                line1_prev <= line1;
+                                line2_prev <= line2;
                                 state <= 0;
                             end
                             else begin
+                                en <= 0;
                                 state <= state + 0;
                             end
                         end 

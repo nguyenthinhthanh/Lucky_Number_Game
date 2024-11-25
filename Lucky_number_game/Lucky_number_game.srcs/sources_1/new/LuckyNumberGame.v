@@ -25,6 +25,7 @@
 module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal SW0, reset if SW0 == 1 on Arty-z7*/
+    input music,                                /*This is music enable signal SW1*/
     input[1:0] winner,                          /*This is two switch to control winner SW0 and SW1 on Extension board Io0 to Io1*/
     input[3:0] button,                          /*This is button read from Arty-z7 BTN0 to BTN3*/
     output buzzer,                              /*This is output for buzzer active play music A0*/
@@ -126,6 +127,7 @@ module LuckyNumberGame(
     playMusic play_music_inst(                              /*This is play music module using active buzzer*/
         .clk(clk),                                          //  @output : buzzer freqency
         .rst(rst),
+        .music(music),
         .buzzer(buzzer)
     );
     

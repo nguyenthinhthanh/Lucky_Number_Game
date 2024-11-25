@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date                      : Sat Nov 23 16:23:11 2024
+| Date                      : Mon Nov 25 11:29:20 2024
 | Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file LuckyNumberGame_io_placed.rpt
 | Design                    : LuckyNumberGame
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            46 |
+|            47 |
 +---------------+
 
 
@@ -273,7 +273,7 @@ Table of Contents
 | M16        |             | High Range | VCCO_35                 | VCCO        |             |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | M17        |             | High Range | IO_L8P_T1_AD10P_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M18        |             | High Range | IO_L8N_T1_AD10N_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| M19        |             | High Range | IO_L7P_T1_AD2P_35       | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| M19        | music       | High Range | IO_L7P_T1_AD2P_35       | INPUT       | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M20        | rst         | High Range | IO_L7N_T1_AD2N_35       | INPUT       | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | N1         |             |            | PS_DDR_CS_B_502         | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N2         |             |            | PS_DDR_A0_502           | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
