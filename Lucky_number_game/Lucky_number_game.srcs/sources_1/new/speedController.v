@@ -117,6 +117,15 @@ module speedController(
                 
                     random_number <= 16'b0000_0000_0000;
                 end
+                else if(fsm_state == `FSM_STATE_NO_STRAIGHT_PLAY) begin
+                    random_number[11:0] <= 12'b0000;
+                end
+                else if(fsm_state == `FSM_STATE_STRAIGHT_INC_PLAY) begin
+                    random_number[11:0] <= 12'b0000;
+                end
+                else if(fsm_state == `FSM_STATE_STRAIGHT_DEC_PLAY) begin
+                    random_number[11:0] <= 12'b0000;
+                end
                 else if(fsm_state == `FSM_STATE_NO_33) begin
                    /*Play mode 3*/
                    for(i=0;i<`NUM_OF_7SEG_MODE_3;i=i+1) begin
@@ -193,6 +202,7 @@ module speedController(
                     end
                 end
                 else if(fsm_state == `FSM_STATE_SET_MODE_SPECIAL) begin
+                    random_number[2*4 +:4] <= 0;
                     for(i=0;i<`NUM_OF_7SEG_MODE_SPECIAL;i=i+1) begin
                         random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                     end
@@ -206,42 +216,7 @@ module speedController(
                     done_mode_2 <= 0;
                     //random_number <= random_number;
                 end
-            
-                /*for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
-                    if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin
-                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
-                    end
-                    *//*else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
-                        random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
-                    end*//*
-                    else if(button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
-                        counter_speed[i] <= counter_speed[i] + 1;
-                        if (counter_speed[i] >= speed[i]) begin
-                            counter_speed[i] <= 0;
-                            if(speed[i] > MAX_SPEED_COUNTER) begin
-                                speed[i] <= speed[i] - 4;
-                                
-                                check1 <= ~check1;      *//*Just for debug*//*
-                            end
-                            
-                            *//*Update random number depend of speed*//*
-                            random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
-                        end
-                    end
-                    else if(button_state[i*2 +:2] == `BUTTON_STATE_RELEASED) begin
-                        counter_speed[i] <= counter_speed[i] + 1;
-                        if (counter_speed[i] >= speed[i]) begin
-                            counter_speed[i] <= 0;
-                            if(speed[i] < MIN_SPEED_COUNTER) begin
-                                speed[i] <= speed[i] + 4;
-                   
-                                check0 <= ~check0;      *//*Just for debug*//*
-                                *//*Update random number depend of speed*//*
-                                random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
-                            end
-                        end
-                    end
-                end*/
+         
             end
         end
     end

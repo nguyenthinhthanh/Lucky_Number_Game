@@ -62,51 +62,84 @@ module LED_Controller(
 
         
     wire [3:0] led_temp;    //use for updating led
-    wire [5:0] rgb_temp;    //use for updating rgb
+    wire rgb_temp;          //use for updating rgb
     reg [1:0] led_state;    //led in blinky or normal state
     reg rgb_state;          //rgb in blinky or normal state
     reg [3:0] led_cur;      //save first state of led to start blinking
-    reg [5:0] rgb_cur;      //save first state of rgb to start blinking
-    
+
+    integer i;
+
     
     always @(posedge clk or posedge rst)   begin
         if(rst) begin
-            led <= led_temp; 
-            rgb <= rgb_temp;  
+            rgb <= TURN_ON_LED_GREEN; 
             led_state <= LED_BLINKY;    
             rgb_state <= RGB_BLINKY; 
-            led_cur <= TURN_ON_LED_0; 
-            rgb_cur <= TURN_ON_LED_GREEN;
+            led_cur <= 4'b1010;             //just for winning state
+            led <= TURN_ON_LED_0;
+            i <= 0;
         end
         else begin
             case(fsm_state)
                 /*Set led for losing game state*/
                 `FSM_STATE_NO_35:   begin
-                    rgb <= TURN_ON_LED_RED;
-                    led <= led_temp;
-                    led_state <= LED_JUMP;
                     rgb_state <= RGB_NORMAL;
+                    led_state <= LED_JUMP;
+                    
+                    rgb <= TURN_ON_LED_RED;
+                    
+//                    led[0] <= led_temp[0];
+//                    led[1] <= led_temp[1];
+//                    led[2] <= led_temp[2];
+//                    led[3] <= led_temp[3];  
+                    for(i = 0; i < 4; i = i + 1)
+                        led[i] <= led_temp[i];                                
+                    led_cur <= ~led_cur;                 
                 end
                 /*Set led for winning game state*/
                 `FSM_STATE_NO_36:   begin
                     led_state <= LED_BLINKY;
                     rgb_state <= RGB_BLINKY;
-                    led_cur <= TURN_ON_LED_ALL;
-                    rgb_cur <= TURN_ON_LED_CYAN;
-                    led <= led_temp;
-                    rgb <= rgb_temp;
+                    
+                    rgb[3] <= 0;
+                    rgb[0] <= 0;
+                    rgb[5] <= rgb_temp;
+                    rgb[4] <= rgb_temp;
+                    rgb[2] <= rgb_temp;
+                    rgb[1] <= rgb_temp;
+                                        
+//                    led[0] <= led_temp[0];
+//                    led[1] <= led_temp[0];
+//                    led[2] <= led_temp[0];
+//                    led[3] <= led_temp[0];
+                    for(i = 0; i < 4; i = i + 1)
+                        led[i] <= led_temp[0]; 
                 end
                 `FSM_STATE_NO_40:   begin
-                    rgb <= TURN_ON_LED_BLUE;
                     led_state <= LED_JUMP;
                     rgb_state <= RGB_NORMAL;
-                    led <= led_temp;
+
+                    rgb <= TURN_ON_LED_YELLOW;
+                    
+                    led_cur <= ~led_cur;
+                    led[0] <= led_temp[0];
+                    led[1] <= led_temp[1];
+                    led[2] <= led_temp[2];
+                    led[3] <= led_temp[3];                               
                 end                                
                 `FSM_STATE_NO_39:   begin
-                    rgb <= TURN_ON_LED_YELLOW;
                     led_state <= LED_JUMP;
                     rgb_state <= RGB_NORMAL;
-                    led <= led_temp;
+ 
+                    rgb <= TURN_ON_LED_YELLOW;
+                    
+                    led_cur <= ~led_cur;
+//                    led[0] <= led_temp[0];
+//                    led[1] <= led_temp[1];
+//                    led[2] <= led_temp[2];
+//                    led[3] <= led_temp[3];  
+                    for(i = 0; i < 4; i = i + 1)
+                        led[i] <= led_temp[i];                                    
                 end
                 default:    begin
                     case(game_mode)
@@ -114,6 +147,7 @@ module LED_Controller(
                         `GAME_MODE_SPECIAL:     begin
                             led_state <= LED_NORMAL;
                             rgb_state <= RGB_NORMAL;
+                            
                             led  <= TURN_ON_LED_ALL;  
                             rgb <= TURN_ON_LED_CYAN;                         
                         end
@@ -122,9 +156,10 @@ module LED_Controller(
                             case(control_mode)
                                 /*setting led & rgb for playmode*/
                                 `GAME_CONTROL_PLAY_MODE:    begin
-                                    rgb <= TURN_ON_LED_PURPLE;
                                     rgb_state <= RGB_NORMAL;
                                     led_state <= LED_NORMAL;
+                                    
+                                    rgb <= TURN_ON_LED_PURPLE;
                                     
                                     if(game_mode == `GAME_MODE_0)   begin
                                         led <= TURN_ON_LED_0;    
@@ -141,24 +176,38 @@ module LED_Controller(
                                 end
                                 /*setting led & rgb for setmode*/
                                 default:    begin
-                                    rgb_cur <= TURN_ON_LED_GREEN;
-                                    rgb <= rgb_temp;
                                     rgb_state <= RGB_BLINKY;
+                                    led_state <= LED_BLINKY;                                
+                                
+                                    rgb[5] <= 0;
+                                    rgb[0] <= 0;
+                                    rgb[3:2] <= 2'b0;
+                                    rgb[4] <= rgb_temp;
+                                    rgb[1] <= rgb_temp;
                                     
-                                    led <= led_temp;
-                                    led_state <= LED_BLINKY;
-                                    
-                                    if(game_mode == `GAME_MODE_0)   begin
-                                        led_cur <= TURN_ON_LED_0;    
+                                    if(game_mode == `GAME_MODE_0)   begin  
+                                        led[0] <= led_temp[0];
+                                        led[1] <= 0;
+                                        led[2] <= 0;
+                                        led[3] <= 0; 
                                     end     
-                                    else if(game_mode == `GAME_MODE_1)   begin
-                                        led_cur <= TURN_ON_LED_1; 
+                                    else if(game_mode == `GAME_MODE_1)   begin 
+                                        led[0] <= 0;
+                                        led[1] <= led_temp[1];
+                                        led[2] <= 0;
+                                        led[3] <= 0;
                                     end 
                                     else if(game_mode == `GAME_MODE_2)   begin
-                                        led_cur <= TURN_ON_LED_2; 
+                                        led[0] <= 0;
+                                        led[1] <= 0;
+                                        led[2] <= led_temp[2];
+                                        led[3] <= 0;                                        
                                     end 
                                     else if(game_mode == `GAME_MODE_3)   begin
-                                        led_cur <= TURN_ON_LED_3; 
+                                        led[0] <= 0;
+                                        led[1] <= 0;
+                                        led[2] <= 0;
+                                        led[3] <= led_temp[3];                                             
                                     end 
                                 end
                             endcase                                                                                 
@@ -169,18 +218,35 @@ module LED_Controller(
         end
     end
     
-    /*Blinky Led just use for winning state*/
-    makeLedBlinky wingame(.clk(clk),  
+    /*Blinky Led control*/
+    makeLedBlinky led0(.clk(clk),  
                           .rst(rst), 
                           .led_state(led_state), 
-                          .led_cur(led_cur),
-                          .led(led_temp)
+                          .led_cur(led_cur[0]),
+                          .led(led_temp[0])
                           );
-   /*Blinky RGB just use for pre/in special mode*/
+    makeLedBlinky led1(.clk(clk),  
+                          .rst(rst), 
+                          .led_state(led_state), 
+                          .led_cur(led_cur[1]),
+                          .led(led_temp[1])
+                          );
+    makeLedBlinky led2(.clk(clk),  
+                          .rst(rst), 
+                          .led_state(led_state), 
+                          .led_cur(led_cur[2]),
+                          .led(led_temp[2])
+                          );
+    makeLedBlinky led3(.clk(clk),  
+                          .rst(rst), 
+                          .led_state(led_state), 
+                          .led_cur(led_cur[3]),
+                          .led(led_temp[3])
+                          );    
+   /*Blinky RGB control*/
     makeRgbBlinky special_m(.clk(clk),
                             .rst(rst),
                             .rgb_state(rgb_state),
-                            .rgb_cur(rgb_cur),
                             .rgb(rgb_temp)
                             );
 endmodule

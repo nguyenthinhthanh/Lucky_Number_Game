@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Mon Nov 25 11:29:41 2024
+| Date         : Thu Nov 28 11:47:21 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file LuckyNumberGame_timing_summary_routed.rpt -pb LuckyNumberGame_timing_summary_routed.pb -rpx LuckyNumberGame_timing_summary_routed.rpx -warn_on_violation
 | Design       : LuckyNumberGame
@@ -42,8 +42,8 @@ Timing Summary Report
 Rule       Severity          Description                   Violations  
 ---------  ----------------  ----------------------------  ----------  
 TIMING-17  Critical Warning  Non-clocked sequential cell   1000        
-LUTAR-1    Warning           LUT drives async reset alert  345         
-TIMING-20  Warning           Non-clocked latch             182         
+LUTAR-1    Warning           LUT drives async reset alert  273         
+TIMING-20  Warning           Non-clocked latch             137         
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -53,10 +53,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (1473)
+1. checking no_clock (1341)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (2986)
+4. checking unconstrained_internal_endpoints (2859)
 5. checking no_input_delay (8)
 6. checking no_output_delay (36)
 7. checking multiple_clock (0)
@@ -66,13 +66,13 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (1473)
+1. checking no_clock (1341)
 ---------------------------
- There are 649 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 587 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 182 register/latch pins with no clock driven by root clock pin: rst (HIGH)
+ There are 137 register/latch pins with no clock driven by root clock pin: rst (HIGH)
 
- There are 424 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
+ There are 444 register/latch pins with no clock driven by root clock pin: frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[0]/Q (HIGH)
 
@@ -80,19 +80,9 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[102]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[105]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[107]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[10]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[110]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[112]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[115]/Q (HIGH)
-
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line1_reg[118]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[11]/Q (HIGH)
 
@@ -112,8 +102,6 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[20]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[21]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[24]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[25]/Q (HIGH)
@@ -132,15 +120,15 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[33]/Q (HIGH)
 
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[34]/Q (HIGH)
+
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[35]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[36]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[37]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[38]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line1_reg[3]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[3]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[40]/Q (HIGH)
 
@@ -149,8 +137,6 @@ Table of Contents
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[42]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[43]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[44]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[45]/Q (HIGH)
 
@@ -170,11 +156,13 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[53]/Q (HIGH)
 
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[54]/Q (HIGH)
+
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[56]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[58]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[57]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[5]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[58]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[60]/Q (HIGH)
 
@@ -190,15 +178,15 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[68]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[69]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[6]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[70]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[72]/Q (HIGH)
 
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[73]/Q (HIGH)
+
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[74]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[75]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[76]/Q (HIGH)
 
@@ -214,7 +202,7 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[83]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[85]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[84]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[88]/Q (HIGH)
 
@@ -222,33 +210,19 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[8]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[92]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[90]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[91]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[94]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[96]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[97]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[99]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line1_reg[9]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[0]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[100]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[104]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[105]/Q (HIGH)
-
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[106]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[108]/Q (HIGH)
-
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[109]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[10]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[109]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[110]/Q (HIGH)
 
@@ -256,33 +230,19 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[113]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[114]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[115]/Q (HIGH)
-
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[116]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[118]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[116]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[11]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[124]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[12]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[13]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[16]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[17]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[18]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[19]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[1]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[20]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[20]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[21]/Q (HIGH)
 
@@ -294,21 +254,19 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[26]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[27]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[27]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[30]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[28]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[32]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[33]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[34]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[34]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[35]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[36]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[38]/Q (HIGH)
+ There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[36]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[40]/Q (HIGH)
 
@@ -320,27 +278,19 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[44]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[45]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[46]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[48]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[49]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[4]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[50]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[51]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[52]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[53]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[54]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[56]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[57]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[58]/Q (HIGH)
 
@@ -350,11 +300,13 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[60]/Q (HIGH)
 
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[62]/Q (HIGH)
+
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[64]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[65]/Q (HIGH)
 
- There are 2 register/latch pins with no clock driven by root clock pin: lcd_controller_inst/line2_reg[66]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[66]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[67]/Q (HIGH)
 
@@ -364,59 +316,35 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[6]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[70]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[72]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[73]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[74]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[75]/Q (HIGH)
-
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[76]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[77]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[78]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[81]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[82]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[83]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[86]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[84]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[88]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[89]/Q (HIGH)
 
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[90]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[8]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[91]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[92]/Q (HIGH)
 
+ There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[93]/Q (HIGH)
+
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[94]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[96]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[97]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[98]/Q (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: lcd_controller_inst/line2_reg[9]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/special_m/rgb_reg[4]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/special_m/rgb_reg[5]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[0]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[1]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[2]/Q (HIGH)
-
- There is 1 register/latch pin with no clock driven by root clock pin: led_controller_inst/wingame/led_reg[3]/Q (HIGH)
 
  There are 36 register/latch pins with no clock driven by root clock pin: speed_controller_inst/frequency_for_button_read_inst/clk_out_reg/Q (HIGH)
 
@@ -431,9 +359,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (2986)
+4. checking unconstrained_internal_endpoints (2859)
 ---------------------------------------------------
- There are 2986 pins that are not constrained for maximum delay. (HIGH)
+ There are 2859 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

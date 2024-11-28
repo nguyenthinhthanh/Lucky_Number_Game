@@ -135,6 +135,7 @@ module LuckyNumberGame(
         .clk(clk),                                          //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
         .clk_system(clk_system),                            //  @output : rs, rw, en for lcd 
         .rst(rst),                                          //  @output : data[7:0] data for lcd
+        .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
         .rs(rs),
         .rw(rw),

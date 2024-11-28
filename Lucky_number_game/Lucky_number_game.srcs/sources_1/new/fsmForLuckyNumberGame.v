@@ -40,6 +40,8 @@ module fsmForLuckyNumberGame(
     //output reg check2                       /*Just for debug*/
     );
     
+    reg[2:0] game_mode_tmp;
+    
     reg game_straight_reg;                  /*This just reg for store game_straight value*/
     reg type_of_straight_reg;               /*This just reg for store type_of_straight value*/
     reg control_mode_reg;                   /*This just reg for store controol_mode value*/
@@ -58,6 +60,8 @@ module fsmForLuckyNumberGame(
             type_of_straight <= `GAME_STRAIGHT_INC;         /*Just don't care because game no straight default*/
             control_mode <= `GAME_CONTROL_SETTING_MODE;     /*Default control mode is setting mode*/ 
             game_mode <= `GAME_MODE_0;                      /*Default mode is 0*/
+            
+            game_mode_tmp <= `GAME_MODE_0;
             
             game_straight_reg <= `GAME_NO_STRAIGHT;             /*Default game is no have straight*/
             type_of_straight_reg <= `GAME_STRAIGHT_INC;         /*Just don't care because game no straight default*/
@@ -93,6 +97,11 @@ module fsmForLuckyNumberGame(
                     //fsm_state_reg <= `FSM_STATE_NO_40;
                     game_mode_reg <= `GAME_MODE_SPECIAL;
                     fsm_state_reg <= `FSM_STATE_SET_MODE_SPECIAL;
+                end
+                else if(!winner[0] && winner[1]) begin
+                    /*If sw0 == 0 && sw1 == 1, win normal game, chose yes or no*/
+                    //fsm_state_reg <= `FSM_STATE_NO_40;
+                    fsm_state_reg <= `FSM_STATE_NO_36;
                 end
                 else if(winner[0] && winner[1]) begin
                     /*If sw0 == 1 && sw1 == 1, win special game*/
@@ -497,6 +506,7 @@ module fsmForLuckyNumberGame(
                     /*Fsm state share for 11,18,25,32 state*/
                     `FSM_STATE_NO_STRAIGHT_PLAY: begin
                         //check2 <= 1;
+                        game_mode_tmp <= game_mode_reg;
                         
                         if(button_state[1:0] == `BUTTON_STATE_PRESSED) begin
                             /*BTN0 pressed to play game*/
@@ -534,6 +544,7 @@ module fsmForLuckyNumberGame(
                     end
                     `FSM_STATE_STRAIGHT_INC_PLAY: begin
                         //check2 <= 1;
+                        game_mode_tmp <= game_mode_reg;
                         
                         if(button_state[1:0] == `BUTTON_STATE_PRESSED) begin
                             /*BTN0 pressed to play game*/
@@ -571,6 +582,7 @@ module fsmForLuckyNumberGame(
                     end
                     `FSM_STATE_STRAIGHT_DEC_PLAY: begin
                         //check2 <= 1;
+                        game_mode_tmp <= game_mode_reg;
                         
                         if(button_state[1:0] == `BUTTON_STATE_PRESSED) begin
                             /*BTN0 pressed to play game*/
@@ -671,6 +683,8 @@ module fsmForLuckyNumberGame(
                     `FSM_STATE_NO_35: begin    /*State 35*/  
                         if(button_state[7:6] == `BUTTON_STATE_PRESSED) begin
                              /*BTN3 pressed to play again*/
+                            game_mode_reg <= game_mode_tmp; 
+                             
                             if(game_straight_reg == `GAME_NO_STRAIGHT) begin
                                 fsm_state_reg <= `FSM_STATE_NO_STRAIGHT_PLAY;
                             end
@@ -695,6 +709,7 @@ module fsmForLuckyNumberGame(
                             /*BTN1 press to "Yes", play special mode*/
                             
                             /*Set enviroment for next step*/
+                            game_mode_tmp <= game_mode_reg;
                             game_mode_reg <= `GAME_MODE_SPECIAL;
                             
                             fsm_state_reg <= `FSM_STATE_SET_MODE_SPECIAL;
@@ -756,6 +771,7 @@ module fsmForLuckyNumberGame(
                     `FSM_STATE_NO_38: begin    /*State 38*/  
                         if(result_state == `RESULT_LOSE) begin
                             /*When player lose the game*/
+                            //game_mode_reg <= game_mode_tmp;
                             fsm_state_reg <= `FSM_STATE_NO_35;
                         end
                         else if(result_state == `RESULT_SPECIAL_WIN) begin
@@ -767,19 +783,22 @@ module fsmForLuckyNumberGame(
                             fsm_state_reg <= `FSM_STATE_NO_38;
                         end
                     end
-                    `FSM_STATE_NO_39: begin    /*State 38*/  
+                    `FSM_STATE_NO_39: begin    /*State 39*/  
                         if(button_state[7:6] == `BUTTON_STATE_PRESSED) begin
                              /*BTN3 pressed to play again*/
                             if(game_straight_reg == `GAME_NO_STRAIGHT) begin
+                                game_mode_reg <= game_mode_tmp;
                                 fsm_state_reg <= `FSM_STATE_NO_STRAIGHT_PLAY;
                             end
                             else begin
                                 /*If game play have straight*/
                                 if(type_of_straight_reg == `GAME_STRAIGHT_INC) begin
+                                    game_mode_reg <= game_mode_tmp;
                                     fsm_state_reg <= `FSM_STATE_STRAIGHT_INC_PLAY;
                                 end
                                 else begin
                                     /*type_of_straight == `GAME_STRAIGHT_DEC*/
+                                    game_mode_reg <= game_mode_tmp;
                                     fsm_state_reg <= `FSM_STATE_STRAIGHT_DEC_PLAY;
                                 end
                             end
