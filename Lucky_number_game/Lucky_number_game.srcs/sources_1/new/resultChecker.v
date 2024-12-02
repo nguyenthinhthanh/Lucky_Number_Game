@@ -21,18 +21,18 @@
 `include "header.vh"
 
 module resultChecker(
-    input clk_system,                      /*This is clock on Arty-z7*/
+    input clk_system,               /*This is clock on Arty-z7*/
     input rst,                      /*This is reset signal*/
     input game_straight,            /*This is game play have straight to win or not*/
     input type_of_straight,         /*This is straight increase or decrease*/
     input[1:0] play_again,          /*This is button value when want to play again*/
     input[2:0] game_mode,           /*This is game mode from @fsmForLuckyNumberGame module*/
-    input[15:0] random_number,     /*This is random number from @speedController module*/
+    input[15:0] random_number,      /*This is random number from @speedController module*/
     input[15:0] fsm_state,          /*This is fsm state from @fsmForLuckyNumberGame module*/
     output reg[2:0] result          /*This is result state*/
     );
     
-    reg[2:0] result_state;
+    reg[2:0] result_state;          /*This is result state output*/
     
     always @(posedge clk_system or posedge rst) begin
         if(rst) begin

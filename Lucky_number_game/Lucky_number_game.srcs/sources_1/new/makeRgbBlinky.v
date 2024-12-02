@@ -19,12 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*This module for blinky rgb led*/
 module makeRgbBlinky(
-    input clk,
-    input rst,
-    input rgb_state,
-    output reg rgb
+    input clk,              /*This is clk from Arty-z7*/
+    input rst,              /*This is reset signal*/
+    input rgb_state,        /*This input rgb_state we want*/
+    output reg rgb          /*This is output rgb*/
     );
     
     /*counter and flag for blinking led*/

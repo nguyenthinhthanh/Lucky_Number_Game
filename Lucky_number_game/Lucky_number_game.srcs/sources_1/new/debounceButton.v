@@ -28,9 +28,9 @@ module debounceButton(
     
     wire Q0,Q1,Q2,Q2_bar;
     
-    my_dff d0(clk, button,Q0 );
-    my_dff d1(clk, Q0,Q1 );
-    my_dff d2(clk, Q1,Q2 );
+    my_dff d0(clk, button,Q0 );     /*This is D-flip flop for store value*/
+    my_dff d1(clk, Q0,Q1 );         /*This is D-flip flop for store value*/
+    my_dff d2(clk, Q1,Q2 );         /*This is D-flip flop for store value*/
     
     assign Q2_bar = ~Q2;
     assign button_pressed = Q1 & Q2_bar;    /*If Q1 = 1 & Q2 = 0,that mean press first time then

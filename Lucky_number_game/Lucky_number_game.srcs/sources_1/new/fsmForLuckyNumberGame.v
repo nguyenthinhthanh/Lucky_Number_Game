@@ -93,18 +93,19 @@ module fsmForLuckyNumberGame(
                     fsm_state_reg <= `FSM_STATE_SET_MODE_0;         
                 end
                 else if(winner[0] && !winner[1]) begin
-                    /*If sw0 == 1 && sw1 == 0, win normal game*/
-                    //fsm_state_reg <= `FSM_STATE_NO_40;
+                    /*If sw0 == 1 && sw1 == 0, win normal game, play special mode*/
+                    /*State 4*/
                     game_mode_reg <= `GAME_MODE_SPECIAL;
                     fsm_state_reg <= `FSM_STATE_SET_MODE_SPECIAL;
                 end
                 else if(!winner[0] && winner[1]) begin
                     /*If sw0 == 0 && sw1 == 1, win normal game, chose yes or no*/
-                    //fsm_state_reg <= `FSM_STATE_NO_40;
+                    /*State 36*/
                     fsm_state_reg <= `FSM_STATE_NO_36;
                 end
                 else if(winner[0] && winner[1]) begin
                     /*If sw0 == 1 && sw1 == 1, win special game*/
+                    /*State 39*/
                     game_mode_reg <= `GAME_MODE_SPECIAL;
                     fsm_state_reg <= `FSM_STATE_NO_39;
                 end

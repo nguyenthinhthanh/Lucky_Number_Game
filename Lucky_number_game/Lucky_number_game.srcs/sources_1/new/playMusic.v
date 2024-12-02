@@ -27,13 +27,13 @@ module playMusic(
     output reg buzzer        /*This is output for buzzer active play music*/
 );
     
-    localparam C5 = 23889;      // T = 1 / (261.63 Hz) * 125 MHz
-    localparam D5 = 21282;      // T = 1 / (293.66 Hz) * 125 MHz
-    localparam E5 = 18961;      // T = 1 / (329.63 Hz) * 125 MHz
-    localparam F5 = 17807;      // T = 1 / (349.23 Hz) * 125 MHz
-    localparam G5 = 15804;      // T = 1 / (392.00 Hz) * 125 MHz
+    localparam C5 = 23889;       /*T = 1 / (261.63 Hz) * 125 MHz*/
+    localparam D5 = 21282;       /*T = 1 / (293.66 Hz) * 125 MHz*/
+    localparam E5 = 18961;       /*T = 1 / (329.63 Hz) * 125 MHz*/
+    localparam F5 = 17807;       /*T = 1 / (349.23 Hz) * 125 MHz*/
+    localparam G5 = 15804;       /*T = 1 / (392.00 Hz) * 125 MHz*/
     
-    reg [15:0] notes [0:7];     
+    reg [15:0] notes [0:7];      /*This is notes for music*/    
     
     initial begin
         notes[0] = C5; notes[1] = D5; notes[2] = E5; notes[3] = F5;

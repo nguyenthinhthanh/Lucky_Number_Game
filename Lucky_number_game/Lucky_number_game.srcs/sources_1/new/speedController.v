@@ -29,9 +29,9 @@ module speedController(
     input[15:0] fsm_state,              /*This is fsm state @from : fsmForLuckyNumberGame module*/
     //input[7:0] button_state,          /*This is button state @from : fsmForButtonState module*/
     output reg done_mode_2,             /*This signal will set when we done in mode 2*/   
-    output reg[15:0] random_number     /*This is random number output*/ 
-    //output reg check0,                  /*Just for debug*/
-    //output reg check1                   /*Just for debug*/
+    output reg[15:0] random_number      /*This is random number output*/ 
+    //output reg check0,                /*Just for debug*/
+    //output reg check1                 /*Just for debug*/
     );
     
     wire clk_random_number;             /*This clk for generate random number*/
@@ -47,7 +47,7 @@ module speedController(
     reg[7:0] counter_speed[3:0];                                    /*This is counter for speed*/
     reg[7:0] speed[3:0];                                            /*This is speed we will increase and decrease*/
     
-    reg done_mode_0;
+    reg done_mode_0;                                        /*Just for debug*/
     
     reg[1:0] seed[3:0];                                     /*This is seed for generate random number*/
     
@@ -118,12 +118,15 @@ module speedController(
                     random_number <= 16'b0000_0000_0000;
                 end
                 else if(fsm_state == `FSM_STATE_NO_STRAIGHT_PLAY) begin
+                    /*Reset random number when play again*/
                     random_number[11:0] <= 12'b0000;
                 end
                 else if(fsm_state == `FSM_STATE_STRAIGHT_INC_PLAY) begin
+                    /*Reset random number when play again*/
                     random_number[11:0] <= 12'b0000;
                 end
                 else if(fsm_state == `FSM_STATE_STRAIGHT_DEC_PLAY) begin
+                    /*Reset random number when play again*/
                     random_number[11:0] <= 12'b0000;
                 end
                 else if(fsm_state == `FSM_STATE_NO_33) begin

@@ -20,22 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 `include "header.vh"
 
+/*This module for blinky led*/
 module makeLedBlinky(
-    input clk,
-    input rst,
-    input [1:0] led_state,
-    input led_cur,
-    output reg led
+    input clk,                  /*This is clk from Arty-z7*/
+    input rst,                  /*This is reset signal*/
+    input [1:0] led_state,      /*This is input led_state for blinky*/
+    input led_cur,              /*This is current led index*/
+    output reg led              /*This is output led*/
     );
     
-    /*counter and flag for blinking led*/
+    /*Counter and flag for blinking led*/
     integer counter_b;
     
-    
-    /*frequency for led blinking*/
+    /*Frequency for led blinking*/
     localparam integer FREQ_BLINKY = 200;  
       
-
     always @(posedge clk or posedge rst)   begin 
         if(rst) begin
             counter_b <= 0;

@@ -21,9 +21,9 @@
 
 /*This module foe D-Flip Flop*/
 module my_dff(
-    input clk,
-    input D,
-    output reg Q
+    input clk,              /*This clk 400Hz - 2.5ms for read button and system*/
+    input D,                /*This D in D-flip flop*/
+    output reg Q            /*This Q in D-flip flop*/
     );
     
     always @(posedge clk) begin

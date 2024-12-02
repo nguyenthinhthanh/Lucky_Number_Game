@@ -19,18 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*This module for controller led with fsm state*/
 `include "header.vh"
-
  
 module LED_Controller(
-    input clk,
-    input rst,
-    input control_mode,
-    input [2:0] game_mode,
-    input [15:0] fsm_state,
-    output reg [5:0] rgb,
-    output reg [3:0] led
+    input clk,                  /*This is clk from Arty-z7*/
+    input rst,                  /*This is reset signal*/
+    input control_mode,         /*This is configure of setting mode or playing mode @from fsmForLuckyNumberGame*/
+    input [2:0] game_mode,      /*This is game mode @from fsmForLuckyNumberGame*/
+    input [15:0] fsm_state,     /*This is fsm_state @from fsmForLuckyNumberGame*/
+    output reg [5:0] rgb,       /*This is output for rgb led*/
+    output reg [3:0] led        /*This is output for led*/
     );
     
     /*use for RGB Controller*/
@@ -219,34 +218,34 @@ module LED_Controller(
     end
     
     /*Blinky Led control*/
-    makeLedBlinky led0(.clk(clk),  
-                          .rst(rst), 
-                          .led_state(led_state), 
+    makeLedBlinky led0(.clk(clk),                   /*This is for blinky led module*/
+                          .rst(rst),                //  @input : led_state[1:0]
+                          .led_state(led_state),    // @output : led
                           .led_cur(led_cur[0]),
                           .led(led_temp[0])
                           );
-    makeLedBlinky led1(.clk(clk),  
-                          .rst(rst), 
-                          .led_state(led_state), 
+    makeLedBlinky led1(.clk(clk),                   /*This is for blinky led module*/
+                          .rst(rst),                //  @input : led_state[1:0]
+                          .led_state(led_state),    // @output : led
                           .led_cur(led_cur[1]),
                           .led(led_temp[1])
                           );
-    makeLedBlinky led2(.clk(clk),  
-                          .rst(rst), 
-                          .led_state(led_state), 
+    makeLedBlinky led2(.clk(clk),                   /*This is for blinky led module*/
+                          .rst(rst),                //  @input : led_state[1:0]
+                          .led_state(led_state),    // @output : led
                           .led_cur(led_cur[2]),
                           .led(led_temp[2])
                           );
-    makeLedBlinky led3(.clk(clk),  
-                          .rst(rst), 
-                          .led_state(led_state), 
+    makeLedBlinky led3(.clk(clk),                   /*This is for blinky led module*/
+                          .rst(rst),                //  @input : led_state[1:0]
+                          .led_state(led_state),    // @output : led
                           .led_cur(led_cur[3]),
                           .led(led_temp[3])
                           );    
    /*Blinky RGB control*/
-    makeRgbBlinky special_m(.clk(clk),
-                            .rst(rst),
-                            .rgb_state(rgb_state),
+    makeRgbBlinky special_m(.clk(clk),              /*This is for blinky rgb led module*/
+                            .rst(rst),              //  @input : rgb_state
+                            .rgb_state(rgb_state),  // @output : rgb led
                             .rgb(rgb_temp)
                             );
 endmodule

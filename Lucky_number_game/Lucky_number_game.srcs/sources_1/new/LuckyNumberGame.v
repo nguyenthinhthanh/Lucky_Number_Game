@@ -114,10 +114,10 @@ module LuckyNumberGame(
         .random_number(random_number_wire)
     );
     
-    LED_Controller led_controller_inst(
-        .clk(clk_system),
-        .rst(rst),
-        .control_mode(control_mode_wire),
+    LED_Controller led_controller_inst(                     /*This is led controller for each state*/
+        .clk(clk_system),                                   //  @input : fsm_state[15:0] @from: fsmForLuckyNumberGame module
+        .rst(rst),                                          //  @input : game configuration @from: fsmForLuckyNumberGame module
+        .control_mode(control_mode_wire),                   //  @output : rgb and led
         .game_mode(game_mode_wire),
         .fsm_state(fsm_state_wire),
         .rgb(rgb),

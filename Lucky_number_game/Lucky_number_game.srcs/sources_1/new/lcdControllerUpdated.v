@@ -19,27 +19,25 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*This module for write lcd 16x2 with fsm state*/
 module lcdControllerUpdated(
-    input clk,               // Clock 125 MHz t? Arty-Z7
-    input clk_system,
-    input rst,
-    input [2:0] game_mode,
-    input [15:0] fsm_state,
-    output  rs,           // Register Select
-    output  rw,           // Read/Write
-    output  en,           // Enable
-    output  [7:0] data    // Data bus cho LCD
+    input clk,                  /*This is clk from Arty-z7*/
+    input clk_system,           /*This clk 400Hz - 2.5ms for read button and system*/
+    input rst,                  /*This is reset signal*/
+    input [2:0] game_mode,      /*This is configure of game mode @from : fsmForLuckyNumberGame module*/
+    input [15:0] fsm_state,     /*This is fsm state @from : fsmForLuckyNumberGame module*/
+    output  rs,                 /*This is rs signal for lcd 16x2*/
+    output  rw,                 /*This is read/write signal for lcd 16x2*/
+    output  en,                 /*This is enable signal for lcd 16x2*/
+    output  [7:0] data          /*This is data for lcd 16x2*/
     );
     
-    /*reg [7:0] line1 [15:0];
-    reg [7:0] line2 [15:0];*/
-    reg [127:0] line1; // 8-bit x 16 ph?n t?
-    reg [127:0] line2;
+    reg [127:0] line1;          /*8-bit x 16 char line 1*/
+    reg [127:0] line2;          /*8-bit x 16 char line 2*/
     
-    writeLcd write_lcd_inst(
-        .clk(clk),
-        .rst(rst),
+    writeLcd write_lcd_inst(    /*This is write lcd module*/
+        .clk(clk),              //  @input : line1[127:0], line2[127:0]
+        .rst(rst),              //  @output : data[7:0] for lcd 16x2 @from: lcdController
         .rs(rs),
         .rw(rw),
         .en(en),
@@ -51,17 +49,17 @@ module lcdControllerUpdated(
     always @(posedge rst or posedge clk_system) begin
         if (rst) begin
             
-            // Kh?i t?o n?i dung hi?n th?
-                    //Mode:0
-                    line1[0*8 +: 8]  <= "M"; line1[1*8 +: 8]  <= "o"; line1[2*8 +: 8]  <= "d"; line1[3*8 +: 8]  <= "e";
-                    line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "0"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
-                    line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
-                    line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
-                    line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
-                    line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
-                    line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
-                    line2[12*8 +: 8] <= ":"; line2[13*8 +: 8] <= "P"; line2[14*8 +: 8] <= "r"; line2[15*8 +: 8] <= "e";
+            /*Init state*/
+            //Mode:0
+            line1[0*8 +: 8]  <= "M"; line1[1*8 +: 8]  <= "o"; line1[2*8 +: 8]  <= "d"; line1[3*8 +: 8]  <= "e";
+            line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "0"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
+            line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
+            line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
+            //0:Swap1:Set2:Pre
+            line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
+            line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
+            line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
+            line2[12*8 +: 8] <= ":"; line2[13*8 +: 8] <= "P"; line2[14*8 +: 8] <= "r"; line2[15*8 +: 8] <= "e";
         end
         else begin
             case (fsm_state)
@@ -72,7 +70,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "0"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
                     line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -85,7 +83,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "N"; line1[10*8 +: 8] <= "o"; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -97,7 +95,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "Y"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "s";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -110,7 +108,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "I"; line1[10*8 +: 8] <= "n"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -122,7 +120,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "D"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -199,7 +197,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "1"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
                     line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= "  "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -211,7 +209,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "N"; line1[10*8 +: 8] <= "o"; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -223,7 +221,7 @@ module lcdControllerUpdated(
                    line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                    line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "Y"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "s";
                    line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                   //0:Swap1:Set3:Pre
+                   //0:Swap1:Set2:Pre
                    line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                    line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                    line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -236,7 +234,7 @@ module lcdControllerUpdated(
                    line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                    line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "I"; line1[10*8 +: 8] <= "n"; line1[11*8 +: 8] <= "c";
                    line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                   //0:Swap1:Set3:Pre
+                   //0:Swap1:Set2:Pre
                    line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                    line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                    line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -248,7 +246,7 @@ module lcdControllerUpdated(
                    line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                    line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "D"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "c";
                    line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                   //0:Swap1:Set3:Pre
+                   //0:Swap1:Set2:Pre
                    line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                    line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                    line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -310,7 +308,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "2"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
                     line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -322,7 +320,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "N"; line1[10*8 +: 8] <= "o"; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -334,7 +332,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "Y"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "s";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -347,7 +345,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "I"; line1[10*8 +: 8] <= "n"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -359,7 +357,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "D"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -421,7 +419,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= ":"; line1[5*8 +: 8]  <= "3"; line1[6*8 +: 8]  <= " "; line1[7*8 +: 8]  <= " ";
                     line1[8*8 +: 8]  <= " "; line1[9*8 +: 8]  <= " "; line1[10*8 +: 8] <= " "; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= "  "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -433,7 +431,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "N"; line1[10*8 +: 8] <= "o"; line1[11*8 +: 8] <= " ";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -445,7 +443,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "Y"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "s";
                     line1[12*8 +: 8] <= " "; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -458,7 +456,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "I"; line1[10*8 +: 8] <= "n"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";
@@ -470,7 +468,7 @@ module lcdControllerUpdated(
                     line1[4*8 +: 8]  <= "i"; line1[5*8 +: 8]  <= "g"; line1[6*8 +: 8]  <= "h"; line1[7*8 +: 8]  <= "t";
                     line1[8*8 +: 8]  <= ":"; line1[9*8 +: 8]  <= "D"; line1[10*8 +: 8] <= "e"; line1[11*8 +: 8] <= "c";
                     line1[12*8 +: 8] <= "r"; line1[13*8 +: 8] <= " "; line1[14*8 +: 8] <= " "; line1[15*8 +: 8] <= " ";
-                    //0:Swap1:Set3:Pre
+                    //0:Swap1:Set2:Pre
                     line2[0*8 +: 8]  <= "0"; line2[1*8 +: 8]  <= ":"; line2[2*8 +: 8]  <= "S"; line2[3*8 +: 8]  <= "w";
                     line2[4*8 +: 8]  <= "a"; line2[5*8 +: 8]  <= "p"; line2[6*8 +: 8]  <= "1"; line2[7*8 +: 8]  <= ":";
                     line2[8*8 +: 8]  <= "S"; line2[9*8 +: 8]  <= "e"; line2[10*8 +: 8] <= "t"; line2[11*8 +: 8] <= "2";

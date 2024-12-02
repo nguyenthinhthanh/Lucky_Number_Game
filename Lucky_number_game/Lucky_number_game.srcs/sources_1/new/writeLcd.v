@@ -19,43 +19,40 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*This module for write 2 line text in lcd 16x2*/
 module writeLcd(
-    input clk,               // Clock 125 MHz t? Arty-Z7
-    input rst,
-    output reg rs,           // Register Select
-    output reg rw,           // Read/Write
-    output reg en,           // Enable
-    input [127:0] line1,
-    input [127:0] line2,
-    output reg [7:0] data    // Data bus cho LCD
+    input clk,               /*This is clk from Arty-z7*/
+    input rst,               /*This is reset signal*/
+    output reg rs,           /*This is rs signal for lcd 16x2*/
+    output reg rw,           /*This is read/write signal for lcd 16x2*/
+    output reg en,           /*This is enable signal for lcd 16x2*/
+    input [127:0] line1,     /*This is text in line 1 in lcd 16x2*/
+    input [127:0] line2,     /*This is text in line 2 in lcd 16x2*/
+    output reg [7:0] data    /*This is data for lcd 16x2*/
 );
 
-    reg [31:0] counter;
-    reg [7:0] state;
-    reg en_pulse;            // Bi?n t?m cho tín hi?u Enable
+    reg [31:0] counter;      /*This is counter for delay when write data to lcd 16x2*/
+    reg [7:0] state;         /*This is state for write data to lcd 16x2*/
+    reg en_pulse;            /*This is temp enable signal*/
     
     reg rs_reg;
     reg rw_reg;
     reg en_reg;
     reg[7:0] data_reg;
     
-    reg[127:0] line1_prev;
-    reg[127:0] line2_prev;
+    reg[127:0] line1_prev;   /*This is previous text in line 1 in lcd 16x2 for track data*/   
+    reg[127:0] line2_prev;   /*This is previous text in line 2 in lcd 16x2 for track data*/
     
 
-    // Các l?nh LCD
-    parameter FUNCTION_SET    = 8'h38;    
-    parameter DISPLAY_ON      = 8'h0C;      
-    parameter CLEAR_DISPLAY   = 8'h01;   
-    parameter ENTRY_MODE      = 8'h06;   ////////////////////////// Delete here    
-    parameter LINE1_ADDR      = 8'h80;      
-    parameter LINE2_ADDR      = 8'hC0;      
+    /*LCD command*/
+    parameter FUNCTION_SET    = 8'h38;      /*For lcd 2 lines and 5×7 matrix*/     
+    parameter DISPLAY_ON      = 8'h0C;      /*For lcd display ON, cursor OFF*/      
+    parameter CLEAR_DISPLAY   = 8'h01;      /*For lcd clear display screen*/
+    parameter ENTRY_MODE      = 8'h06;      /*For lcd increment cursor (shift cursor to right)*/
+    parameter LINE1_ADDR      = 8'h80;      /*For lcd force cursor to beginning of first line*/
+    parameter LINE2_ADDR      = 8'hC0;      /*For lcd force cursor to beginning of second line*/
 
-    // N?i dung hi?n th?
-    /*reg [7:0] line1 [12:0];
-    reg [7:0] line2 [11:0];*/
-
+    /*Init state*/
     initial begin
         rs = 0;
         rw = 0;
@@ -75,7 +72,7 @@ module writeLcd(
         
     end
     
-
+    /*Write 2 line in lcd*/
     always @(posedge rst or posedge clk) begin
         if (rst) begin
             rs <= 0;
@@ -99,11 +96,11 @@ module writeLcd(
         end else begin
             counter <= counter + 1;
             
-            // 5000000
-            if (counter == 1000000) begin    // Kho?ng ch? gi?a các tr?ng thái
+           /*5000000 before is outdated*/
+            if (counter == 1000000) begin    /*Delay in write char*/
                 counter <= 0;
                 
-                // T?o tín hi?u Enable pulse
+                /*Create enable pulse signal*/
                 if (en_pulse == 1) begin
                     en <= 0;
                     en_pulse <= 0;
@@ -111,7 +108,7 @@ module writeLcd(
                     en <= 1;
                     en_pulse <= 1;
                     
-                    // X? lý theo state
+                    /*Do for state*/
                     case (state)
                         0: begin
                             rs <= 0; rw <= 0;
@@ -119,7 +116,7 @@ module writeLcd(
                             state <= state + 1;
                         end
                         1: begin
-                            data <= FUNCTION_SET;   // G?i FUNCTION_SET l?n th? hai
+                            data <= FUNCTION_SET;   /*Send FUNCTION_SET 2 line*/
                             state <= state + 1;
                         end
                         2: begin
@@ -135,10 +132,10 @@ module writeLcd(
                             state <= state + 1;
                         end
                         5: begin
-                            data <= LINE1_ADDR;   // ??a ch? b?t ??u dòng 1
+                            data <= LINE1_ADDR;     /*Begin cursor in line 1*/
                             state <= state + 1;
                         end
-                        // Hi?n th? dòng 1
+                        /*Display line 1*/
                         6:  begin rs <= 1; data <= line1[0*8 +: 8];  state <= state + 1; end
                         7:  begin data <= line1[1*8 +: 8];  state <= state + 1; end
                         8:  begin data <= line1[2*8 +: 8];  state <= state + 1; end
@@ -156,12 +153,13 @@ module writeLcd(
                         20: begin data <= line1[14*8 +: 8]; state <= state + 1; end
                         21: begin data <= line1[15*8 +: 8]; state <= state + 1; end
                         
-                        // Thi?t l?p ??a ch? dòng 2
+                        /*Configurate for line 2*/
                         22: begin
                             rs <= 0; data <= LINE2_ADDR;
                             state <= state + 1;
                         end
-                        // Hi?n th? dòng 2
+                        
+                        /*Display line 2*/
                         23: begin rs <= 1; data <= line2[0*8 +: 8];  state <= state + 1; end
                         24: begin data <= line2[1*8 +: 8];  state <= state + 1; end
                         25: begin data <= line2[2*8 +: 8];  state <= state + 1; end
