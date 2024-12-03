@@ -38,13 +38,14 @@ module writeLcd(
     reg rs_reg;
     reg rw_reg;
     reg en_reg;
-    reg ce;                  /*Debug warning*/
+    reg ce;                  /*Counter enable*/
     reg[7:0] data_reg;
     
     reg[127:0] line1_prev;   /*This is previous text in line 1 in lcd 16x2 for track data*/   
     reg[127:0] line2_prev;   /*This is previous text in line 2 in lcd 16x2 for track data*/
     
-
+    reg update_line;         /*This will set when line change*/
+    
     /*LCD command*/
     parameter FUNCTION_SET    = 8'h38;      /*For lcd 2 lines and 5×7 matrix*/     
     parameter DISPLAY_ON      = 8'h0C;      /*For lcd display ON, cursor OFF*/      
@@ -69,22 +70,41 @@ module writeLcd(
         
         line2[0]  <= 8'h49; line2[1]  <= 8'h20; line2[2]  <= "a"; line2[3]  <= "m";
         line2[4]  <= " "; line2[5]  <= "t"; line2[6]  <= "h"; line2[7]  <= "e";
-        line2[8]  <= " "; line2[9]  <= "b"; line2[10] <= "e"; line2[11] <= "s";*/
-        //line1_prev <= line1;
-        //line2_prev <= line2;
-        
+        line2[8]  <= " "; line2[9]  <= "b"; line2[10] <= "e"; line2[11] <= "s";*/        
     end
-    
-    reg update_line;
     
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             update_line <= 0;
-        end else if (line1_prev != line1 || line2_prev != line2) begin
+            /*line1_prev <= line1;          Bug in here
+            line2_prev <= line2;*/  
+        end 
+        else if (line1_prev != line1 || line2_prev != line2) begin
             update_line <= 1;
-            //state <= 0;
+            line1_prev <= line1;
+            line2_prev <= line2;
         end else begin
             update_line <= 0;
+        end
+    end
+    
+    always @(posedge clk or posedge rst) begin
+        if(rst) begin
+            ce <= 0;
+            counter <= 0;
+        end
+        else begin
+            counter <= counter + 1;
+                
+           /*5000000 before is outdated*/
+           /*1000000 before is outdated*/
+            if (counter == 1000000) begin    /*Delay in write char*/
+                ce <= 1;
+                counter <= 0;
+            end
+            else begin
+                ce <= 0;
+            end
         end
     end
     
@@ -99,31 +119,31 @@ module writeLcd(
             rw_reg <= 0;
             en_reg <= 0;
             
-            ce <= 0;
+            //ce <= 0;
             
             en_pulse <= 0;
-            counter <= 0;
+            //counter <= 0;
             state <= 0;
             
             data <= 8'hFF;
             data_reg <= 8'hFF;
             
-            line1_prev <= line1;
-            line2_prev <= line2;
+            /*line1_prev <= line1;          Bug in here
+            line2_prev <= line2;*/  
             
         end 
         else begin
-                counter <= counter + 1;
+                /*counter <= counter + 1;
                 
-               /*5000000 before is outdated*/
-               /*1000000 before is outdated*/
-                if (counter == 1000000) begin    /*Delay in write char*/
+               *//*5000000 before is outdated*//*
+               *//*1000000 before is outdated*//*
+                if (counter == 1000000) begin    *//*Delay in write char*//*
                     ce <= 1;
                     counter <= 0;
                 end
                 else begin
                     ce <= 0;
-                end
+                end*/
                 
                 if(ce) begin
                     /*Create enable pulse signal*/
@@ -204,8 +224,8 @@ module writeLcd(
                             38: begin data <= line2[15*8 +: 8]; state <= state + 1; end
                             39: begin
                                 if(/*line1_prev != line1 || line2_prev != line2*/update_line) begin
-                                    line1_prev <= line1;
-                                    line2_prev <= line2;
+                                    /*line1_prev <= line1;
+                                    line2_prev <= line2;*/
                                     state <= 0;
                                 end
                                 else begin
@@ -218,12 +238,12 @@ module writeLcd(
                         endcase
                         
                     end
-                end   
- 
-            //rs <= rs_reg;
-            //rw <= rw_reg;
-            //en <= en_reg;
-            //data <= data_reg;
+                end
+                
+            /*rs <= rs_reg;
+            rw <= rw_reg;
+            en <= en_reg;
+            data <= data_reg;*/
         end
     end
 endmodule

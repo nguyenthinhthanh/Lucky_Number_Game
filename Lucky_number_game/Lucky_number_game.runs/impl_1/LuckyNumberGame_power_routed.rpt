@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Tue Dec  3 12:55:27 2024
+| Date             : Tue Dec  3 21:30:04 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file LuckyNumberGame_power_routed.rpt -pb LuckyNumberGame_power_summary_routed.pb -rpx LuckyNumberGame_power_routed.rpx
 | Design           : LuckyNumberGame
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.413        |
+| Total On-Chip Power (W)  | 3.389        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.212        |
-| Device Static (W)        | 0.201        |
+| Dynamic (W)              | 3.190        |
+| Device Static (W)        | 0.200        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 45.6         |
-| Junction Temperature (C) | 64.4         |
+| Max Ambient (C)          | 45.9         |
+| Junction Temperature (C) | 64.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.235 |     3296 |       --- |             --- |
-|   LUT as Logic |     1.051 |     1393 |     53200 |            2.62 |
+| Slice Logic    |     1.242 |     2531 |       --- |             --- |
+|   LUT as Logic |     1.059 |      977 |     53200 |            1.84 |
 |   CARRY4       |     0.103 |      176 |     13300 |            1.32 |
-|   Register     |     0.075 |     1206 |    106400 |            1.13 |
+|   Register     |     0.074 |      921 |    106400 |            0.87 |
 |   BUFG         |     0.006 |        3 |        32 |            9.38 |
-|   Others       |     0.000 |       58 |       --- |             --- |
-|   F7/F8 Muxes  |     0.000 |       19 |     53200 |            0.04 |
-| Signals        |     1.189 |     2461 |       --- |             --- |
+|   Others       |     0.000 |       57 |       --- |             --- |
+|   F7/F8 Muxes  |     0.000 |       21 |     53200 |            0.04 |
+| Signals        |     1.159 |     1832 |       --- |             --- |
 | I/O            |     0.789 |       47 |       125 |           37.60 |
-| Static Power   |     0.201 |          |           |                 |
-| Total          |     3.413 |          |           |                 |
+| Static Power   |     0.200 |          |           |                 |
+| Total          |     3.389 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     2.489 |       2.456 |      0.034 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     2.467 |       2.433 |      0.033 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.051 |       0.028 |      0.024 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.215 |       0.214 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,26 +146,26 @@ Table of Contents
 +------------------------------------+-----------+
 | Name                               | Power (W) |
 +------------------------------------+-----------+
-| LuckyNumberGame                    |     3.212 |
-|   frequency_for_button_read_inst   |     0.287 |
-|   fsm_for_button_state_inst        |     0.310 |
-|     read_button_debounce_inst      |     0.287 |
+| LuckyNumberGame                    |     3.190 |
+|   frequency_for_button_read_inst   |     0.310 |
+|   fsm_for_button_state_inst        |     0.303 |
+|     read_button_debounce_inst      |     0.281 |
 |       debounce_button_0_inst       |     0.002 |
 |       debounce_button_1_inst       |     0.002 |
 |       debounce_button_2_inst       |     0.002 |
 |       debounce_button_3_inst       |     0.002 |
-|   fsm_for_lucky_number_game_inst   |     0.034 |
-|   lcd_controller_inst              |     0.614 |
-|     write_lcd_inst                 |     0.614 |
-|   led_controller_inst              |     0.307 |
-|     led0                           |     0.050 |
-|     led1                           |     0.064 |
-|     led2                           |     0.070 |
-|     led3                           |     0.058 |
-|     special_m                      |     0.065 |
-|   play_music_inst                  |     0.293 |
-|   speed_controller_inst            |     0.368 |
-|     frequency_for_button_read_inst |     0.298 |
+|   fsm_for_lucky_number_game_inst   |     0.033 |
+|   lcd_controller_inst              |     0.542 |
+|     write_lcd_inst                 |     0.542 |
+|   led_controller_inst              |     0.378 |
+|     led0                           |     0.070 |
+|     led1                           |     0.098 |
+|     led2                           |     0.055 |
+|     led3                           |     0.065 |
+|     special_m                      |     0.089 |
+|   play_music_inst                  |     0.299 |
+|   speed_controller_inst            |     0.386 |
+|     frequency_for_button_read_inst |     0.308 |
 +------------------------------------+-----------+
 
 
