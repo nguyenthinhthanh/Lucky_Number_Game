@@ -36,7 +36,7 @@ module lcdControllerUpdated(
     reg [127:0] line2;          /*8-bit x 16 char line 2*/
     
     writeLcd write_lcd_inst(    /*This is write lcd module*/
-        .clk(clk),              //  @input : line1[127:0], line2[127:0]
+        .clk(clk),              //  @input : line1[127:0], line2[127:0], clk before
         .rst(rst),              //  @output : data[7:0] for lcd 16x2 @from: lcdController
         .rs(rs),
         .rw(rw),
@@ -62,6 +62,8 @@ module lcdControllerUpdated(
             line2[12*8 +: 8] <= ":"; line2[13*8 +: 8] <= "P"; line2[14*8 +: 8] <= "r"; line2[15*8 +: 8] <= "e";
         end
         else begin
+            if(clk_system) begin
+            
             case (fsm_state)
               //MODE 0:
                 8'd0: begin
@@ -635,6 +637,8 @@ module lcdControllerUpdated(
                 end  
                 
             endcase
+            
+            end
         end    
     end
     
