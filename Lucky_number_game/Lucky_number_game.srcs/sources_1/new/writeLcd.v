@@ -120,7 +120,12 @@ module writeLcd(
                 if (counter == 1000000) begin    /*Delay in write char*/
                     ce <= 1;
                     counter <= 0;
-                    
+                end
+                else begin
+                    ce <= 0;
+                end
+                
+                if(ce) begin
                     /*Create enable pulse signal*/
                     if (en_pulse == 1) begin
                         en <= 0;
@@ -213,11 +218,7 @@ module writeLcd(
                         endcase
                         
                     end
-                end
-                else begin
-                    ce <= 0;
-                end
-                
+                end   
  
             //rs <= rs_reg;
             //rw <= rw_reg;
