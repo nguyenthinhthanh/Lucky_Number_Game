@@ -7,23 +7,21 @@ Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên 
 Quay số ngẫu nhiên: LED sẽ nhấp nháy như một vòng quay và dừng lại ở số được chọn.  
 Điều chỉnh xác suất thắng: Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.  
 Điều khiển bằng nút nhấn:  
-Nút Start: Bắt đầu vòng quay.  
-Nút Reset: Đặt lại trò chơi.  
+  Nút Start: Bắt đầu vòng quay.  
+  Nút Reset: Đặt lại trò chơi.  
 📋 Yêu cầu phần cứng và phần mềm  
 Phần cứng  
-Bo mạch Arty Z7  
-10 LED (hoặc sử dụng LED tích hợp trên bo)  
-2 nút nhấn (hoặc nút tích hợp trên bo):  
-Nút Start (nút BTN0)  
-Nút Reset (nút BTN1)  
+  Bo mạch Arty Z7  
+  10 LED (hoặc sử dụng LED tích hợp trên bo)  
+  2 nút nhấn (hoặc nút tích hợp trên bo):  
+  Nút Start (nút BTN0)  
+  Nút Reset (nút BTN1)  
 Phần mềm  
-Vivado Design Suite (Phiên bản ≥ 2022.2)  
-Kiến thức cơ bản về ngôn ngữ Verilog.  
+  Vivado Design Suite (Phiên bản ≥ 2022.2)  
+  Kiến thức cơ bản về ngôn ngữ Verilog.  
 🚀 Cách triển khai
 1. Clone repository
-bash
-Sao chép mã
-git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
+  git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
 2. Mở Vivado và tạo dự án
 Tạo một dự án mới trong Vivado với tên LuckySpinGame.
 Chọn bo mạch Arty Z7 
