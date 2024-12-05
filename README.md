@@ -3,21 +3,21 @@
 Mô tả dự án
 Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên bo mạch Arty Z7. Dự án sử dụng LED để hiển thị kết quả và các nút nhấn để điều khiển. Ngoài ra, thuật toán thông minh giúp điều chỉnh xác suất thắng dựa trên kết quả trước đó, làm tăng tính thú vị và thách thức cho người chơi.
 
-🎯 Chức năng chính
-Quay số ngẫu nhiên: LED sẽ nhấp nháy như một vòng quay và dừng lại ở số được chọn.
-Điều chỉnh xác suất thắng: Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.
-Điều khiển bằng nút nhấn:
-Nút Start: Bắt đầu vòng quay.
-Nút Reset: Đặt lại trò chơi.
-📋 Yêu cầu phần cứng và phần mềm
-Phần cứng
-Bo mạch Arty Z7
-10 LED (hoặc sử dụng LED tích hợp trên bo)
-2 nút nhấn (hoặc nút tích hợp trên bo):
-Nút Start (nút BTN0)
-Nút Reset (nút BTN1)
-Phần mềm
-Vivado Design Suite (Phiên bản ≥ 2022.2)
+🎯 Chức năng chính  
+Quay số ngẫu nhiên: LED sẽ nhấp nháy như một vòng quay và dừng lại ở số được chọn.  
+Điều chỉnh xác suất thắng: Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.  
+Điều khiển bằng nút nhấn:  
+Nút Start: Bắt đầu vòng quay.  
+Nút Reset: Đặt lại trò chơi.  
+📋 Yêu cầu phần cứng và phần mềm  
+Phần cứng  
+Bo mạch Arty Z7  
+10 LED (hoặc sử dụng LED tích hợp trên bo)  
+2 nút nhấn (hoặc nút tích hợp trên bo):  
+Nút Start (nút BTN0)  
+Nút Reset (nút BTN1)  
+Phần mềm  
+Vivado Design Suite (Phiên bản ≥ 2022.2)  
 Kiến thức cơ bản về ngôn ngữ Verilog.  
 🚀 Cách triển khai
 1. Clone repository
