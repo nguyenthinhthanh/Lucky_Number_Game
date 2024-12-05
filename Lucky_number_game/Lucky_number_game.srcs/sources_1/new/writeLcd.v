@@ -88,6 +88,27 @@ module writeLcd(
         end
     end
     
+    always @(posedge clk or posedge rst) begin
+        if(rst) begin
+            ce <= 0;
+            counter <= 0;
+        end
+        else begin
+            counter <= counter + 1;
+                
+           /*5000000 before is outdated
+           1000000 before is outdated*/
+            if (counter == 1000000) begin    /*Delay in write char*/
+                ce <= 1;
+                counter <= 0;
+            end
+            else begin
+                ce <= 0;
+            end
+        end
+    end
+
+    
     /*Write 2 line in lcd*/
     always @(posedge rst or posedge clk) begin
         if (rst) begin
@@ -99,31 +120,31 @@ module writeLcd(
             rw_reg <= 0;
             en_reg <= 0;
             
-            ce <= 0;
+            //ce <= 0;
             
             en_pulse <= 0;
-            counter <= 0;
+            //counter <= 0;
             state <= 0;
             
             data <= 8'hFF;
             data_reg <= 8'hFF;
             
-            line1_prev <= line1;
-            line2_prev <= line2;
+            /*line1_prev <= line1;
+            line2_prev <= line2;*/
             
         end 
         else begin
-                counter <= counter + 1;
+                /*counter <= counter + 1;
                 
-               /*5000000 before is outdated*/
-               /*1000000 before is outdated*/
-                if (counter == 1000000) begin    /*Delay in write char*/
+               *//*5000000 before is outdated*//*
+               *//*1000000 before is outdated*//*
+                if (counter == 1000000) begin    *//*Delay in write char*//*
                     ce <= 1;
                     counter <= 0;
                 end
                 else begin
                     ce <= 0;
-                end
+                end*/
                 
                 if(ce) begin
                     /*Create enable pulse signal*/
