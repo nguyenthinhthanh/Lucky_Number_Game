@@ -2,11 +2,11 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Wed Dec  4 10:53:44 2024
-# Process ID: 18196
+# Start of session at: Thu Dec  5 09:46:27 2024
+# Process ID: 9708
 # Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
-# Command line: vivado.exe -log toggleLedWithIrRemote.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toggleLedWithIrRemote.tcl
-# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/toggleLedWithIrRemote.vds
+# Command line: vivado.exe -log LuckyNumberGame.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl
+# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/LuckyNumberGame.vds
 # Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source toggleLedWithIrRemote.tcl -notrace
+source LuckyNumberGame.tcl -notrace

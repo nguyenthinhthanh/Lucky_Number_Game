@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log toggleLedWithIrRemote.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source toggleLedWithIrRemote.tcl
+EAStep vivado -log LuckyNumberGame.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl

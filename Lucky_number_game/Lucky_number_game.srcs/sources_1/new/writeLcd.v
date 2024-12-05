@@ -81,8 +81,8 @@ module writeLcd(
         end 
         else if (line1_prev != line1 || line2_prev != line2) begin
             update_line <= 1;
-            line1_prev <= line1;
-            line2_prev <= line2;
+            /*line1_prev <= line1;
+            line2_prev <= line2;*/
         end else begin
             update_line <= 0;
         end
@@ -96,8 +96,8 @@ module writeLcd(
         else begin
             counter <= counter + 1;
                 
-           /*5000000 before is outdated*/
-           /*1000000 before is outdated*/
+           /*5000000 before is outdated
+           1000000 before is outdated*/
             if (counter == 1000000) begin    /*Delay in write char*/
                 ce <= 1;
                 counter <= 0;
@@ -135,8 +135,8 @@ module writeLcd(
         else begin
                 /*counter <= counter + 1;
                 
-               *//*5000000 before is outdated*//*
-               *//*1000000 before is outdated*//*
+               *//*5000000 before is outdated
+               1000000 before is outdated*//*
                 if (counter == 1000000) begin    *//*Delay in write char*//*
                     ce <= 1;
                     counter <= 0;
@@ -224,8 +224,8 @@ module writeLcd(
                             38: begin data <= line2[15*8 +: 8]; state <= state + 1; end
                             39: begin
                                 if(/*line1_prev != line1 || line2_prev != line2*/update_line) begin
-                                    /*line1_prev <= line1;
-                                    line2_prev <= line2;*/
+                                    line1_prev <= line1;
+                                    line2_prev <= line2;
                                     state <= 0;
                                 end
                                 else begin
