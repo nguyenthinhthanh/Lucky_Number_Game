@@ -23,8 +23,8 @@
 module fifoHistory(
     input wire clk,
     input wire rst,
+    input store,
     input wire [3:0] data_in,   // S? k?t qu? quay m?i (0-9)
-    input wire write_en,        // Tín hi?u ghi
     output reg[63:0] history // L?ch s? quay 16x 4bit number
 );
     reg[63:0] history_reg;
@@ -38,11 +38,13 @@ module fifoHistory(
                 history[i*4 +: 4] <= 4'b0000;
             end
         end 
-        else if (write_en) begin
-            for (i = 15; i > 0; i = i - 1) begin
-                history_reg[i*4 +: 4] <= history_reg[(i - 1)*4 +: 4];  // D?ch xu?ng
+        else begin
+            if(store) begin
+                for (i = 15; i > 0; i = i - 1) begin
+                    history_reg[i*4 +: 4] <= history_reg[(i - 1)*4 +: 4];  // D?ch xu?ng
+                end
+                history_reg[0*4 +: 4] <= data_in;            // L?u k?t qu? m?i
             end
-            history_reg[0*4 +: 4] <= data_in;            // L?u k?t qu? m?i
         end
         
         history <= history_reg;

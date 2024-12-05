@@ -51,6 +51,11 @@ module speedController(
     
     reg[1:0] seed[3:0];                                     /*This is seed for generate random number*/
     
+    wire[63:0] history_wire;
+    wire[79:0] weight_wire;
+    wire[3:0] weight_random_number_wire;
+    reg store;
+    
     frequencyDivider #(                                     /*This is frequency divider*/
         .TARGET_CLK_FREQ(TARGET_CLK_FREQ_NORMAL)            //  @input : parameter TARGET_CLK_FREQ*/
     ) frequency_for_button_read_inst(                       //  @output : clk for generate random number
@@ -87,6 +92,43 @@ module speedController(
         .random_number(random_number_wire[15:12])           // @output : random number from 0 to 9
     );
     
+    
+    fifoHistory fifo_history_inst(
+        .clk(clk_system),
+        .rst(rst),
+        .store(store),
+        .data_in(random_number_wire[3:0]),
+        .history(history_wire)
+    );
+    
+    weightCalculator weight_calculator_inst(
+        .clk(clk_system),
+        .rst(rst),
+        .history(history_wire),
+        .weights(weight_wire)
+    );
+    
+    weightedRandomNumber weighted_ramdom_number_inst(
+        .clk(clk_system),
+        .rst(rst),
+        .weights(weight_wire),
+        .random_number_in(random_number_wire[3:0]),
+        .random_num(weight_random_number_wire)
+    );
+    
+    always @(posedge clk_system or posedge rst) begin
+        if(rst) begin
+            store <= 0;
+        end
+        else begin
+            if(fsm_state == `FSM_STATE_FINAL_RESULT) begin
+                store <= 1;
+            end
+            else begin
+                store <= 0;
+            end
+        end
+    end
     
     always @(posedge clk_system or posedge rst) begin
         if(rst) begin
@@ -148,7 +190,13 @@ module speedController(
                         end*/
                         
                         for(i=0;i<`NUM_OF_7SEG_MODE_0;i=i+1) begin
-                            random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                            if(i==0) begin
+                                random_number[i*0 +:4] <= weight_random_number_wire;
+                            end
+                            else begin
+                                random_number[i*4 +:4] <= random_number_wire[i*4 +:4];                            
+                            end
+                            //random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                         end
                     end
                     /*else if(game_mode == `GAME_MODE_1) begin

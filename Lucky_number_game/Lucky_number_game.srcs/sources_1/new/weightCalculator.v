@@ -22,6 +22,7 @@
 
 module weightCalculator(
     input wire clk,
+    input rst,
     input wire[63:0] history, // L?ch s? quay 16x 4 bit number 
     output reg[79:0] weights   // Tr?ng s? cho t?ng s? t? 0-9
 );
@@ -29,17 +30,22 @@ module weightCalculator(
     integer i, j;
     reg [3:0] count [0:9];
 
-    always @(posedge clk) begin
-        // ??m s? l?n xu?t hi?n
-        for (i = 0; i < 10; i = i + 1) begin
-            count[i] <= 0; 
+    always @(posedge clk or posedge rst) begin
+        if(rst) begin
+            weights <= 80'b0000;
         end
-
-        for (j = 0; j < 16; j = j + 1) begin
-            count[history[j]] <= count[history[j]] + 1;
+        else begin
+            // ??m s? l?n xu?t hi?n
+            for (i = 0; i < 10; i = i + 1) begin
+                count[i] <= 0; 
+            end
+    
+            for (j = 0; j < 16; j = j + 1) begin
+                count[history[j*4 +: 4]] <= count[history[j*4 +: 4]] + 1;
+            end
+            // C?p nh?t tr?ng s? (tr?ng s? gi?m khi s? xu?t hi?n nhi?u)
+            for (i = 0; i < 10; i = i + 1)
+                weights[i*8 +: 8] <= 16 - count[i]; // Tr?ng s? cao h?n cho s? ít xu?t hi?n
         end
-        // C?p nh?t tr?ng s? (tr?ng s? gi?m khi s? xu?t hi?n nhi?u)
-        for (i = 0; i < 10; i = i + 1)
-            weights[i*8 +: 8] <= 16 - count[i]; // Tr?ng s? cao h?n cho s? ít xu?t hi?n
     end
 endmodule
