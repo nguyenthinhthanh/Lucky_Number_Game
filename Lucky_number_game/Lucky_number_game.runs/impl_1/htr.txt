@@ -6,4 +6,4 @@ REM          to be invoked for Vivado to track run status.
 REM Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 REM
 
-vivado -log LuckyNumberGame.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source LuckyNumberGame.tcl -notrace
+vivado -log toggleLedWithIrRemote.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source toggleLedWithIrRemote.tcl -notrace

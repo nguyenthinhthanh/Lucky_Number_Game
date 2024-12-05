@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log LuckyNumberGame.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source LuckyNumberGame.tcl -notrace" );
+         "-log toggleLedWithIrRemote.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source toggleLedWithIrRemote.tcl -notrace" );
 
 
 
