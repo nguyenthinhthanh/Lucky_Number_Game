@@ -18,7 +18,7 @@ Nút Start (nút BTN0)
 Nút Reset (nút BTN1)
 Phần mềm
 Vivado Design Suite (Phiên bản ≥ 2022.2)
-Kiến thức cơ bản về ngôn ngữ Verilog.
+Kiến thức cơ bản về ngôn ngữ Verilog.  
 🚀 Cách triển khai
 1. Clone repository
 bash
