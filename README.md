@@ -7,8 +7,8 @@ Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên 
 Quay số ngẫu nhiên: LED sẽ nhấp nháy như một vòng quay và dừng lại ở số được chọn.  
 Điều chỉnh xác suất thắng: Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.  
 Điều khiển bằng nút nhấn:  
-  Nút Start: Bắt đầu vòng quay.  
-  Nút Reset: Đặt lại trò chơi.  
+    Nút Start: Bắt đầu vòng quay.  
+    Nút Reset: Đặt lại trò chơi.  
 📋 Yêu cầu phần cứng và phần mềm  
 Phần cứng  
   Bo mạch Arty Z7  
