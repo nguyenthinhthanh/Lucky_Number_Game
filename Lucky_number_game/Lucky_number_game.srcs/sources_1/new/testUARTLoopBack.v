@@ -32,7 +32,8 @@ module testUARTLoopBack(
     wire rx_ready;
     reg data_valid;
     reg [3:0] state;
-    
+    reg [31:0] delay_counter;  // Delay counter for sending
+
     // K?t n?i UART module
     uart uart (
         .clk(clk),
@@ -45,11 +46,16 @@ module testUARTLoopBack(
         .tx_busy(tx_busy),
         .rx_ready(rx_ready)
     );
+    
+    reg [7:0] counter;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
+            counter <= 0;
+        
             data_valid <= 0;
             state <= 0;
+            delay_counter <= 0;
         end else begin
             case (state)
                 0: begin
@@ -66,9 +72,19 @@ module testUARTLoopBack(
                     end
                 end
                 2: begin
-                    if (!tx_busy) begin
-                        state <= 0;
+                    
+                    if(counter <= 8) begin
+                        if (!tx_busy) begin
+                            counter <= counter + 1;
+                            state <= 0;
+                        end
                     end
+                    else begin
+                        state <= 2;
+                    end
+                    /*if (!tx_busy) begin
+                        state <= 0;
+                    end*/
                 end
                 default: state <= 0;
             endcase

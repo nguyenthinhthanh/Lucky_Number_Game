@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Sat Dec  7 16:37:41 2024
+| Date             : Sat Dec  7 17:15:14 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file testUARTLoopBack_power_routed.rpt -pb testUARTLoopBack_power_summary_routed.pb -rpx testUARTLoopBack_power_routed.rpx
 | Design           : testUARTLoopBack
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.169        |
+| Total On-Chip Power (W)  | 1.198        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.045        |
-| Device Static (W)        | 0.124        |
+| Dynamic (W)              | 1.073        |
+| Device Static (W)        | 0.125        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 71.5         |
-| Junction Temperature (C) | 38.5         |
+| Max Ambient (C)          | 71.2         |
+| Junction Temperature (C) | 38.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.563 |      193 |       --- |             --- |
-|   LUT as Logic |     0.456 |       86 |     53200 |            0.16 |
-|   CARRY4       |     0.060 |        8 |     13300 |            0.06 |
-|   Register     |     0.040 |       72 |    106400 |            0.07 |
+| Slice Logic    |     0.577 |      205 |       --- |             --- |
+|   LUT as Logic |     0.470 |       93 |     53200 |            0.17 |
+|   CARRY4       |     0.061 |        8 |     13300 |            0.06 |
+|   Register     |     0.040 |       76 |    106400 |            0.07 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.474 |      144 |       --- |             --- |
+| Signals        |     0.488 |      152 |       --- |             --- |
 | I/O            |     0.008 |        4 |       125 |            3.20 |
-| Static Power   |     0.124 |          |           |                 |
-| Total          |     1.169 |          |           |                 |
+| Static Power   |     0.125 |          |           |                 |
+| Total          |     1.198 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.056 |       1.045 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.085 |       1.073 |      0.012 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -145,8 +145,8 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| testUARTLoopBack |     1.045 |
-|   uart           |     1.003 |
+| testUARTLoopBack |     1.073 |
+|   uart           |     1.021 |
 +------------------+-----------+
 
 
