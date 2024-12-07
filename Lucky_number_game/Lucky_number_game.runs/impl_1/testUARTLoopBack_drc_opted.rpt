@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Sat Dec  7 14:56:17 2024
+| Date         : Sat Dec  7 16:30:47 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_drc -file testUARTLoopBack_drc_opted.rpt -pb testUARTLoopBack_drc_opted.pb -rpx testUARTLoopBack_drc_opted.rpx
 | Design       : testUARTLoopBack

@@ -87,7 +87,10 @@ set_property ip_output_repo d:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lu
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/header.vh
+read_verilog {
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/header.vh
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/UartStates.vh
+}
 set_property is_global_include true [get_files D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/header.vh]
 read_verilog -library xil_defaultlib {
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/button_test.v
@@ -117,6 +120,13 @@ read_verilog -library xil_defaultlib {
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/weightedRandomNumber.v
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/myUART.v
   D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/testUARTLoopBack.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8Transmitter.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/BaudRateGenerator.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8Receiver.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/UART_HelloWorld.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/uart_tx.v
+  D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/uart.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

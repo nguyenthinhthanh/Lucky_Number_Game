@@ -126,7 +126,7 @@ module myUART(
                     if (rx_bit_counter == 0) begin
                         rx_bit_counter <= BIT_PERIOD;
                         rx_shift_reg <= {rx, rx_shift_reg[7:1]};
-                        if (rx_shift_reg == 8'b0) begin
+                        if (rx_bit_counter == 8) begin
                             rx_state <= 4'b0011;
                         end else begin
                             rx_state <= 4'b0010;
@@ -136,14 +136,10 @@ module myUART(
                     end
                 end
                 4'b0011: begin
-                    if (rx_bit_counter == 0) begin
-                        data_out <= rx_shift_reg;
-                        data_ready <= 1'b1;
-                        rx_state <= 4'b0000;
-                        rx_busy <= 1'b0;
-                    end else begin
-                        rx_bit_counter <= rx_bit_counter - 1;
-                    end
+                    data_out <= rx_shift_reg;
+                    data_ready <= 1'b1;
+                    rx_state <= 4'b0000;
+                    rx_busy <= 1'b0;
                 end
                 default: rx_state <= 4'b0000;
             endcase
