@@ -16,7 +16,7 @@ LED sẽ nhấp nháy và đổi màu tương ứng với chế độ và trạn
 - Nút Reset: Đặt lại trò chơi.  
 ## 📋 Yêu cầu phần cứng và phần mềm  
 Phần cứng  
-  Bo mạch Arty Z7  
+  - Bo mạch Arty Z7  
   - 4 LED đơn tích hợp trên bo
   - 2 LED RGB tích hợp trên bo
   - 4 nút nhấn tích hợp trên bo:
@@ -42,14 +42,23 @@ Thực hiện Implementation.
 Tạo tệp .bit.
 Lập trình tệp .bit lên bo thông qua cổng JTAG.
 ## 💡 Hướng dẫn sử dụng
-Cấp nguồn cho bo Arty Z7.
-Nhấn nút BTN0-BTN4, kết hợp Lcd để bắt đầu trò chơi.
-LED sẽ nhấp nháy và dừng lại, hiển thị số bạn đã quay được.
-Sử dụng nút Reset (SWO) để khởi động lại trò chơi.
+Cấp nguồn cho bo Arty Z7.  
+
+Nhấn nút BTN0-BTN4, kết hợp Lcd để bắt đầu trò chơi.  
+
+LCD hiện thị kết quả thắng thua, LED sẽ nhấp nháy, đổi màu và dừng lại, LED 7 đoạn hiển thị số bạn đã quay được.  
+
+Sử dụng nút Reset (SWO) để khởi động lại trò chơi.  
+
+Sử dụng Bluetooth terminal để điều khiển trò chơi trên thiết bị.  
 ## ✨ Tính năng mở rộng
-Hiển thị số quay được trên màn hình 7 đoạn.
-Thêm âm thanh (buzzer) khi vòng quay dừng lại.
-Tích hợp thuật toán nâng cao để phân tích kết quả trước để thay đổi xác suất trúng số.
+Điều khiển trò chơi bằng App sử dụng module Bluetooth, giao tiếp Uartt.  
+
+Thêm nhiều chế độ chơi, cho phép người chơi thiết lập cách chơi và chế độ Special Mode tăng tính hấp dẫn.  
+
+Thêm âm thanh (buzzer) phát nhạc trong suốt trò chơi.  
+
+Tích hợp thuật toán nâng cao để phân tích kết quả trước để thay đổi xác suất trúng số.  
 ## 🤝 Đóng góp
 Bạn có ý tưởng cải thiện trò chơi? Hãy mở Pull Request hoặc Issue trên GitHub!
 
