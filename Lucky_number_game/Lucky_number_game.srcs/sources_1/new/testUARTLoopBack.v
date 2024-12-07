@@ -23,82 +23,51 @@
 module testUARTLoopBack(
     input wire clk,
     input wire rst,
+    input wire rx,
     output wire tx
 );
-    reg [7:0] data_in;
-    reg data_valid;
+    wire [7:0] data_in;
+    reg [7:0] data_out;
     wire tx_busy;
-    reg [31:0] counter;     // Counter for 2 seconds delay
+    wire rx_ready;
+    reg data_valid;
     reg [3:0] state;
-    reg [3:0] char_index;
     
-    // Chu?i "I am iron man" ???c mã hóa d??i d?ng b?ng kı t?
-    reg [7:0] message [0:12];
-
-    initial begin
-        message[0] = "I";
-        message[1] = " ";
-        message[2] = "a";
-        message[3] = "m";
-        message[4] = " ";
-        message[5] = "i";
-        message[6] = "r";
-        message[7] = "o";
-        message[8] = "n";
-        message[9] = " ";
-        message[10] = "m";
-        message[11] = "a";
-        message[12] = "n";
-        data_valid = 0;
-        char_index = 0;
-        state = 0;
-        counter = 0;
-    end
-
     // K?t n?i UART module
-    uart_tx uart (
+    uart uart (
         .clk(clk),
         .reset(rst),
-        .tx_start(data_valid),
-        .tx_data(data_in),
+        .rx(rx),
         .tx(tx),
-        .tx_busy(tx_busy)
+        .tx_data(data_out),
+        .rx_data(data_in),
+        .tx_start(data_valid),
+        .tx_busy(tx_busy),
+        .rx_ready(rx_ready)
     );
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             data_valid <= 0;
-            char_index <= 0;
             state <= 0;
-            counter <= 0;
         end else begin
             case (state)
                 0: begin
-                    // ??m th?i gian 2 giây
-                    if (counter < (2 * 125000000)) begin
-                        counter <= counter + 1;
-                    end else begin
-                        counter <= 0;
+                    if (rx_ready) begin
+                        data_out <= data_in;
+                        data_valid <= 1;
                         state <= 1;
                     end
                 end
                 1: begin
-                    if (char_index < 13) begin
-                        if (!tx_busy) begin
-                            data_in <= message[char_index];
-                            data_valid <= 1;
-                            char_index <= char_index + 1;
-                            state <= 2;
-                        end
-                    end else begin
-                        char_index <= 0; // Reset index to start sending "I am iron man" again
-                        state <= 0;
+                    if (tx_busy) begin
+                        data_valid <= 0;
+                        state <= 2;
                     end
                 end
                 2: begin
-                    if (tx_busy) begin
-                        data_valid <= 0;
-                        state <= 1;
+                    if (!tx_busy) begin
+                        state <= 0;
                     end
                 end
                 default: state <= 0;
@@ -106,5 +75,3 @@ module testUARTLoopBack(
         end
     end
 endmodule
-
-
