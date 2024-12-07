@@ -21,131 +21,142 @@
 
 
 module myUART(
-    input wire clk,          // Clock input
-    input wire rst,          // Reset signal
-    input wire rx,           // UART receive input
-    output reg tx,           // UART transmit output
-    input wire [7:0] data_in,  // Data to be transmitted
-    output reg [7:0] data_out, // Data received
-    input wire data_valid,   // Valid signal for data_in
-    output reg data_ready    // Data ready signal
+    input wire clk,
+    input wire reset,
+    input wire rx,
+    output reg tx,
+    input wire [7:0] tx_data,
+    output reg [7:0] rx_data,
+    input wire tx_start,
+    output reg tx_busy,
+    output reg rx_ready
 );
-
-    parameter BAUD_RATE = 9600;
     parameter CLOCK_FREQ = 125000000;
-    
+    parameter BAUD_RATE = 9600;
     localparam integer BIT_PERIOD = CLOCK_FREQ / BAUD_RATE;
-    
+
     // Transmitter state machine
-    reg [3:0] tx_state;
-    reg [7:0] tx_shift_reg;
-    reg [15:0] tx_bit_counter;
-    reg tx_busy;
+    localparam TX_IDLE = 3'b000;
+    localparam TX_START = 3'b001;
+    localparam TX_DATA = 3'b010;
+    localparam TX_STOP = 3'b011;
     
-    // Receiver state machine
-    reg [3:0] rx_state;
-    reg [7:0] rx_shift_reg;
-    reg [15:0] rx_bit_counter;
-    reg rx_busy;
+    reg [2:0] tx_state;
+    reg [2:0] tx_bit_idx;
+    reg [15:0] tx_bit_timer;
     
-    // UART transmitter logic
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
             tx <= 1'b1;
             tx_busy <= 1'b0;
-            tx_state <= 4'b0000;
-            tx_shift_reg <= 8'b0;
-            tx_bit_counter <= 16'b0;
+            tx_state <= TX_IDLE;
+            tx_bit_idx <= 3'd0;
+            tx_bit_timer <= 16'd0;
         end else begin
             case (tx_state)
-                4'b0000: begin
-                    if (data_valid && !tx_busy) begin
-                        tx_shift_reg <= data_in;
-                        tx_bit_counter <= BIT_PERIOD;
-                        tx <= 1'b0;  // Start bit
+                TX_IDLE: begin
+                    if (tx_start) begin
+                        tx_state <= TX_START;
                         tx_busy <= 1'b1;
-                        tx_state <= 4'b0001;
+                        tx_bit_timer <= BIT_PERIOD;
                     end
                 end
-                4'b0001: begin
-                    if (tx_bit_counter == 0) begin
-                        tx_bit_counter <= BIT_PERIOD;
-                        tx <= tx_shift_reg[0];
-                        tx_shift_reg <= {1'b0, tx_shift_reg[7:1]};
-                        if (tx_shift_reg == 8'b0) begin
-                            tx_state <= 4'b0010;
-                        end else begin
-                            tx_state <= 4'b0001;
+                TX_START: begin
+                    if (tx_bit_timer == 16'd0) begin
+                        tx <= 1'b0; // start bit
+                        tx_state <= TX_DATA;
+                        tx_bit_idx <= 3'd0;
+                        tx_bit_timer <= BIT_PERIOD;
+                    end else begin
+                        tx_bit_timer <= tx_bit_timer - 1;
+                    end
+                end
+                TX_DATA: begin
+                    if (tx_bit_timer == 16'd0) begin
+                        tx <= tx_data[tx_bit_idx];
+                        tx_bit_idx <= tx_bit_idx + 1;
+                        tx_bit_timer <= BIT_PERIOD;
+                        if (tx_bit_idx == 3'd7) begin
+                            tx_state <= TX_STOP;
                         end
                     end else begin
-                        tx_bit_counter <= tx_bit_counter - 1;
+                        tx_bit_timer <= tx_bit_timer - 1;
                     end
                 end
-                4'b0010: begin
-                    if (tx_bit_counter == 0) begin
-                        tx_bit_counter <= BIT_PERIOD;
-                        tx <= 1'b1;  // Stop bit
-                        tx_state <= 4'b0000;
+                TX_STOP: begin
+                    if (tx_bit_timer == 16'd0) begin
+                        tx <= 1'b1; // stop bit
+                        tx_state <= TX_IDLE;
                         tx_busy <= 1'b0;
                     end else begin
-                        tx_bit_counter <= tx_bit_counter - 1;
+                        tx_bit_timer <= tx_bit_timer - 1;
                     end
                 end
-                default: tx_state <= 4'b0000;
+                default: tx_state <= TX_IDLE;
             endcase
         end
     end
 
-    // UART receiver logic
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            data_out <= 8'b0;
-            data_ready <= 1'b0;
-            rx_busy <= 1'b0;
-            rx_state <= 4'b0000;
-            rx_shift_reg <= 8'b0;
-            rx_bit_counter <= 16'b0;
+    // Receiver state machine
+    localparam RX_IDLE = 3'b000;
+    localparam RX_START = 3'b001;
+    localparam RX_DATA = 3'b010;
+    localparam RX_STOP = 3'b011;
+    
+    reg [2:0] rx_state;
+    reg [2:0] rx_bit_idx;
+    reg [15:0] rx_bit_timer;
+    reg [7:0] rx_shift_reg;
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            rx_ready <= 1'b0;
+            rx_state <= RX_IDLE;
+            rx_bit_idx <= 3'd0;
+            rx_bit_timer <= 16'd0;
         end else begin
             case (rx_state)
-                4'b0000: begin
-                    if (!rx && !rx_busy) begin  // Start bit detected
-                        rx_bit_counter <= BIT_PERIOD / 2;
-                        rx_busy <= 1'b1;
-                        rx_state <= 4'b0001;
+                RX_IDLE: begin
+                    if (!rx) begin // start bit detected
+                        rx_ready <= 0;                       /*For reset read 1 byte*/
+                    
+                        rx_state <= RX_START;
+                        rx_bit_timer <= BIT_PERIOD / 2;
                     end
                 end
-                4'b0001: begin
-                    if (rx_bit_counter == 0) begin
-                        rx_bit_counter <= BIT_PERIOD;
-                        rx_state <= 4'b0010;
+                RX_START: begin
+                    if (rx_bit_timer == 16'd0) begin
+                        rx_bit_timer <= BIT_PERIOD;
+                        rx_bit_idx <= 3'd0;
+                        rx_state <= RX_DATA;
                     end else begin
-                        rx_bit_counter <= rx_bit_counter - 1;
+                        rx_bit_timer <= rx_bit_timer - 1;
                     end
                 end
-                4'b0010: begin
-                    if (rx_bit_counter == 0) begin
-                        rx_bit_counter <= BIT_PERIOD;
-                        rx_shift_reg <= {rx, rx_shift_reg[7:1]};
-                        if (rx_bit_counter == 8) begin
-                            rx_state <= 4'b0011;
-                        end else begin
-                            rx_state <= 4'b0010;
+                RX_DATA: begin
+                    if (rx_bit_timer == 16'd0) begin
+                        rx_shift_reg[rx_bit_idx] <= rx;
+                        rx_bit_idx <= rx_bit_idx + 1;
+                        rx_bit_timer <= BIT_PERIOD;
+                        if (rx_bit_idx == 3'd7) begin
+                            rx_state <= RX_STOP;
                         end
                     end else begin
-                        rx_bit_counter <= rx_bit_counter - 1;
+                        rx_bit_timer <= rx_bit_timer - 1;
                     end
                 end
-                4'b0011: begin
-                    data_out <= rx_shift_reg;
-                    data_ready <= 1'b1;
-                    rx_state <= 4'b0000;
-                    rx_busy <= 1'b0;
+                RX_STOP: begin
+                    if (rx_bit_timer == 16'd0) begin
+                        rx_data <= rx_shift_reg;
+                        rx_ready <= 1'b1;
+                        rx_state <= RX_IDLE;
+                    end else begin
+                        rx_bit_timer <= rx_bit_timer - 1;
+                    end
                 end
-                default: rx_state <= 4'b0000;
+                default: rx_state <= RX_IDLE;
             endcase
         end
     end
 endmodule
-
-
 
