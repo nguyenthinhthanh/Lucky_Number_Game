@@ -73,7 +73,7 @@ module testUARTLoopBack(
                 end
                 2: begin
                     
-                    if(counter <= 8) begin
+                    if(counter < 1) begin
                         if (!tx_busy) begin
                             counter <= counter + 1;
                             state <= 0;
