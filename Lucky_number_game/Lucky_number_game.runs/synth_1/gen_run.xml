@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733566433">
-  <File Type="PA-TCL" Name="testUARTLoopBack.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="testUARTLoopBack_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="testUARTLoopBack_reports.tcl"/>
-  <File Type="RDS-RDS" Name="testUARTLoopBack.vds"/>
-  <File Type="RDS-UTIL" Name="testUARTLoopBack_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="testUARTLoopBack_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="testUARTLoopBack.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="testUARTLoopBack_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="testUARTLoopBack_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733580333">
+  <File Type="PA-TCL" Name="controlGameWithBluetooth.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="controlGameWithBluetooth_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="controlGameWithBluetooth_reports.tcl"/>
+  <File Type="RDS-RDS" Name="controlGameWithBluetooth.vds"/>
+  <File Type="RDS-UTIL" Name="controlGameWithBluetooth_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="controlGameWithBluetooth_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="controlGameWithBluetooth.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="controlGameWithBluetooth_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="controlGameWithBluetooth_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/header.vh">
@@ -262,9 +262,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/controlGameWithBluetooth.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="testUARTLoopBack"/>
+      <Option Name="TopModule" Val="controlGameWithBluetooth"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -286,7 +293,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

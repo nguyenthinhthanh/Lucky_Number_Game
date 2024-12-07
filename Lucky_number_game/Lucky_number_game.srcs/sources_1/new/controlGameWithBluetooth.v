@@ -18,21 +18,26 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "header.vh"
 
 module controlGameWithBluetooth(
     input wire clk,
+    /*input wire clk_system,*/
     input wire rst,
     input wire rx,
-    output wire tx
+    output wire tx,
+    output reg[7:0] bluetooth_button_state
 );
     wire [7:0] data_in;
     reg [7:0] data_out;
     wire tx_busy;
     wire rx_ready;
+    
     reg data_valid;
     reg [3:0] state;
     reg [31:0] delay_counter;  // Delay counter for sending
+    
+    reg[7:0] bluetooth_button_state_reg;                  /*This just is reg for store bluetooth button state*/
 
     /*Connect uart module*/
     myUART uart (
@@ -48,6 +53,47 @@ module controlGameWithBluetooth(
     );
     
     reg [7:0] counter;
+    
+    always @(posedge clk /*clk_system*/ or posedge rst) begin
+        if(rst) begin
+            bluetooth_button_state <= 8'b0000_0000;
+            bluetooth_button_state_reg <= 8'b0000_0000;
+        end
+        else begin
+            case (data_out)
+                8'h41: begin                /*A char*/
+                    bluetooth_button_state_reg[0*2 +:2] <= `BUTTON_STATE_PRESSED;
+                end
+                8'h42: begin                /*B char*/
+                    bluetooth_button_state_reg[1*2 +:2] <= `BUTTON_STATE_PRESSED;
+                end
+                8'h43: begin                /*C char*/
+                    bluetooth_button_state_reg[2*2 +:2] <= `BUTTON_STATE_PRESSED;
+                end
+                8'h44: begin                /*D char*/
+                    bluetooth_button_state_reg[3*2 +:2] <= `BUTTON_STATE_PRESSED;
+                end
+                8'h44: begin                /*E char*/
+                    bluetooth_button_state_reg[0*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD; 
+                end
+                8'h46: begin                /*F char*/
+                    bluetooth_button_state_reg[1*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;    
+                end
+                8'h47: begin                /*G char*/
+                    bluetooth_button_state_reg[2*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD; 
+                end
+                8'h48: begin                /*H char*/
+                    bluetooth_button_state_reg[3*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;  
+                end
+                /*If not have bluetooth char, button state default BUTTON_STATE_RELEASED*/
+                //default: bluetooth_button_state_reg <= 8'b0000_0000;
+                /*Just to test*/ 
+                default: bluetooth_button_state_reg <= bluetooth_button_state_reg;
+            endcase
+            
+            bluetooth_button_state <= bluetooth_button_state_reg;
+        end
+    end
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
