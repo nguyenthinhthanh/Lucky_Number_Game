@@ -3,7 +3,7 @@
 Mô tả dự án  
 Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên bo mạch Arty Z7. Dự án sử dụng LED và LCD 16x2 để hiển thị kết quả và các nút nhấn để điều khiển, kết hợp nhạc để tăng tính thú vị cho trò chơi. Ngoài ra, thuật toán thông minh giúp điều chỉnh xác suất thắng dựa trên kết quả trước đó, làm tăng tính thú vị và thách thức cho người chơi.  
 
-Trò chơi cũng được tích hợp điều khiển từ xa bằng App, sử dụng module Bluetooth HC-06 giao tiếp UART.  
+Trò chơi cũng được tích hợp điều khiển từ xa bằng App, sử dụng module ESP32 NodeMCU LuaNode32 nhận dữ liệu thông qua Bluetooth từ App và gửi tới Arty Z7 bằng giao tiếp UART.  
 
 ## 🎯 Chức năng chính  
 Quay số ngẫu nhiên: Trò chơi cho phép người chơi lựa chọn chế độ chơi, cách thức chơi, cách thức đặt cược.  
@@ -13,7 +13,9 @@ LED sẽ nhấp nháy và đổi màu tương ứng với chế độ và trạn
 
 Điều khiển bằng nút nhấn:  
 - Nút Start: Bắt đầu vòng quay.  
-- Nút Reset: Đặt lại trò chơi.  
+- Nút Reset: Đặt lại trò chơi.
+
+Điều khiển trò chơi qua App kết nối Bluetooth.  
 ## 📋 Yêu cầu phần cứng và phần mềm  
 Phần cứng  
   - Bo mạch Arty Z7  
@@ -22,7 +24,7 @@ Phần cứng
   - 4 nút nhấn tích hợp trên bo:
   - 1 LCD 16x2 hướng dẫn người chơi và thông báo kết quả  
   - 1 Buzzer active phát nhạc  
-  - 1 Module Bluetooth HC-06
+  - 1 Module ESP32 NodeMCU LuaNode32
 Phần mềm  
   Vivado Design Suite (Phiên bản ≥ 2022.2)  
   Kiến thức cơ bản về ngôn ngữ Verilog.  
@@ -52,13 +54,15 @@ Sử dụng nút Reset (SWO) để khởi động lại trò chơi.
 
 Sử dụng Bluetooth terminal để điều khiển trò chơi trên thiết bị.  
 ## ✨ Tính năng mở rộng
-Điều khiển trò chơi bằng App sử dụng module Bluetooth, giao tiếp Uartt.  
+Điều khiển trò chơi bằng App sử dụng module ESP32 NodeMCU LuaNode32 Bluetooth, giao tiếp Uartt.  
 
 Thêm nhiều chế độ chơi, cho phép người chơi thiết lập cách chơi và chế độ Special Mode tăng tính hấp dẫn.  
 
 Thêm âm thanh (buzzer) phát nhạc trong suốt trò chơi.  
 
 Tích hợp thuật toán nâng cao để phân tích kết quả trước để thay đổi xác suất trúng số.  
+
+Ngoài ra vì được kết nối với ESP32 một module mạnh mẽ, trong tương lai dự án có thể mở rộng hơn rất nhiều.  
 ## 🤝 Đóng góp
 Bạn có ý tưởng cải thiện trò chơi? Hãy mở Pull Request hoặc Issue trên GitHub!
 
