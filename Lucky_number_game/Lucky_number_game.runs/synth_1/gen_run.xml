@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733627519">
-  <File Type="PA-TCL" Name="controlGameWithBluetooth.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="controlGameWithBluetooth_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="controlGameWithBluetooth_reports.tcl"/>
-  <File Type="RDS-RDS" Name="controlGameWithBluetooth.vds"/>
-  <File Type="RDS-UTIL" Name="controlGameWithBluetooth_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="controlGameWithBluetooth_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="controlGameWithBluetooth.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="controlGameWithBluetooth_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="controlGameWithBluetooth_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733644621">
+  <File Type="PA-TCL" Name="testUARTLoopBack.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="testUARTLoopBack_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="testUARTLoopBack_reports.tcl"/>
+  <File Type="RDS-RDS" Name="testUARTLoopBack.vds"/>
+  <File Type="RDS-UTIL" Name="testUARTLoopBack_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="testUARTLoopBack_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="testUARTLoopBack.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="testUARTLoopBack_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="testUARTLoopBack_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/header.vh">
@@ -271,7 +271,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="controlGameWithBluetooth"/>
+      <Option Name="TopModule" Val="testUARTLoopBack"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

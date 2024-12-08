@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log controlGameWithBluetooth.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source controlGameWithBluetooth.tcl -notrace" );
+         "-log testUARTLoopBack.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source testUARTLoopBack.tcl -notrace" );
 
 
 
