@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sat Dec  7 21:05:36 2024
-# Process ID: 9744
+# Start of session at: Sun Dec  8 10:12:02 2024
+# Process ID: 10492
 # Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
 # Command line: vivado.exe -log controlGameWithBluetooth.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlGameWithBluetooth.tcl
 # Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/controlGameWithBluetooth.vds

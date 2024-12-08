@@ -107,8 +107,16 @@ module controlGameWithBluetooth(
                 0: begin
                     if (rx_ready) begin
                         data_out <= data_in;
-                        data_valid <= 1;
-                        state <= 1;
+                        if(data_out == 8'h21) begin             /*! char to end*/
+                            data_valid <= 0;
+                            state <= 0;
+                        end
+                        else begin
+                            data_valid <= 1;
+                            state <= 1;
+                        end
+                        /*data_valid <= 1;
+                        state <= 1;*/
                     end
                 end
                 1: begin

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Sat Dec  7 21:06:53 2024
+| Date             : Sun Dec  8 10:13:11 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file controlGameWithBluetooth_power_routed.rpt -pb controlGameWithBluetooth_power_summary_routed.pb -rpx controlGameWithBluetooth_power_routed.rpx
 | Design           : controlGameWithBluetooth
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.106        |
+| Total On-Chip Power (W)  | 1.645        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.957        |
-| Device Static (W)        | 0.148        |
+| Dynamic (W)              | 1.510        |
+| Device Static (W)        | 0.136        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 60.7         |
-| Junction Temperature (C) | 49.3         |
+| Max Ambient (C)          | 66.0         |
+| Junction Temperature (C) | 44.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.552 |      216 |       --- |             --- |
-|   LUT as Logic |     0.445 |       94 |     53200 |            0.18 |
+| Slice Logic    |     0.567 |      219 |       --- |             --- |
+|   LUT as Logic |     0.461 |       98 |     53200 |            0.18 |
 |   CARRY4       |     0.060 |        8 |     13300 |            0.06 |
-|   Register     |     0.041 |       86 |    106400 |            0.08 |
+|   Register     |     0.040 |       86 |    106400 |            0.08 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.480 |      159 |       --- |             --- |
-| I/O            |     0.926 |       12 |       125 |            9.60 |
-| Static Power   |     0.148 |          |           |                 |
-| Total          |     2.106 |          |           |                 |
+| Signals        |     0.460 |      163 |       --- |             --- |
+| I/O            |     0.483 |       12 |       125 |            9.60 |
+| Static Power   |     0.136 |          |           |                 |
+| Total          |     1.645 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.058 |       1.040 |      0.018 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.051 |       0.034 |      0.017 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.261 |       0.260 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.050 |       1.035 |      0.015 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.032 |       0.017 |      0.015 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.135 |       0.134 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -84,7 +84,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.036 |       0.000 |      0.036 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.030 |       0.000 |      0.030 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -145,8 +145,8 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| controlGameWithBluetooth |     1.957 |
-|   uart                   |     0.981 |
+| controlGameWithBluetooth |     1.510 |
+|   uart                   |     0.985 |
 +--------------------------+-----------+
 
 

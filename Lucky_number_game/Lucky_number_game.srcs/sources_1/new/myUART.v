@@ -117,9 +117,10 @@ module myUART(
         end else begin
             case (rx_state)
                 RX_IDLE: begin
-                    if (!rx) begin // start bit detected
-                        rx_ready <= 0;                       /*For reset read 1 byte*/
+                    //rx_ready <= 0;                       /*For reset read 1 byte*/
                     
+                    if (!rx) begin // start bit detected
+                        //rx_ready <= 1;
                         rx_state <= RX_START;
                         rx_bit_timer <= BIT_PERIOD / 2;
                     end
