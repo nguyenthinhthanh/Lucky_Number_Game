@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Mon Dec  9 11:13:50 2024
+| Date             : Mon Dec  9 11:35:53 2024
 | Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file controlGameWithBluetooth_power_routed.rpt -pb controlGameWithBluetooth_power_summary_routed.pb -rpx controlGameWithBluetooth_power_routed.rpx
 | Design           : controlGameWithBluetooth
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.137        |
+| Total On-Chip Power (W)  | 1.488        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.988        |
-| Device Static (W)        | 0.149        |
+| Dynamic (W)              | 1.357        |
+| Device Static (W)        | 0.132        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 60.4         |
-| Junction Temperature (C) | 49.6         |
+| Max Ambient (C)          | 67.8         |
+| Junction Temperature (C) | 42.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.584 |      216 |       --- |             --- |
-|   LUT as Logic |     0.478 |       93 |     53200 |            0.17 |
-|   CARRY4       |     0.060 |        8 |     13300 |            0.06 |
-|   Register     |     0.041 |       86 |    106400 |            0.08 |
+| Slice Logic    |     0.699 |      301 |       --- |             --- |
+|   LUT as Logic |     0.561 |      134 |     53200 |            0.25 |
+|   CARRY4       |     0.078 |       16 |     13300 |            0.12 |
+|   Register     |     0.054 |      119 |    106400 |            0.11 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.478 |      159 |       --- |             --- |
-| I/O            |     0.926 |       12 |       125 |            9.60 |
-| Static Power   |     0.149 |          |           |                 |
-| Total          |     2.137 |          |           |                 |
+|   Others       |     0.000 |        6 |       --- |             --- |
+| Signals        |     0.650 |      241 |       --- |             --- |
+| I/O            |     0.008 |       12 |       125 |            9.60 |
+| Static Power   |     0.132 |          |           |                 |
+| Total          |     1.488 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.088 |       1.070 |      0.018 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.051 |       0.034 |      0.017 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.261 |       0.260 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.370 |       1.357 |      0.014 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -84,7 +84,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.036 |       0.000 |      0.036 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.028 |       0.000 |      0.028 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -142,11 +142,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------+-----------+
-| Name                     | Power (W) |
-+--------------------------+-----------+
-| controlGameWithBluetooth |     1.988 |
-|   uart                   |     1.014 |
-+--------------------------+-----------+
++----------------------------------+-----------+
+| Name                             | Power (W) |
++----------------------------------+-----------+
+| controlGameWithBluetooth         |     1.357 |
+|   frequency_for_button_read_inst |     0.306 |
+|   uart                           |     0.997 |
++----------------------------------+-----------+
 
 

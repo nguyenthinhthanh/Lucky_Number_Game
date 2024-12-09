@@ -39,6 +39,18 @@ module controlGameWithBluetooth(
     
     reg[7:0] bluetooth_button_state_reg;                  /*This just is reg for store bluetooth button state*/
 
+    wire clk_system;
+
+    parameter TARGET_CLK_FREQ = 400;            /*This clk for every 400Hz - 2.5ms read button value */
+    
+    frequencyDivider #(                                     /*This is frequency divider to make clk for systems*/ 
+        .TARGET_CLK_FREQ(TARGET_CLK_FREQ)                   //  @input : parameter TARGET_CLK_FREQ*/
+    ) frequency_for_button_read_inst(                       //  @output : clk for systems
+        .clk(clk),
+        .rst(rst),
+        .clk_out(clk_system)
+    );
+
     /*Connect uart module*/
     myUART uart (
         .clk(clk),
@@ -54,7 +66,7 @@ module controlGameWithBluetooth(
     
     reg [7:0] counter;
     
-    always @(posedge clk /*clk_system*/ or posedge rst) begin
+    always @(posedge /*clk*/ clk_system or posedge rst) begin
         if(rst) begin
             bluetooth_button_state <= 8'b0000_0000;
             bluetooth_button_state_reg <= 8'b0000_0000;
