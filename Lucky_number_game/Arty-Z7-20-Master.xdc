@@ -103,40 +103,40 @@ set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { en }];
 #set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { winner[1] }]; #IO_L23P_T3_34           Sch=CK_IO13
 
 ## ChipKit Inner Digital Header
-#set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { bcd[0] }]; #IO_L19N_T3_VREF_13  Sch=CK_IO26
-#set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { bcd[1] }]; #IO_L6N_T0_VREF_13   Sch=CK_IO27
-#set_property -dict { PACKAGE_PIN V6    IOSTANDARD LVCMOS33 } [get_ports { bcd[2] }]; #IO_L22P_T3_13       Sch=CK_IO28
-#set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { bcd[3] }]; #IO_L11P_T1_SRCC_13  Sch=CK_IO29
-#set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { bcd[4] }]; #IO_L11N_T1_SRCC_13  Sch=CK_IO30
-#set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { bcd[5] }]; #IO_L17N_T2_13       Sch=CK_IO31
-#set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { bcd[6] }]; #IO_L15P_T2_DQS_13   Sch=CK_IO32
-#set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { bcd[7] }]; #IO_L21N_T3_DQS_13   Sch=CK_IO33
-#set_property -dict { PACKAGE_PIN W10   IOSTANDARD LVCMOS33 } [get_ports { bcd[8] }]; #IO_L16P_T2_13       Sch=CK_IO34
-#set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { bcd[9] }]; #IO_L22N_T3_13       Sch=CK_IO35
-#set_property -dict { PACKAGE_PIN Y6    IOSTANDARD LVCMOS33 } [get_ports { bcd[10] }]; #IO_L13N_T2_MRCC_13  Sch=CK_IO36
-#set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { bcd[11] }]; #IO_L13P_T2_MRCC_13  Sch=cCK_IO37
-#set_property -dict { PACKAGE_PIN W8    IOSTANDARD LVCMOS33 } [get_ports { bcd[12] }]; #IO_L15N_T2_DQS_13   Sch=CK_IO38
-#set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { bcd[13] }]; #IO_L14N_T2_SRCC_13  Sch=CK_IO39
-#set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { bcd[14] }]; #IO_L16N_T2_13       Sch=CK_IO40
-#set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { bcd[15] }]; #IO_L14P_T2_SRCC_13  Sch=CK_IO41
+set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { bcd[0] }]; #IO_L19N_T3_VREF_13  Sch=CK_IO26
+set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { bcd[1] }]; #IO_L6N_T0_VREF_13   Sch=CK_IO27
+set_property -dict { PACKAGE_PIN V6    IOSTANDARD LVCMOS33 } [get_ports { bcd[2] }]; #IO_L22P_T3_13       Sch=CK_IO28
+set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { bcd[3] }]; #IO_L11P_T1_SRCC_13  Sch=CK_IO29
+set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { bcd[4] }]; #IO_L11N_T1_SRCC_13  Sch=CK_IO30
+set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { bcd[5] }]; #IO_L17N_T2_13       Sch=CK_IO31
+set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { bcd[6] }]; #IO_L15P_T2_DQS_13   Sch=CK_IO32
+set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { bcd[7] }]; #IO_L21N_T3_DQS_13   Sch=CK_IO33
+set_property -dict { PACKAGE_PIN W10   IOSTANDARD LVCMOS33 } [get_ports { bcd[8] }]; #IO_L16P_T2_13       Sch=CK_IO34
+set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { bcd[9] }]; #IO_L22N_T3_13       Sch=CK_IO35
+set_property -dict { PACKAGE_PIN Y6    IOSTANDARD LVCMOS33 } [get_ports { bcd[10] }]; #IO_L13N_T2_MRCC_13  Sch=CK_IO36
+set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { bcd[11] }]; #IO_L13P_T2_MRCC_13  Sch=cCK_IO37
+set_property -dict { PACKAGE_PIN W8    IOSTANDARD LVCMOS33 } [get_ports { bcd[12] }]; #IO_L15N_T2_DQS_13   Sch=CK_IO38
+set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { bcd[13] }]; #IO_L14N_T2_SRCC_13  Sch=CK_IO39
+set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { bcd[14] }]; #IO_L16N_T2_13       Sch=CK_IO40
+set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { bcd[15] }]; #IO_L14P_T2_SRCC_13  Sch=CK_IO41
 
 ############To test bluetooth button state############
-set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[0] }]; #IO_L19N_T3_VREF_13  Sch=CK_IO26
-set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[1] }]; #IO_L6N_T0_VREF_13   Sch=CK_IO27
-#set_property -dict { PACKAGE_PIN V6    IOSTANDARD LVCMOS33 } [get_ports { bcd[2] }]; #IO_L22P_T3_13       Sch=CK_IO28
-#set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { bcd[3] }]; #IO_L11P_T1_SRCC_13  Sch=CK_IO29
-set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[2] }]; #IO_L11N_T1_SRCC_13  Sch=CK_IO30
-set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[3] }]; #IO_L17N_T2_13       Sch=CK_IO31
-#set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { bcd[6] }]; #IO_L15P_T2_DQS_13   Sch=CK_IO32
-#set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { bcd[7] }]; #IO_L21N_T3_DQS_13   Sch=CK_IO33
-set_property -dict { PACKAGE_PIN W10   IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[4] }]; #IO_L16P_T2_13       Sch=CK_IO34
-set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[5] }]; #IO_L22N_T3_13       Sch=CK_IO35
-#set_property -dict { PACKAGE_PIN Y6    IOSTANDARD LVCMOS33 } [get_ports { bcd[10] }]; #IO_L13N_T2_MRCC_13  Sch=CK_IO36
-#set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { bcd[11] }]; #IO_L13P_T2_MRCC_13  Sch=cCK_IO37
-set_property -dict { PACKAGE_PIN W8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[6] }]; #IO_L15N_T2_DQS_13   Sch=CK_IO38
-set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[7] }]; #IO_L14N_T2_SRCC_13  Sch=CK_IO39
-#set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { bcd[14] }]; #IO_L16N_T2_13       Sch=CK_IO40
-#set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { bcd[15] }]; #IO_L14P_T2_SRCC_13  Sch=CK_IO41
+#set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[0] }]; #IO_L19N_T3_VREF_13  Sch=CK_IO26
+#set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[1] }]; #IO_L6N_T0_VREF_13   Sch=CK_IO27
+##set_property -dict { PACKAGE_PIN V6    IOSTANDARD LVCMOS33 } [get_ports { bcd[2] }]; #IO_L22P_T3_13       Sch=CK_IO28
+##set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { bcd[3] }]; #IO_L11P_T1_SRCC_13  Sch=CK_IO29
+#set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[2] }]; #IO_L11N_T1_SRCC_13  Sch=CK_IO30
+#set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[3] }]; #IO_L17N_T2_13       Sch=CK_IO31
+##set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { bcd[6] }]; #IO_L15P_T2_DQS_13   Sch=CK_IO32
+##set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { bcd[7] }]; #IO_L21N_T3_DQS_13   Sch=CK_IO33
+#set_property -dict { PACKAGE_PIN W10   IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[4] }]; #IO_L16P_T2_13       Sch=CK_IO34
+#set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[5] }]; #IO_L22N_T3_13       Sch=CK_IO35
+##set_property -dict { PACKAGE_PIN Y6    IOSTANDARD LVCMOS33 } [get_ports { bcd[10] }]; #IO_L13N_T2_MRCC_13  Sch=CK_IO36
+##set_property -dict { PACKAGE_PIN Y7    IOSTANDARD LVCMOS33 } [get_ports { bcd[11] }]; #IO_L13P_T2_MRCC_13  Sch=cCK_IO37
+#set_property -dict { PACKAGE_PIN W8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[6] }]; #IO_L15N_T2_DQS_13   Sch=CK_IO38
+#set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { bluetooth_button_state[7] }]; #IO_L14N_T2_SRCC_13  Sch=CK_IO39
+##set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { bcd[14] }]; #IO_L16N_T2_13       Sch=CK_IO40
+##set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { bcd[15] }]; #IO_L14P_T2_SRCC_13  Sch=CK_IO41
 
 ## ChipKit Outer Analog Header - as Single-Ended Analog Inputs
 ## NOTE: These ports can be used as single-ended analog inputs with voltages from 0-3.3V (ChipKit analog pins A0-A5) or as digital I/O.

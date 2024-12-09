@@ -26,6 +26,8 @@ module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal SW0, reset if SW0 == 1 on Arty-z7*/
     input music,                                /*This is music enable signal SW1*/
+    input wire rx,
+    output wire tx,
     input[1:0] winner,                          /*This is two switch to control winner SW0 and SW1 on Extension board Io0 to Io1*/
     input[3:0] button,                          /*This is button read from Arty-z7 BTN0 to BTN3*/
     output buzzer,                              /*This is output for buzzer active play music A0*/
@@ -41,6 +43,7 @@ module LuckyNumberGame(
     wire clk_system;                            /*This clk 400Hz - 2.5ms for read button and system*/  
     
     wire[7:0] button_state_wire;                /*This is button state wire for connect between modules*/
+    wire[7:0] bluetooth_button_state_wire;     /*This is button bluetooth state wire for connect between modules*/
     wire button_pressed_hold_wire;              /*Just for debug*/
     
     wire game_straight_wire;                    /*This is game straight wire for connect between modules*/
@@ -75,7 +78,17 @@ module LuckyNumberGame(
         .clk_system(clk_system),                            //  @output : button_state[7:0] @ref : BUTTON_STATE macro from header.vh
         .rst(rst),
         .button_in(button),
+        .bluetooth_button_state(bluetooth_button_state_wire),
         .button_state(button_state_wire)
+    );
+    
+    controlGameWithBluetooth control_game_with_Bluetooth_Uart_inst(
+        .clk(clk),
+        .clk_system(clk_system),
+        .rst(rst),
+        .rx(rx),
+        .tx(tx),
+        .bluetooth_button_state(bluetooth_button_state_wire)
     );
     
     fsmForLuckyNumberGame fsm_for_lucky_number_game_inst(   /*This is fsm for whole system*/

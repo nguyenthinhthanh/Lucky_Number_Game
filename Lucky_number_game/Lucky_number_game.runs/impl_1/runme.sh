@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log controlGameWithBluetooth.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source controlGameWithBluetooth.tcl -notrace
+EAStep vivado -log LuckyNumberGame.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source LuckyNumberGame.tcl -notrace
 
 

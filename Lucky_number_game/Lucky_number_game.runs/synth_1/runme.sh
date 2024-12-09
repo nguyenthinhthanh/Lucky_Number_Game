@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log controlGameWithBluetooth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlGameWithBluetooth.tcl
+EAStep vivado -log LuckyNumberGame.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LuckyNumberGame.tcl

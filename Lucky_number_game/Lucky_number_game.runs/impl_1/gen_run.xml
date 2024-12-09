@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733718875">
-  <File Type="ROUTE-PWR" Name="controlGameWithBluetooth_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="controlGameWithBluetooth.tcl"/>
-  <File Type="BITSTR-MMI" Name="controlGameWithBluetooth.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="controlGameWithBluetooth_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="controlGameWithBluetooth_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="controlGameWithBluetooth_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="controlGameWithBluetooth_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="controlGameWithBluetooth_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="controlGameWithBluetooth_opt.dcp"/>
-  <File Type="OPT-DRC" Name="controlGameWithBluetooth_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="controlGameWithBluetooth.hwdef"/>
-  <File Type="PWROPT-DCP" Name="controlGameWithBluetooth_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="controlGameWithBluetooth_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="controlGameWithBluetooth_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="controlGameWithBluetooth_placed.dcp"/>
-  <File Type="PLACE-IO" Name="controlGameWithBluetooth_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="controlGameWithBluetooth_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="controlGameWithBluetooth_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="controlGameWithBluetooth_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="controlGameWithBluetooth_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="controlGameWithBluetooth_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="controlGameWithBluetooth_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="controlGameWithBluetooth.bin"/>
-  <File Type="PLACE-TIMING" Name="controlGameWithBluetooth_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="controlGameWithBluetooth_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="controlGameWithBluetooth.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="controlGameWithBluetooth_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="controlGameWithBluetooth_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="controlGameWithBluetooth_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="controlGameWithBluetooth.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="controlGameWithBluetooth_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="controlGameWithBluetooth_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="controlGameWithBluetooth_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="controlGameWithBluetooth_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="controlGameWithBluetooth_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="controlGameWithBluetooth_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="controlGameWithBluetooth_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="controlGameWithBluetooth_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="controlGameWithBluetooth_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="controlGameWithBluetooth_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="controlGameWithBluetooth_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="controlGameWithBluetooth_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="controlGameWithBluetooth_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="controlGameWithBluetooth_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="controlGameWithBluetooth_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="controlGameWithBluetooth_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="controlGameWithBluetooth_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="controlGameWithBluetooth_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="controlGameWithBluetooth_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="controlGameWithBluetooth_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="controlGameWithBluetooth_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="controlGameWithBluetooth_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="controlGameWithBluetooth_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="controlGameWithBluetooth_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="controlGameWithBluetooth_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="controlGameWithBluetooth_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="controlGameWithBluetooth_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="controlGameWithBluetooth.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="controlGameWithBluetooth_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="controlGameWithBluetooth_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="controlGameWithBluetooth.nky"/>
-  <File Type="BITSTR-BMM" Name="controlGameWithBluetooth_bd.bmm"/>
-  <File Type="PDI-FILE" Name="controlGameWithBluetooth.pdi"/>
-  <File Type="RCFI_FILE" Name="controlGameWithBluetooth.rcfi"/>
-  <File Type="CFI_FILE" Name="controlGameWithBluetooth.cfi"/>
-  <File Type="RNPI_FILE" Name="controlGameWithBluetooth.rnpi"/>
-  <File Type="NPI_FILE" Name="controlGameWithBluetooth.npi"/>
-  <File Type="RBD_FILE" Name="controlGameWithBluetooth.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1733729593">
+  <File Type="ROUTE-PWR" Name="LuckyNumberGame_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="LuckyNumberGame.tcl"/>
+  <File Type="BITSTR-MMI" Name="LuckyNumberGame.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="LuckyNumberGame_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="LuckyNumberGame_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="LuckyNumberGame_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="LuckyNumberGame_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="LuckyNumberGame_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="LuckyNumberGame_opt.dcp"/>
+  <File Type="OPT-DRC" Name="LuckyNumberGame_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="LuckyNumberGame.hwdef"/>
+  <File Type="PWROPT-DCP" Name="LuckyNumberGame_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="LuckyNumberGame_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="LuckyNumberGame_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="LuckyNumberGame_placed.dcp"/>
+  <File Type="PLACE-IO" Name="LuckyNumberGame_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="LuckyNumberGame_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="LuckyNumberGame_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="LuckyNumberGame_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="LuckyNumberGame_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="LuckyNumberGame.bin"/>
+  <File Type="PLACE-TIMING" Name="LuckyNumberGame_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="LuckyNumberGame_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="LuckyNumberGame.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="LuckyNumberGame_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="LuckyNumberGame_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="LuckyNumberGame_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="LuckyNumberGame.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="LuckyNumberGame_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="LuckyNumberGame_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="LuckyNumberGame_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="LuckyNumberGame_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="LuckyNumberGame_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="LuckyNumberGame_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="LuckyNumberGame_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="LuckyNumberGame_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="LuckyNumberGame_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="LuckyNumberGame_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="LuckyNumberGame_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="LuckyNumberGame_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="LuckyNumberGame_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="LuckyNumberGame_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="LuckyNumberGame_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="LuckyNumberGame_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="LuckyNumberGame_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="LuckyNumberGame_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="LuckyNumberGame_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="LuckyNumberGame_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="LuckyNumberGame_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="LuckyNumberGame_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="LuckyNumberGame_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="LuckyNumberGame_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="LuckyNumberGame_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="LuckyNumberGame_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="LuckyNumberGame_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="LuckyNumberGame.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="LuckyNumberGame_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="LuckyNumberGame_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="LuckyNumberGame.nky"/>
+  <File Type="BITSTR-BMM" Name="LuckyNumberGame_bd.bmm"/>
+  <File Type="PDI-FILE" Name="LuckyNumberGame.pdi"/>
+  <File Type="RCFI_FILE" Name="LuckyNumberGame.rcfi"/>
+  <File Type="CFI_FILE" Name="LuckyNumberGame.cfi"/>
+  <File Type="RNPI_FILE" Name="LuckyNumberGame.rnpi"/>
+  <File Type="NPI_FILE" Name="LuckyNumberGame.npi"/>
+  <File Type="RBD_FILE" Name="LuckyNumberGame.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="controlGameWithBluetooth.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="controlGameWithBluetooth.sysdef"/>
-  <File Type="BG-BGN" Name="controlGameWithBluetooth.bgn"/>
-  <File Type="BG-DRC" Name="controlGameWithBluetooth.drc"/>
-  <File Type="RDI-RDI" Name="controlGameWithBluetooth.vdi"/>
+  <File Type="BITSTR-LTX" Name="LuckyNumberGame.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="LuckyNumberGame.sysdef"/>
+  <File Type="BG-BGN" Name="LuckyNumberGame.bgn"/>
+  <File Type="BG-DRC" Name="LuckyNumberGame.drc"/>
+  <File Type="RDI-RDI" Name="LuckyNumberGame.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -279,34 +279,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Uart8Transmitter.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/BaudRateGenerator.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Uart8Receiver.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Uart8.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/UART_HelloWorld.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -337,7 +309,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="controlGameWithBluetooth"/>
+      <Option Name="TopModule" Val="LuckyNumberGame"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

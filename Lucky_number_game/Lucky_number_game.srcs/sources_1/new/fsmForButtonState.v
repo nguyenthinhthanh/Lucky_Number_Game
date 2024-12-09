@@ -26,6 +26,7 @@ module fsmForButtonState(
     input clk_system,                                   /*This clk 400Hz - 2.5ms for read button and system*/
     input rst,                                          /*This is reset signal*/
     input[3:0] button_in,                               /*This for read button value from Arty-z7*/
+    input[7:0] bluetooth_button_state,                  
     output reg[7:0] button_state                        /*This is for button state button_state[i*2 +:2] = button i*/
     );
     
@@ -57,27 +58,27 @@ module fsmForButtonState(
             for(i=0;i<4;i=i+1) begin
                 case(button_state_reg[i*2 +:2])
                     `BUTTON_STATE_RELEASED: begin
-                        if(button_pressed_wire[i]) begin    /*If button[i] is pressed*/
+                        if(button_pressed_wire[i] || bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED) begin    /*If button[i] is pressed*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED;
                         end
                         else begin
-                            if(button_pressed_hold_wire[i]) begin   /*If button[i] is pressed and hold*/
+                            if(button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD*/) begin   /*If button[i] is pressed and hold*/
                                 button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED: begin
-                        if(!button_pressed_wire[i]) begin   /*If button[i] is release*/
+                        if(!button_pressed_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED*/) begin   /*If button[i] is release*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
                         end
                         else begin
-                            if(button_pressed_hold_wire[i]) begin   /*If button[i] is pressed and hold*/
+                            if(button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD*/) begin   /*If button[i] is pressed and hold*/
                                 button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED_HOLD: begin
-                        if(!button_pressed_hold_wire[i]) begin      /*If button[i] is release*/
+                        if(!button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED*/) begin      /*If button[i] is release*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
                         end              
                     end
