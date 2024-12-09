@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log testUARTLoopBack.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source testUARTLoopBack.tcl" );
+         "-log controlGameWithBluetooth.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlGameWithBluetooth.tcl" );
 
 
 

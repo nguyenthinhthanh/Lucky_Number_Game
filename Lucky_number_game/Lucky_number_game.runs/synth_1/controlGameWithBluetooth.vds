@@ -1,0 +1,357 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Dec  9 11:12:41 2024
+# Process ID: 7920
+# Current directory: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1
+# Command line: vivado.exe -log controlGameWithBluetooth.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlGameWithBluetooth.tcl
+# Log file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/controlGameWithBluetooth.vds
+# Journal file: D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source controlGameWithBluetooth.tcl -notrace
+Command: synth_design -top controlGameWithBluetooth -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1628
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module BaudRateGenerator [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/BaudRateGenerator.v:22]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module Uart8Receiver [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8Receiver.v:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module Uart8Transmitter [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8Transmitter.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in Uart8 with formal parameter declaration list [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/Uart8.v:58]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1222.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'controlGameWithBluetooth' [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlGameWithBluetooth.v:23]
+INFO: [Synth 8-6157] synthesizing module 'myUART' [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/myUART.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'myUART' (1#1) [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/myUART.v:23]
+WARNING: [Synth 8-151] case item 8'b01000100 is unreachable [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlGameWithBluetooth.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'controlGameWithBluetooth' (2#1) [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.srcs/sources_1/new/controlGameWithBluetooth.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1222.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1222.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1222.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1222.219 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'music'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[2]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[1]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[0]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[5]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[4]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rgb[3]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'button[0]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'button[1]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'button[2]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'button[3]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'winner[0]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'winner[1]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[0]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[1]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[2]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[3]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[4]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[5]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[6]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'data[7]'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:99]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rs'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rw'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'en'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buzzer'. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:159]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc:159]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Arty-Z7-20-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/controlGameWithBluetooth_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/controlGameWithBluetooth_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1267.605 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1267.605 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'myUART'
+INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'myUART'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'controlGameWithBluetooth'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 TX_IDLE |                               00 |                              000
+                TX_START |                               01 |                              001
+                 TX_DATA |                               10 |                              010
+                 TX_STOP |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'myUART'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 RX_IDLE |                               00 |                              000
+                RX_START |                               01 |                              001
+                 RX_DATA |                               10 |                              010
+                 RX_STOP |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'myUART'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                             0000
+                  iSTATE |                               01 |                             0001
+                 iSTATE0 |                               10 |                             0010
+                 iSTATE2 |                               11 |                             1111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'controlGameWithBluetooth'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   4 Input   16 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |    30|
+|4     |LUT2   |    18|
+|5     |LUT3   |     5|
+|6     |LUT4   |    33|
+|7     |LUT5   |    15|
+|8     |LUT6   |    16|
+|9     |FDCE   |    61|
+|10    |FDPE   |     1|
+|11    |FDRE   |    24|
+|12    |IBUF   |     3|
+|13    |OBUF   |     9|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1267.605 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1267.605 ; gain = 45.387
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1269.035 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1283.895 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: bb2da355
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 31 Warnings, 32 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1283.895 ; gain = 61.676
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'D:/Vivado/Git_Lucky_number_game/Lucky_number_game/Lucky_number_game.runs/synth_1/controlGameWithBluetooth.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file controlGameWithBluetooth_utilization_synth.rpt -pb controlGameWithBluetooth_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  9 11:13:05 2024...
