@@ -1,4 +1,4 @@
-## 🎡 Lucky Spin Game
+## 🎡 Lucky Spin Number Game
 
 Mô tả dự án  
 Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên bo mạch Arty Z7. Dự án sử dụng LED và LCD 16x2 để hiển thị kết quả và các nút nhấn để điều khiển, kết hợp nhạc để tăng tính thú vị cho trò chơi. Ngoài ra, thuật toán thông minh giúp điều chỉnh xác suất thắng dựa trên kết quả trước đó, làm tăng tính thú vị và thách thức cho người chơi.  
