@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3">
   <diagram name="Trang-1" id="_Kgdst20RLDARL7_TV8L">
-    <mxGraphModel dx="2911" dy="1062" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1546" dy="366" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
         <mxCell id="j5ymkjZYho3_YVoNhxPD-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-1" target="j5ymkjZYho3_YVoNhxPD-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="vWVMO-xU8ZEmeTkblkzG-1" value="module LuckyNumberGame (&lt;br&gt;    input clk,&lt;br&gt;    input rst,&lt;br&gt;    input [1:0] switch,&lt;div&gt;input [3:0] button,&lt;/div&gt;&lt;div&gt;output [5:0] rgb,&lt;/div&gt;&lt;div&gt;&lt;div&gt;    output [3:0] led&lt;/div&gt;&lt;div&gt;output [15:0] bcd,&lt;/div&gt;&lt;div&gt;output [15:0] lcd&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+        <mxCell id="vWVMO-xU8ZEmeTkblkzG-1" value="module LuckyNumberGame (&lt;br&gt;    input clk,&lt;br&gt;    input rst,&lt;div&gt;input rx,&lt;/div&gt;&lt;div&gt;input tx,&lt;br&gt;    input [1:0] switch,&lt;div&gt;input [3:0] button,&lt;/div&gt;&lt;div&gt;output [5:0] rgb,&lt;/div&gt;&lt;div&gt;&lt;div&gt;    output [3:0] led&lt;/div&gt;&lt;div&gt;output [15:0] bcd,&lt;/div&gt;&lt;div&gt;output [15:0] lcd&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="321" y="125" width="186" height="210" as="geometry" />
         </mxCell>
         <mxCell id="vWVMO-xU8ZEmeTkblkzG-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="vWVMO-xU8ZEmeTkblkzG-2" target="vWVMO-xU8ZEmeTkblkzG-16" edge="1">
@@ -96,13 +96,13 @@
         <mxCell id="j5ymkjZYho3_YVoNhxPD-1" value="module playMusic(&lt;br&gt;    input clk,&lt;br&gt;    input rst,&lt;br&gt;output reg music&lt;br&gt;&lt;div&gt;&lt;div&gt;);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="730" y="125" width="186" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="8XpNE83muvlkrDpT54Yh-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="8XpNE83muvlkrDpT54Yh-1" target="8XpNE83muvlkrDpT54Yh-2">
+        <mxCell id="8XpNE83muvlkrDpT54Yh-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="8XpNE83muvlkrDpT54Yh-1" target="8XpNE83muvlkrDpT54Yh-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="8XpNE83muvlkrDpT54Yh-1" value="&lt;div&gt;module myUART(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire reset,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg tx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire [7:0] tx_data,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg [7:0] rx_data,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire tx_start,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg tx_busy,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg rx_ready&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;gradientColor=#97d077;" vertex="1" parent="1">
+        <mxCell id="8XpNE83muvlkrDpT54Yh-1" value="&lt;div&gt;module myUART(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire reset,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg tx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire [7:0] tx_data,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg [7:0] rx_data,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire tx_start,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg tx_busy,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg rx_ready&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;gradientColor=#97d077;" parent="1" vertex="1">
           <mxGeometry x="-378" y="160" width="208" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="8XpNE83muvlkrDpT54Yh-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="8XpNE83muvlkrDpT54Yh-2" target="vWVMO-xU8ZEmeTkblkzG-2">
+        <mxCell id="8XpNE83muvlkrDpT54Yh-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="8XpNE83muvlkrDpT54Yh-2" target="vWVMO-xU8ZEmeTkblkzG-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="220" y="240" />
@@ -110,7 +110,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="8XpNE83muvlkrDpT54Yh-2" value="&lt;div&gt;module controlGameWithBluetooth(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk_system,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rst,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output wire tx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg[7:0] bluetooth_button_state&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;gradientColor=#97d077;" vertex="1" parent="1">
+        <mxCell id="8XpNE83muvlkrDpT54Yh-2" value="&lt;div&gt;module controlGameWithBluetooth(&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire clk_system,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rst,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; input wire rx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output wire tx,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; output reg[7:0] bluetooth_button_state&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;gradientColor=#97d077;" parent="1" vertex="1">
           <mxGeometry x="-60" y="160" width="208" height="160" as="geometry" />
         </mxCell>
       </root>
