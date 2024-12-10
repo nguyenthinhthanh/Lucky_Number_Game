@@ -26,8 +26,8 @@ module LuckyNumberGame(
     input clk,                                  /*This is clk from Arty-z7*/
     input rst,                                  /*This is reset signal SW0, reset if SW0 == 1 on Arty-z7*/
     input music,                                /*This is music enable signal SW1*/
-    input wire rx,
-    output wire tx,
+    input wire rx,                              /*This is rx for Uart communicate with ESP32*/
+    output wire tx,                             /*This is tx for Uart communicate with ESP32*/
     input[1:0] winner,                          /*This is two switch to control winner SW0 and SW1 on Extension board Io0 to Io1*/
     input[3:0] button,                          /*This is button read from Arty-z7 BTN0 to BTN3*/
     output buzzer,                              /*This is output for buzzer active play music A0*/
@@ -36,7 +36,7 @@ module LuckyNumberGame(
     output en,                                  /*This is rw signal for lcd 16x2 Io12*/
     output[3:0] led,                            /*This is output led LD0 to LD3*/
     output[5:0] rgb,                            /*This is output for rgb led LD4 and LD5*/
-    output [7:0] data,                          /*This is output data for lcd 16x2 Io2 to Io9*/
+    output[7:0] data,                           /*This is output data for lcd 16x2 Io2 to Io9*/
     output[15:0] bcd                            /*This is output bcd 16 bit Io26 to Io41*/
     );
     
@@ -75,17 +75,17 @@ module LuckyNumberGame(
     
     fsmForButtonState fsm_for_button_state_inst(            /*This is fsm for button state*/
         .clk(clk),                                          //  @input : button_in[3:0] from Arty-z7
-        .clk_system(clk_system),                            //  @output : button_state[7:0] @ref : BUTTON_STATE macro from header.vh
-        .rst(rst),
+        .clk_system(clk_system),                            //  @input : bluetoothh_button_state @from : controlGameWithBluetooth module
+        .rst(rst),                                          //  @output : button_state[7:0] @ref : BUTTON_STATE macro from header.vh
         .button_in(button),
         .bluetooth_button_state(bluetooth_button_state_wire),
         .button_state(button_state_wire)
     );
     
-    controlGameWithBluetooth control_game_with_Bluetooth_Uart_inst(
-        .clk(clk),
-        .clk_system(clk_system),
-        .rst(rst),
+    controlGameWithBluetooth control_game_with_Bluetooth_Uart_inst(     /*This is control game with Bluetooth modudle*/
+        .clk(clk),                                                      //  @input : rx for Uart
+        .clk_system(clk_system),                                        //  @output : tx for Uart
+        .rst(rst),                                                      //  @output : bluetooth_button_state for control button using app
         .rx(rx),
         .tx(tx),
         .bluetooth_button_state(bluetooth_button_state_wire)

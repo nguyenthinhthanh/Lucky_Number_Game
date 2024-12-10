@@ -19,17 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*This module for Uart communicate
+    receive and tranmist with ESP32 module
+    */
 module myUART(
-    input wire clk,
-    input wire reset,
-    input wire rx,
-    output reg tx,
-    input wire [7:0] tx_data,
-    output reg [7:0] rx_data,
-    input wire tx_start,
-    output reg tx_busy,
-    output reg rx_ready
+    input wire clk,                 /*This is clk from Arty-z7*/
+    input wire reset,               /*This is reset signal*/
+    input wire rx,                  /*This is rx for Uart communicate*/
+    output reg tx,                  /*This is tx for Uart communicate*/
+    input wire[7:0] tx_data,        /*This is tx data transmit*/
+    output reg[7:0] rx_data,        /*This is rx data receive*/
+    input wire tx_start,            /*This is signal start transmit*/
+    output reg tx_busy,             /*This is transmiting*/
+    output reg rx_ready             /*This is ready to receive*/
 );
     parameter CLOCK_FREQ = 125000000;
     parameter BAUD_RATE = 9600;

@@ -21,12 +21,12 @@
 `include "header.vh"
 
 module controlGameWithBluetooth(
-    input wire clk,
-    input wire clk_system,
-    input wire rst,
-    input wire rx,
-    output wire tx,
-    output reg[7:0] bluetooth_button_state
+    input wire clk,                         /*This is clk from Arty-z7*/
+    input wire clk_system,                  /*This clk 400Hz - 2.5ms for system*/
+    input wire rst,                         /*This is reset signal*/
+    input wire rx,                          /*This is tx for Uart communicate*/
+    output wire tx,                         /*This is rx for Uart communicate*/
+    output reg[7:0] bluetooth_button_state  /*This is bluetooth button state*/
 );
     wire [7:0] data_in;
     reg [7:0] data_out;
@@ -36,9 +36,9 @@ module controlGameWithBluetooth(
     
     reg data_valid;
     reg [3:0] state;
-    reg [31:0] delay_counter;  // Delay counter for sending
+    reg [31:0] delay_counter;                       /*Delay counter for sending*/
     
-    reg[7:0] bluetooth_button_state_reg;                  /*This just is reg for store bluetooth button state*/
+    reg[7:0] bluetooth_button_state_reg;            /*This just is reg for store bluetooth button state*/
 
     /*Connect uart module*/
     myUART uart (
@@ -60,7 +60,6 @@ module controlGameWithBluetooth(
     always @(posedge /*clk*/ clk_system or posedge rst) begin
         if(rst) begin
             flag <= 0;
-            //data_out_tmp <= 8'b00;
             
             bluetooth_button_state <= 8'b0000_0000;
             bluetooth_button_state_reg <= 8'b0000_0000;
@@ -83,7 +82,7 @@ module controlGameWithBluetooth(
                         flag <= 1;
                         bluetooth_button_state_reg[3*2 +:2] <= `BUTTON_STATE_PRESSED;
                     end
-                    8'h44: begin                /*E char*/
+                    8'h45: begin                /*E char*/
                         flag <= 1;
                         bluetooth_button_state_reg[0*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD; 
                     end
@@ -151,18 +150,7 @@ module controlGameWithBluetooth(
                     end
                 end
                 2: begin
-                    
-                    /*if(counter < 1) begin
-                        if (!tx_busy) begin
-                            counter <= counter + 1;
-                            state <= 0;
-                        end
-                    end
-                    else begin
-                        state <= 2;
-                    end*/
                     if (!tx_busy) begin
-                        //data_out <= 8'h00;
                         state <= 0;
                     end
                 end
