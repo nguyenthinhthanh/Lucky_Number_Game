@@ -190,13 +190,13 @@ module speedController(
                         end*/
                         
                         for(i=0;i<`NUM_OF_7SEG_MODE_0;i=i+1) begin
-                            if(i==0) begin
+                            /*if(i==0) begin
                                 random_number[i*0 +:4] <= weight_random_number_wire;
                             end
                             else begin
                                 random_number[i*4 +:4] <= random_number_wire[i*4 +:4];                            
-                            end
-                            //random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
+                            end*/
+                            random_number[i*4 +:4] <= random_number_wire[i*4 +:4];
                         end
                     end
                     /*else if(game_mode == `GAME_MODE_1) begin

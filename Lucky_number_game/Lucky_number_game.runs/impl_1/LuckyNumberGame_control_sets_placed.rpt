@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Dec 10 16:36:57 2024
+| Date         : Tue Dec 10 21:40:19 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file LuckyNumberGame_control_sets_placed.rpt
 | Design       : LuckyNumberGame
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    47 |
-|    Minimum number of control sets                        |    47 |
+| Total control sets                                       |    44 |
+|    Minimum number of control sets                        |    44 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   150 |
+| Unused register locations in slices containing registers |   138 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    47 |
+| Total control sets |    44 |
 | >= 0 to < 4        |    16 |
-| >= 4 to < 6        |     4 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     7 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     1 |
+| >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    16 |
+| >= 16              |    13 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              76 |           27 |
-| No           | No                    | Yes                    |             489 |          144 |
+| No           | No                    | No                     |              12 |            8 |
+| No           | No                    | Yes                    |             341 |           98 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |             216 |           83 |
-| Yes          | No                    | Yes                    |             565 |          170 |
+| Yes          | No                    | No                     |             164 |           59 |
+| Yes          | No                    | Yes                    |             497 |          151 |
 | Yes          | Yes                   | No                     |               8 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,53 +73,50 @@ Table of Contents
 +----------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
 |     Clock Signal     |                                      Enable Signal                                     |                            Set/Reset Signal                            | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[2]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/ce_reg_n_0                                          | rst_IBUF                                                               |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[0]                                   |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[1]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[5]                                   |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[6]                                   |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[4]                                   |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/ce_reg_n_0                                          | rst_IBUF                                                               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[2]                                   |                                                                        |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/rs3_out                                             | rst_IBUF                                                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[0]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[1]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[3]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | fsm_for_button_state_inst/read_button_debounce_inst/button_pressed_hold_reg[2]_i_1_n_0 | rst_IBUF                                                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[3]                                   |                                                                        |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_shift_reg[7]_i_1_n_0                     |                                                                        |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[6]                                   |                                                                        |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[2]                                   |                                                                        |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/tx_i_1_n_0                                  | rst_IBUF                                                               |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[1]                                   |                                                                        |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[4]                                   |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_shift_reg[7]_i_1_n_0                     |                                                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/p_0_in[0]                                   |                                                                        |                1 |              1 |         1.00 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[3]                                                    | rst_IBUF                                                               |                1 |              3 |         3.00 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_1[0]                                   | rst_IBUF                                                               |                3 |              4 |         1.33 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[2]_0[0]                                   | rst_IBUF                                                               |                2 |              4 |         2.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_2[0]                                   | rst_IBUF                                                               |                4 |              4 |         1.00 |
-|  clk_system_BUFG     | speed_controller_inst/weighted_ramdom_number_inst/random_num_reg0                      | rst_IBUF                                                               |                1 |              4 |         4.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg0                                          | rst_IBUF                                                               |                3 |              5 |         1.67 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_0[0]                                   | rst_IBUF                                                               |                2 |              6 |         3.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_1[0]                                   | rst_IBUF                                                               |                2 |              6 |         3.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_2[0]                                   | rst_IBUF                                                               |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/state                                               | rst_IBUF                                                               |                3 |              8 |         2.67 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg0                                          | rst_IBUF                                                               |                4 |              5 |         1.25 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_2[0]                                   | rst_IBUF                                                               |                3 |              6 |         2.00 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_1[0]                                   | rst_IBUF                                                               |                3 |              6 |         2.00 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_3[0]                                   | rst_IBUF                                                               |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_data[7]_i_1_n_0                          |                                                                        |                5 |              8 |         1.60 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[1]                                                    | rst_IBUF                                                               |                2 |              8 |         4.00 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[0]                                                    | rst_IBUF                                                               |                2 |              8 |         4.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[1]                                                    | rst_IBUF                                                               |                3 |              8 |         2.67 |
 |  clk_system_BUFG     | fsm_for_lucky_number_game_inst/E[2]                                                    | rst_IBUF                                                               |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/data[7]_i_1_n_0                                     | rst_IBUF                                                               |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_data[7]_i_1_n_0                          |                                                                        |                3 |              8 |         2.67 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_ready_reg_0                              | control_game_with_Bluetooth_Uart_inst/uart/FSM_sequential_state_reg[0] |                2 |              8 |         4.00 |
-|  lfsr_reg[3]_i_1_n_0 | speed_controller_inst/weight_calculator_inst/E[0]                                      |                                                                        |                3 |             12 |         4.00 |
-|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/tx_bit_timer_1                              | rst_IBUF                                                               |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/data[7]_i_1_n_0                                     | rst_IBUF                                                               |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/state                                               | rst_IBUF                                                               |                4 |              8 |         2.00 |
+|  lfsr_reg[3]_i_1_n_0 | speed_controller_inst/generate_random_number2_inst/E[0]                                |                                                                        |                4 |             12 |         3.00 |
+|  clk_system_BUFG     |                                                                                        |                                                                        |                8 |             12 |         1.50 |
 |  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/rx_bit_timer_0                              | rst_IBUF                                                               |                4 |             16 |         4.00 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[0]_0[0]                                   | rst_IBUF                                                               |               10 |             24 |         2.40 |
-|  lfsr_reg[3]_i_1_n_0 |                                                                                        | rst_IBUF                                                               |                7 |             24 |         3.43 |
-|  clk_IBUF_BUFG       | speed_controller_inst/frequency_for_button_read_inst/counter_0                         | rst_IBUF                                                               |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG       | control_game_with_Bluetooth_Uart_inst/uart/tx_bit_timer_1                              | rst_IBUF                                                               |                4 |             16 |         4.00 |
+|  lfsr_reg[3]_i_1_n_0 |                                                                                        | rst_IBUF                                                               |                6 |             24 |         4.00 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/game_mode_reg[1]_0[0]                                   | rst_IBUF                                                               |                9 |             24 |         2.67 |
 |  clk_IBUF_BUFG       | frequency_for_button_read_inst/counter                                                 | rst_IBUF                                                               |               13 |             32 |         2.46 |
-|  clk_system_BUFG     | led_controller_inst/led_state[0]                                                       | rst_IBUF                                                               |                9 |             32 |         3.56 |
-|  clk_system_BUFG     | speed_controller_inst/weight_calculator_inst/E[0]                                      |                                                                        |               31 |             52 |         1.68 |
-|  clk_IBUF_BUFG       |                                                                                        | play_music_inst/note_index[2]_i_2_n_0                                  |               18 |             62 |         3.44 |
-|  clk_system_BUFG     | speed_controller_inst/store_reg_n_0                                                    | rst_IBUF                                                               |               21 |             64 |         3.05 |
-|  clk_system_BUFG     |                                                                                        |                                                                        |               27 |             76 |         2.81 |
-|  clk_system_BUFG     | led_controller_inst/led3/led_state_reg[0]                                              | rst_IBUF                                                               |               32 |            128 |         4.00 |
-|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/line2_prev[126]_i_1_n_0                             |                                                                        |               38 |            136 |         3.58 |
-|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_3[0]                                   | rst_IBUF                                                               |               29 |            136 |         4.69 |
+|  clk_IBUF_BUFG       | speed_controller_inst/frequency_for_button_read_inst/counter_0                         | rst_IBUF                                                               |               13 |             32 |         2.46 |
+|  clk_system_BUFG     | led_controller_inst/led_state[0]                                                       | rst_IBUF                                                               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG       |                                                                                        | play_music_inst/note_index[2]_i_2_n_0                                  |               17 |             62 |         3.65 |
+|  clk_system_BUFG     |                                                                                        | rst_IBUF                                                               |               30 |             71 |         2.37 |
+|  clk_system_BUFG     | led_controller_inst/led3/led_state_reg[0]                                              | rst_IBUF                                                               |               33 |            128 |         3.88 |
+|  clk_IBUF_BUFG       | lcd_controller_inst/write_lcd_inst/line2_prev[126]_i_1_n_0                             |                                                                        |               42 |            136 |         3.24 |
+|  clk_system_BUFG     | fsm_for_lucky_number_game_inst/fsm_state_reg[3]_0[0]                                   | rst_IBUF                                                               |               28 |            136 |         4.86 |
 |  clk_IBUF_BUFG       |                                                                                        | rst_IBUF                                                               |               45 |            184 |         4.09 |
-|  clk_system_BUFG     |                                                                                        | rst_IBUF                                                               |               74 |            219 |         2.96 |
 +----------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+--------------+
 
 
