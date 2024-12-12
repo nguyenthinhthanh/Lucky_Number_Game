@@ -57,6 +57,8 @@ module controlGameWithBluetooth(
     reg flag;
     reg [7:0] counter;
     
+    integer i;
+    
     always @(posedge /*clk*/ clk_system or posedge rst) begin
         if(rst) begin
             flag <= 0;
@@ -83,23 +85,37 @@ module controlGameWithBluetooth(
                         bluetooth_button_state_reg[3*2 +:2] <= `BUTTON_STATE_PRESSED;
                     end
                     8'h45: begin                /*E char*/
-                        flag <= 1;
+                        //flag <= 1;
                         bluetooth_button_state_reg[0*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD; 
                     end
                     8'h46: begin                /*F char*/
-                        flag <= 1;
+                        //flag <= 1;
                         bluetooth_button_state_reg[1*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;    
                     end
                     8'h47: begin                /*G char*/
-                        flag <= 1;
+                        //flag <= 1;
                         bluetooth_button_state_reg[2*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD; 
                     end
                     8'h48: begin                /*H char*/
-                        flag <= 1;
+                        //flag <= 1;
                         bluetooth_button_state_reg[3*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;  
                     end
+                    8'h53: begin                /*S char* stop hold*/
+                        flag <= 1;
+                        bluetooth_button_state_reg <= 8'b0000_0000;
+                    end
                     /*If not have bluetooth char, button state default BUTTON_STATE_RELEASED*/
-                    default: bluetooth_button_state_reg <= 8'b0000_0000;
+                    default: begin
+                        for(i=0;i<`NUM_OF_BUTTON;i=i+1) begin
+                            if(bluetooth_button_state_reg[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin
+                                bluetooth_button_state_reg <= bluetooth_button_state_reg;
+                            end
+                            else begin
+                                bluetooth_button_state_reg <= 8'b0000_0000; 
+                            end
+                        end
+                        /*bluetooth_button_state_reg <= 8'b0000_0000;*/                   
+                    end
                     /*Just to test*/ 
                     //default: bluetooth_button_state_reg <= bluetooth_button_state_reg;
                 endcase

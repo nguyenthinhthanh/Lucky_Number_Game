@@ -62,23 +62,23 @@ module fsmForButtonState(
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED;
                         end
                         else begin
-                            if(button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD*/) begin   /*If button[i] is pressed and hold*/
+                            if(button_pressed_hold_wire[i] || bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin   /*If button[i] is pressed and hold*/
                                 button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED: begin
-                        if(!button_pressed_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED*/) begin   /*If button[i] is release*/
+                        if(!button_pressed_wire[i] || bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED) begin   /*If button[i] is release*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
                         end
                         else begin
-                            if(button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD*/) begin   /*If button[i] is pressed and hold*/
+                            if(button_pressed_hold_wire[i] || bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_PRESSED_HOLD) begin   /*If button[i] is pressed and hold*/
                                 button_state_reg[i*2 +:2] <= `BUTTON_STATE_PRESSED_HOLD;
                             end
                         end
                     end
                     `BUTTON_STATE_PRESSED_HOLD: begin
-                        if(!button_pressed_hold_wire[i] /*|| bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED*/) begin      /*If button[i] is release*/
+                        if(!button_pressed_hold_wire[i] || bluetooth_button_state[i*2 +:2] == `BUTTON_STATE_RELEASED) begin      /*If button[i] is release*/
                             button_state_reg[i*2 +:2] <= `BUTTON_STATE_RELEASED;
                         end              
                     end
