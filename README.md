@@ -17,15 +17,15 @@ Mô tả dự án
 
 
 ## Chức năng chính  
-1. Quay số ngẫu nhiên: Trò chơi cho phép người chơi lựa chọn chế độ chơi, cách thức chơi, cách thức đặt cược.  
-2. LED sẽ nhấp nháy và đổi màu tương ứng với chế độ và trạng thái trò chơi tương ứng.  
-  
-3. Điều chỉnh xác suất thắng: Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.  
-
-4. Điều khiển bằng nút nhấn:  
-  - Nút Start: Bắt đầu vòng quay.  
-  - Nút Reset: Đặt lại trò chơi.
-
+1. **Quay số ngẫu nhiên**:
+   - Trò chơi cho phép người chơi lựa chọn chế độ chơi, cách thức chơi, cách thức đặt cược.  
+2. **LED**:
+   - Nhấp nháy và đổi màu tương ứng với chế độ và trạng thái trò chơi tương ứng.  
+3. **Điều chỉnh xác suất thắng**:
+   - Tăng xác suất xuất hiện của các số ít được chọn, giảm xác suất của các số được chọn nhiều lần.  
+4. **Điều khiển bằng nút nhấn**:  
+   - Nút Start: Bắt đầu vòng quay.  
+   - Nút Reset: Đặt lại trò chơi.
 5. Điều khiển trò chơi qua App kết nối Bluetooth.  
 ## Yêu cầu phần cứng và phần mềm  
 Phần cứng  
@@ -44,16 +44,16 @@ Phần mềm
 ```bash
 git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
 ```
-2. Mở Vivado và tạo dự án
-Tạo một dự án mới trong Vivado với tên LuckySpinGame.
-Chọn bo mạch Arty Z7 
-Thêm các tệp .v trong thư mục src vào dự án.
-3. Synthesize và implement
-Thực hiện Synthesis.
-Thực hiện Implementation.
-4. Generate bitstream và lập trình bo
-Tạo tệp .bit.
-Lập trình tệp .bit lên bo thông qua cổng JTAG.
+2. **Mở Vivado và tạo dự án**
+   - Tạo một dự án mới trong Vivado với tên LuckySpinGame.
+   - Chọn bo mạch Arty Z7 
+   - Thêm các tệp .v trong thư mục src vào dự án.
+3. **Synthesize và implement**  
+   - Thực hiện Synthesis.
+   - Thực hiện Implementation.
+4. **Generate bitstream và lập trình bo**
+   - Tạo tệp .bit.
+   - Lập trình tệp .bit lên bo thông qua cổng JTAG.
 ## Hướng dẫn sử dụng
 - Cấp nguồn cho bo Arty Z7.  
 
