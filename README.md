@@ -1,11 +1,12 @@
 ## Lucky Spin Number Game
 
-Mô tả dự án  
-- Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên bo mạch Arty Z7. Dự án sử dụng LED và LCD 16x2 để hiển thị kết quả và các nút nhấn để điều khiển, kết hợp nhạc để tăng tính thú vị cho trò chơi. Ngoài ra, thuật toán thông minh giúp điều chỉnh xác suất thắng dựa trên kết quả trước đó, làm tăng tính thú vị và thách thức cho người chơi.  
+**Mô tả dự án**  
 
-- Trò chơi cũng được tích hợp điều khiển từ xa bằng App, sử dụng module ESP32 NodeMCU LuaNode32 nhận dữ liệu thông qua Bluetooth từ App và gửi tới Arty Z7 bằng giao tiếp UART.  
+Trò chơi vòng quay may mắn được viết bằng Verilog và chạy trên bo mạch Arty Z7. Dự án sử dụng LED và LCD 16x2 để hiển thị kết quả và các nút nhấn để điều khiển, kết hợp nhạc để tăng tính thú vị cho trò chơi. Ngoài ra, thuật toán thông minh giúp điều chỉnh xác suất thắng dựa trên kết quả trước đó, làm tăng tính thú vị và thách thức cho người chơi.  
 
-### Table of Contents
+Trò chơi cũng được tích hợp điều khiển từ xa bằng App, sử dụng module ESP32 NodeMCU LuaNode32 nhận dữ liệu thông qua Bluetooth từ App và gửi tới Arty Z7 bằng giao tiếp UART.  
+
+### Mục lục
 - [Lucky Spin Number Game](#lucky-spin-number-game)
 - [Chức năng chính](#chức-năng-chính)
 - [Yêu cầu phần cứng và phần mềm](#yêu-cầu-phần-cứng-và-phần-mềm)
@@ -46,7 +47,7 @@ git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
 ```
 2. **Mở Vivado và tạo dự án**
    - Tạo một dự án mới trong Vivado với tên LuckySpinGame.
-   - Chọn bo mạch Arty Z7 
+   - Chọn bo mạch Arty Z7
    - Thêm các tệp .v trong thư mục src vào dự án.
 3. **Synthesize và implement**  
    - Thực hiện Synthesis.
@@ -55,6 +56,7 @@ git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
    - Tạo tệp .bit.
    - Lập trình tệp .bit lên bo thông qua cổng JTAG.
 ## Hướng dẫn sử dụng
+Các bước bắt đầu như sau:
 - Cấp nguồn cho bo Arty Z7.  
 
 - Nhấn nút BTN0-BTN4, kết hợp Lcd để bắt đầu trò chơi.  
@@ -65,17 +67,18 @@ git clone https://github.com/nguyenthinhthanh/Lucky_Number_Game
 
 - Sử dụng Bluetooth terminal để điều khiển trò chơi trên thiết bị.  
 ## Tính năng mở rộng
-- Điều khiển trò chơi bằng App sử dụng module ESP32 NodeMCU LuaNode32 Bluetooth, giao tiếp Uartt.  
+Ngoài những tính năng cơ bản, dự án còn mở rộng:  
+   - Điều khiển trò chơi bằng App sử dụng module ESP32 NodeMCU LuaNode32 Bluetooth, giao tiếp Uartt.  
 
-- Thêm nhiều chế độ chơi, cho phép người chơi thiết lập cách chơi và chế độ Special Mode tăng tính hấp dẫn.  
+   - Thêm nhiều chế độ chơi, cho phép người chơi thiết lập cách chơi và chế độ Special Mode tăng tính hấp dẫn.  
 
-- Thêm âm thanh (buzzer) phát nhạc trong suốt trò chơi.  
+   - Thêm âm thanh (buzzer) phát nhạc trong suốt trò chơi.  
 
-- Tích hợp thuật toán nâng cao để phân tích kết quả trước để thay đổi xác suất trúng số.  
+   - Tích hợp thuật toán nâng cao để phân tích kết quả trước để thay đổi xác suất trúng số.  
 
 - Ngoài ra vì được kết nối với ESP32 một module mạnh mẽ, trong tương lai dự án có thể mở rộng hơn rất nhiều.  
 ## Đóng góp
-- Bạn có ý tưởng cải thiện trò chơi? Hãy mở Pull Request hoặc Issue trên GitHub!
+Bạn có ý tưởng cải thiện trò chơi? Hãy mở Pull Request hoặc Issue trên GitHub!
 
 ## Giấy phép
-- Null.
+Dự án này được tạo ra **chỉ nhằm mục đích học tập**. Không được sử dụng cho mục đích thương mại.
